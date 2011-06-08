@@ -1,0 +1,14 @@
+<h2 change:h="">
+	${blockTitle}
+	<a class="link rss-link" change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle" title="${trans:m.event.fo.highlight-rss-link,ucf}"><img change:img="front/rss.gif" alt="${trans:m.event.fo.highlight-rss-link,ucf}" /></a>
+</h2>
+
+<div tal:condition="contextdocument/getDescription">${contextdocument/getDescriptionAsHtml}</div>
+
+<tal:block change:include="type 'html'; transmitAll 'true'" module="event" template="Event-Inc-Baseevent-List" />
+
+<ul class="mini-navigation" tal:condition="linkToDetailPage">
+	<li>
+		<a change:link="document contextdocument">${trans:m.event.fo.view-complete-list,ucf}</a>
+	</li>
+</ul>

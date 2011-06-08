@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.baseeventcontextuallist" lcid="fr_FR">
+	<include id="m.event.bo.blocks.baseeventlistbase" />
+	<key id="title">liste contextuelle d'actualités et événements</key>
+	<key id="showdetailsincurrenttopic">page de détail dans la rubrique</key>
+	<key id="showdetailsincurrenttopic-help">Choisissez oui pour que les documents soient affichés dans la rubrique en cours, choisissez non pour qu'il soient affichés dans leur rubrique primaire.</key>
+</i18n>

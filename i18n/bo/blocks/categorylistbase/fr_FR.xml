@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.categorylistbase" lcid="fr_FR">
+	<key id="itemsperpage">éléments par page</key>
+	<key id="itemsperpage-help">Spécifiez ici le nombre d'élément maximum à afficher par page.</key>
+	<key id="filterbymodel">filtrer par type</key>
+	<key id="filterbymodel-help">Choisissez "oui" pour n'afficher que certains types d'actualités ou événements.</key>
+	<key id="includedmodels">types retenus</key>
+	<key id="includedmodels-help">Cochez ici les types d'actualités ou événements que vous souhaitez afficher.</key>
+	<key id="paginationposition">position de la pagination</key>
+	<key id="paginationposition-help">Précisez ici la position de la pagination.</key>
+	<key id="blocktitle">titre du bloc</key>
+	<key id="blocktitle-help">Titre du bloc sur le site. Laisser vide pour le générer automatiquement.</key>
+</i18n>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/1.0.xsd"
+	model-version="1.0" indexable="true" use-correction="true">
+	<properties>
+		<add name="date" type="DateTime" min-occurs="1" />
+		<add name="topic" type="modules_website/topic" max-occurs="-1" inverse="true" />
+		<add name="website" type="modules_website/website" max-occurs="-1" inverse="true" />
+		<add name="summary" type="XHTMLFragment" localized="true" />
+		<add name="text" type="XHTMLFragment" localized="true" />
+		<add name="linkedpage" type="modules_website/page" />
+		<add name="listvisual" type="modules_media/media" />
+		<add name="detailvisual" type="modules_media/media" />
+		<add name="category" type="modules_event/category" max-occurs="-1" inverse="true" />
+		<add name="excludeFromRss" type="Boolean" default-value="false" />
+		<add name="allowComments" type="Boolean" default-value="true" />
+	</properties>
+</document>

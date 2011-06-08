@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.actions" lcid="fr_FR">
+	<key id="create_">créer</key>
+	<key id="createnews">créer une actualité</key>
+	<key id="createevent">créer un événement</key>
+	<key id="createtreefolder">créer un dossier de classement</key>
+	<key id="createhighlightfolder">créer un dossier de mises en avant</key>
+	<key id="createcategoryfolder">créer un dossier de catégories</key>
+	<key id="createcategory">créer une catégorie</key>
+	<key id="createhighlight">créer une mise en avant</key>
+	<key id="initdefaultstructure">initialiser les pages globales d'un site</key>
+	<key id="initlocalstructure">initialiser les pages d'une rubrique</key>
+</i18n>

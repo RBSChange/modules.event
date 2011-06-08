@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+	<binding fileName="modules/media/persistentdocument/import/media_binding.xml" />
+	<binding fileName="modules/event/persistentdocument/import/event_binding.xml" />
+	
+	<website byTag="default_modules_website_default-website">
+		<execute method="setDocumentIdAttribute" />
+		<topic byLabel="Actualités et événements" id="events1">
+			<topic byLabel="Actualités et événements RBS change" id="events2" />
+			<topic byLabel="Mises à jour majeures" id="events3" />
+			<execute method="setDocumentIdAttribute" />
+			<binding fileName="modules/event/setup/localDefaultStructure.xml" />
+			<binding fileName="modules/event/setup/globalDefaultStructure.xml" />
+		</topic>
+	</website>
+	
+<!--	<rootfolder module="media">
+		<folder byLabel="Exemple de media Actualité et événements">
+			<media path="modules/event/setup/sample/eComGeneve.jpg" byLabel="eCom Genève" id="photo1" />
+		</folder>
+	</rootfolder>
+	
+  	<rootfolder module="event">
+		<categoryfolder byLabel="Catégories">
+			<category byLabel="RBS Change" id="cat-change" />
+			<category byLabel="eCommerce" id="cat-ecom" />
+			<category byLabel="CMS" id="cat-cms" />
+			<category byLabel="Navigateurs" id="cat-nav" />
+			<category byLabel="Firefox" id="cat-firefox" />
+			<category byLabel="Opera" id="cat-opera" />
+		</categoryfolder>
+		<treefolder byLabel="Actualités et événements">
+			<treefolder byLabel="RBS Change">
+				<attribute name="summary"><![CDATA[<p class="normal">eCom est le plus grand salon du e-business en Suisse Romande en 2011, cette première édition réunira plus de 60 experts en e-commerce et e-marketing.<br />
+eCom est une opportunité unique de rencontrer les meilleurs spécialistes locaux, (plus de 80 % des intervenants sont régionaux) de Suisse et de France frontalière afin de répondre au mieux aux attentes des visiteurs qui recherchent en priorité des partenaires de proximité.<br />
+Plus d'informations sur <a class="link" href="http://www.salon-ecom.com/">www.salon-ecom.com</a></p>]]></attribute>
+				<attribute name="text"><![CDATA[<p class="normal">Venez nous rencontrer pour découvrir ou vous renseigner à propos de RBS Change sur le stand B20.</p>
+<p class="normal">
+	Assistez à notre conférence Salle 2 de  13h55 à 14h45 :<br />
+	<strong>Les bénéfices d’un logiciel de gestion de contenu pour les applications e-commerce</strong> par Jean-Michel Ramseyer
+</p>
+<p class="normal"><strong>Date et horaire</strong><br />Mardi 24 mai de 9h00 à 18h30</p>
+<p class="normal">
+	<strong>Lieu</strong><br />
+    Centre des conventions de la Praille<br />
+    Ramada Encore<br />
+    Genève
+</p>
+<p class="normal">
+	<strong>Accès</strong><br />
+	Pour voir les différents modes d'accès au salon, vous pouvez consulter la page dédiée
+</p>]]></attribute>
+				<news byLabel="eCom Genève 2011 " date="2011-05-24 09:00:00" text-attr="" summary-attr="" category-refids="cat-change,cat-ecom" topic-refids="events1,events2" listvisual-refid="photo1" detailvisual-refid="photo1" />
+				<attribute name="text"><![CDATA[<p class="normal">La 12ème édition du salon Solutions Linux/Open Source confirme le tournant pris l’an passé grâce aux changements et la maturité de l’offre Open Source.<br />La France est plus que jamais un vecteur de croissance pour le logiciel libre, avec une croissance des dépenses en 2010 de près de 35% (Sce : Pierre Audoin Consultants), soit un chiffre d’affaires d’1,5 milliards d’Euros.</p>
+<p class="normal">Venez nous retrouver au salon Solutions Linux sur le <strong>stand D32/E33</strong>, et découvrez <strong>en avant première RBS Change 3.5</strong>. Vous pourrez également à cette occasion échanger avec nous, nous faire des suggestions, nous poser vos questions ou simplement discuter de RBS Change.</p>
+<p class="normal">Nous interviendrons également lors des rendez-vous suivants :</p>
+<ul class="normal">
+	<li>
+		<strong>Jeudi 12 mai 2011 de 09h30 à 11h00 Salle AMPERE</strong><br />
+		Table ronde "Quelle place pour l'Open Source dans l'eCommerce de demain?"
+	</li>
+	<li>
+		<strong>Jeudi 12 mai 2011 de 12h40 à 11h00 Salle AMPERE</strong><br />
+		Session technique "La dernière génération du plus puissant des CMS eCommerce Open Source"
+	</li>
+</ul>
+<p class="normal">Date et horaire :</p>
+<ul class="normal">
+	<li>Mardi 10 mai 2011: 9h00-18h00</li>
+	<li>Mercredi 11 mai 2011 : 9h00-20h00</li>
+	<li>Jeudi 12 mai 2011 : 9h00-18h00</li>
+</ul>
+<p class="normal">
+	<strong>Lieu</strong><br />
+	Le CNIT Paris la Défense<br />
+	Hall Marie Curie
+</p>
+<p class="normal">
+	<strong>Accès</strong><br />
+	Métro : ligne 1, station La Défense - Grande Arche<br />
+	RER : ligne A, station la Défense – Accès Parvis<br />
+	Voiture : boulevard circulaire (Parking central sortie la Défense 4 / Parking CNIT sortie la Défense 6)
+</p>]]></attribute>
+				<event byLabel="Solutions Linux 2011" date="2011-05-10 09:00:00" enddate="2011-05-12 18:00:00" text-attr="" category-refids="cat-change" topic-refids="events1,events2" />
+				<attribute name="text"><![CDATA[<p class="normal">Cela fait maintenant un peu plus d'un an que RBS Change est Open Source, de quoi demain sera-t-il fait ?</p>
+<p class="normal">Un nouveau site a vu le jour, une année s'est terminée... Un an déjà que RBS Change a fait le saut du modèle propriétaire vers le monde de l'Open Source avec succès, si l’on en juge par le nombre de projets réalisés et de partenaires qui ont choisi RBS Change.</p>
+<p class="normal">Durant cette année nous avons travaillé à rendre l'expérience utilisateur encore plus agréable et à enrichir RBS Change. Une nouvelle version verra le jour dans les prochains mois afin de vous faire bénéficier de ces nouveautés. Au courant de l'année à venir nous allons bien entendu continuer à améliorer notre solution tout en développant la communauté de sorte à rendre RBS Change encore plus agréable et qu'il réponde encore plus à vos besoins avec votre aide.</p>
+<p class="normal">Vous le constaterez certainement au cours des prochains jours/mois, le site va évoluer pour vous permettre d'interagir encore plus facilement avec les différents acteurs autour de RBS Change. Nous allons également revoir et enrichir la documentation de sorte à vous permettre d'utiliser RBS Change au mieux par rapport à vos attentes.</p>
+<p class="normal">N'hésitez pas à nous contacter ou à utiliser nos forums si vous ne trouvez pas réponse à vos questions, nous nous efforcerons de vous répondre dans les meilleurs délais.</p>]]></attribute>
+				<news byLabel="Un an déjà " date="2011-04-27 12:00:00" text-attr="" category-refids="cat-change,cat-ecom,cat-cms" topic-refids="events1,events2,events3" />
+				<attribute name="text"><![CDATA[<p class="normal">Une série de hotfixes pour RBS Change 3.0.4 viennent d'être publiés. Ces hotfixes corrigent une vingtaine de tickets.</p>
+<p class="normal">Pour savoir si votre projet est concerné par un de ces correctifs, utilisez la commande <em>check-hotfix</em> :</p>
+<ul class="normal">
+	<li>En ligne de commande : <em>change.php check-hotfix</em></li>
+	<li>En mode web, depuis la console de votre backoffice (outils > console)</li>
+</ul>
+<p class="normal">Pour appliquer un correctif, utilisez la commande <em>apply-hotfix</em>.</p>
+<p class="normal">Pour plus de détails, vous pouvez consulter la page réservée à ces hotfixes.</p>]]></attribute>
+				<news byLabel="Hotfixes RBS Change 3.0.4" date="2010-12-20 11:33:00" text-attr="" category-refids="cat-change,cat-ecom,cat-cms" topic-refids="events1,events2" />
+				<attribute name="text"><![CDATA[<p class="normal">RBS Change sera présent au <a href="http://www.afup.org/pages/forumphp2010/" class="link">forum PHP 2010</a> : venez nombreux découvrir les aspects technique de notre CMS E-Commerce. Nous ferons partie des projets Open Source mis en avant à l'occasion du forum !</p>
+<p class="normal">Le forum le seul événement professionnel en France consacré à la plate-forme PHP et aux technologies Web. Il rassemble les différents acteurs de la profession et valorise le dynamisme français en terme de technologies de pointe sur Internet.</p>]]></attribute>
+				<event byLabel="RBS Change au forum PHP 2010" date="2010-11-09 09:00:00" enddate="2010-11-10 18:00:00" text-attr="" category-refids="cat-change" topic-refids="events1,events2" />
+			</treefolder>
+			<treefolder byLabel="Divers">
+				<news byLabel="Sortie de Firefox 4.0.1" date="2011-04-28 12:00:00" text="Mise à jour corrective pour la branche 4.0." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.17" date="2011-04-28 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.19" date="2011-04-28 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 11.10" date="2011-04-12 12:00:00" text="Mise à jour mineure." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 4.0" date="2011-03-22 12:00:00" text="Installez le plus sûr, le plus rapide et le plus malin des Firefox à ce jour." category-refids="cat-firefox,cat-nav" topic-refids="events1,events3" />
+				<news byLabel="Sortie de Firefox 3.6.16" date="2011-03-22 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.15" date="2011-03-06 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.14" date="2011-03-01 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.17" date="2011-03-01 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 11.01" date="2011-01-27 12:00:00" text="Mise à jour corrective pour la branche 11." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 11" date="2010-12-16 12:00:00" text="Nouvelle version majeure." category-refids="cat-opera,cat-nav" topic-refids="events1,events3" />
+				<news byLabel="Sortie de Firefox 3.6.13" date="2010-12-09 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.16" date="2010-12-09 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.12" date="2010-10-27 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.15" date="2010-10-27 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.11" date="2010-10-19 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.14" date="2010-10-19 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.63" date="2010-10-12 12:00:00" text="Mise à jour corrective pour la branche 10." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.10" date="2010-09-15 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.13" date="2010-09-15 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.62" date="2010-09-09 12:00:00" text="Mise à jour corrective pour la branche 10.60" category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.9" date="2010-09-07 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.12" date="2010-09-07 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.61" date="2010-08-12 12:00:00" text="Mise à jour corrective pour la branche 10.60" category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.8" date="2010-07-23 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.7" date="2010-07-20 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.60" date="2010-07-01 12:00:00" text="Mise à jour mineure." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.6" date="2010-06-26 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.4" date="2010-06-22 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.10" date="2010-06-22 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.54" date="2010-06-21 12:00:00" text="Mise à jour corrective pour la branche 10.50." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.53" date="2010-04-30 12:00:00" text="Mise à jour corrective pour la branche 10.50." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.52" date="2010-04-27 12:00:00" text="Mise à jour corrective pour la branche 10.50." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.3" date="2010-04-01 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.9" date="2010-03-30 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6.2" date="2010-03-22 12:00:00" text="Mise à jour corrective pour la branche 3.6." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.51" date="2010-03-22 12:00:00" text="Mise à jour corrective pour la branche 10.50." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Opera 10.50" date="2010-03-02 12:00:00" text="Mise à jour mineure." category-refids="cat-opera,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.5.8" date="2010-02-17 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+				<news byLabel="Sortie de Firefox 3.6" date="2010-01-21 12:00:00" text="Installez le plus sûr, le plus rapide et le plus malin des Firefox à ce jour." category-refids="cat-firefox,cat-nav" topic-refids="events1,events3" />
+				<news byLabel="Sortie de Firefox 3.5.7" date="2010-01-05 12:00:00" text="Mise à jour corrective pour la branche 3.5." category-refids="cat-firefox,cat-nav" topic-refids="events1" />
+			</treefolder>
+		</treefolder>
+		<highlightfolder byLabel="Mises en avant">
+			<highlight byLabel="Tout" />
+		</highlightfolder>
+	</rootfolder> -->
+</script>

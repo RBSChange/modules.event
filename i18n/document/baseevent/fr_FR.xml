@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.document.baseevent" lcid="fr_FR">
+	<include id="m.generic.document.document" />
+	<key id="document-name">baseevent</key>
+	<key id="topic">rubriques</key>
+	<key id="topic-help">Rubriques dans lesquelles ce document est implanté.</key>
+	<key id="date">date</key>
+	<key id="summary">résumé</key>
+	<key id="text">contenu</key>
+	<key id="linkedpage">page liée</key>
+	<key id="linkedpage-help">Si renseignée, cette page remplace la page de détail.</key>
+	<key id="listvisual">visuel pour l'affichage en liste</key>
+	<key id="detailvisual">visuel</key>
+	<key id="category">catégories</key>
+	<key id="allowcomments">autoriser les commentaires</key>
+	<key id="allowcomments-help">Autoriser ou non les utilisateurs à soumettre de nouveaux commentaires. Ce choix n'a aucun effet sur les commentaires existants.</key>
+	<key id="excludefromrss">exclure des flux RSS</key>
+	<key id="excludefromrss-help">Exclure ou non des flux RSS. Choisissez oui si ce document est en accès restreint.</key>
+</i18n>

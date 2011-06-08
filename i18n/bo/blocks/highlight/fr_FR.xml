@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.highlight" lcid="fr_FR">
+	<include id="m.event.bo.blocks.baseeventlistbase" />
+	<key id="title">détail d'un mise en avant</key>
+	<key id="random">sélection aléatoire</key>
+	<key id="random-help">Si activé, les éléments à affichés seront sélectionnés aléatoirement parmi les éléments de la mise en avant.</key>
+	<key id="linktodetailpage">lien vers la liste complète</key>
+	<key id="linktodetailpage-help">Activer ou non le lien vers la liste complète des éléments de la mise en avant. Quoiqu'il arrive, ce lien sera omis sur la page de détail de la mise en avant.</key>
+	<key id="onlyfromcurrentwebsite">restreindre au site courant</key>
+	<key id="onlyfromcurrentwebsite-help">Choisissez oui pour restreindre la liste aux éléments présents dans au moins une rubrique du site courant.</key>
+</i18n>

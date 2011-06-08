@@ -1,0 +1,16 @@
+<p><a change:link="pageId 4122">Test 1</a></p>
+<p><a change:link="documentId '3553'">Test 2</a></p>
+<p><a change:link="documentId '3553'; forWebsiteId '3795'">Test 2'</a></p>
+<p><a change:link="documentId '3553'; forWebsiteId '3795'; anchor 'toto'">Test 2''</a></p>
+<p><a change:link="document contextdocument">Test 3</a></p>
+<p tal:define="websiteId '3795'"><a change:link="document contextdocument; forWebsiteId websiteId">Test 3'</a></p>
+<p><a change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle">Test 4</a></p>
+<p><a change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle; forWebsiteId '3795'">Test 4'</a></p>
+<p><a change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle; forWebsiteId '3795'; anchor 'toto'">Test 4''</a></p>
+<p><a change:link="home">Test 5</a></p>
+<p tal:define="website php: DocumentHelper::getDocumentInstance(3795)"><a change:link="home; forWebsite website">Test 5'</a></p>
+<p><a change:link="home; forWebsiteId '3795'">Test 5''</a></p>
+<p><a change:link="home; forWebsiteId '3795'; anchor 'toto'">Test 5'''</a></p>
+<p><a change:link="tag ctx_event_baseeventalllist">Test 6</a></p>
+<p><a change:link="tag ctx_event_baseeventalllist; forWebsiteId '3795'">Test 6'</a></p>
+<p><a change:link="tag ctx_event_baseeventalllist; forWebsiteId '3795'; anchor 'toto'">Test 6''</a></p>

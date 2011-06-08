@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <binding fileName="modules/generic/persistentdocument/import/generic_binding.xml"/>
+  <binding name="baseevent" className="event_BaseeventScriptDocumentElement"/>
+  <binding name="news" className="event_NewsScriptDocumentElement"/>
+  <binding name="event" className="event_EventScriptDocumentElement"/>
+  <binding name="treefolder" className="event_TreefolderScriptDocumentElement"/>
+  <binding name="highlightfolder" className="event_HighlightfolderScriptDocumentElement"/>
+  <binding name="categoryfolder" className="event_CategoryfolderScriptDocumentElement"/>
+  <binding name="category" className="event_CategoryScriptDocumentElement"/>
+  <binding name="highlight" className="event_HighlightScriptDocumentElement"/>
+</script>

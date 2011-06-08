@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.list" lcid="fr_FR">
+	<key id="availablemodels-label">types d'événements disponibles</key>
+	<key id="availablemodels-description">Liste des types d'événements disponibles.</key>
+	<key id="linkspositions-label">position des liens</key>
+	<key id="linkspositions-description">Position des liens de navigation dans les blocs.</key>
+	<key id="linkspositions-both">en haut et en bas</key>
+	<key id="linkspositions-top">en haut</key>
+	<key id="linkspositions-bottom">en bas</key>
+	<key id="linkspositions-none">nul part</key>
+	<key id="listtemplates-label">gabarits de listes</key>
+	<key id="listtemplates-description">Liste des gabarits de listes d'actualités ou d'événements.</key>
+	<key id="detailtemplates-label">gabarits de détail</key>
+	<key id="detailtemplates-description">Liste des gabarits de listes d'actualités ou d'événements.</key>
+	<key id="blocktemplates-label">templates disponibles</key>
+	<key id="blocktemplates-description">Liste des templates disponibles pour un bloc donné.</key>
+	<key id="blocktemplates-success">par défaut</key>
+	<key id="detailblocktemplates-label">templates de détail disponibles</key>
+	<key id="detailblocktemplates-description">Liste des templates disponibles pour le bloc de détail des actualités et événements.</key>
+</i18n>

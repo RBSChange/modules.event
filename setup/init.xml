@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/list/persistentdocument/import/list_binding.xml" />
+	<binding fileName="modules/event/persistentdocument/import/event_binding.xml" />
+
+	<rootfolder module="event">
+		<treefolder byLabel="Actualités et événements" />
+		<highlightfolder byLabel="Mises en avant" />
+		<categoryfolder byLabel="Catégories" />
+	</rootfolder>
+
+	<systemfolder module="list" relatedmodule="event">
+		<dynamiclist listid="modules_event/availablemodels" label="m.event.list.availablemodels-label"
+			description="m.event.list.availablemodels-description" />
+
+		<staticlist listid="modules_event/linkspositions" label="m.event.list.linkspositions-label"
+			description="m.event.list.linkspositions-description">
+			<staticitem label="m.event.list.linkspositions-both" value="both" />
+			<staticitem label="m.event.list.linkspositions-top" value="top" />
+			<staticitem label="m.event.list.linkspositions-bottom" value="bottom" />
+			<staticitem label="m.event.list.linkspositions-none" value="none" />
+		</staticlist>
+		
+		<dynamiclist listid="modules_event/blocktemplates" label="m.event.list.blocktemplates-label"
+			description="m.event.list.blocktemplates-description" />
+			
+		<valuededitablelist listid="modules_event/detailblocktemplates" label="m.event.list.detailblocktemplates-label"
+			description="m.event.list.detailblocktemplates-description">
+			<valueditem label="Par défaut" value="Success" />
+		</valuededitablelist>
+	</systemfolder>
+</script>

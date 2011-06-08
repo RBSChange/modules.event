@@ -1,0 +1,35 @@
+<?php
+/**
+ * event_BlockEventContextualListAction
+ * @package modules.event.lib.blocks
+ */
+class event_BlockBaseeventContextualListAction extends event_BlockBaseeventBaseListAction
+{
+	/**
+	 * @param f_mvc_Request $request
+	 * @param string[] $modelNames
+	 * @return integer 
+	 */
+	protected function getParentDoc($request)
+	{
+		return $this->getContext()->getParent();
+	}
+	
+	/**
+	 * @param f_mvc_Request $request
+	 * @param integer $offset
+	 * @param integer $itemsPerPage
+	 * @param string[] $modelNames
+	 * @return event_persistentdocument_baseevent
+	 */
+	protected function getBlockTitle($request, $modelNames)
+	{
+		$title = $this->getConfigurationValue('blockTitle');
+		if (!$title)
+		{
+			$doc = $this->getParentDoc($request);
+			$title = LocaleService::getInstance()->transFO('m.event.fo.topic-title', array('ucf', 'html'), array('topic' => $doc->getLabel()));
+		}
+		return $title;
+	}
+}

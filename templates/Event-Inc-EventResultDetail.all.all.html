@@ -1,0 +1,17 @@
+<tal:block tal:define="doc item/getDocument">
+	<img tal:condition="doc/getListVisual" change:media="document doc/getListVisual; format 'modules.event.frontoffice/listvisual'; class 'float-right'" />
+	<p class="event-infos">
+		<tal:block change:date="formatI18n f.date.date.default-date-format; value doc/getDate" /> - 
+		<tal:block change:date="formatI18n f.date.date.default-date-format; value doc/getEndDate" />
+	</p>
+	<p>
+		<strong>${trans:m.solrsearch.frontoffice.description,lab,ucf}</strong>
+		${item/getHighlightedText}<span>${trans:m.solrsearch.frontoffice.end-description,ucf,etc}</span>
+	</p>
+	<div>
+		<strong>${trans:m.event.fo.categories,lab,ucf}</strong>
+		<ul tal:condition="doc/getPublishedCategoryCount" class="event-categories">
+			<li tal:repeat="category doc/getPublishedCategoryArray"><a change:link="document category">${category/getLabelAsHtml}</a></li>
+		</ul>
+	</div>
+</tal:block>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <binding fileName="modules/useractionlogger/persistentdocument/import/useractionlogger_binding.xml"/>
+  <actiondef modulename="event" actionname="insert.highlight" label="m.event.bo.useractionlogger.insert-highlight"/>
+  <actiondef modulename="event" actionname="delete.highlight" label="m.event.bo.useractionlogger.delete-highlight"/>
+  <actiondef modulename="event" actionname="delete.event" label="m.event.bo.useractionlogger.delete-event"/>
+  <actiondef modulename="event" actionname="delete.news" label="m.event.bo.useractionlogger.delete-news"/>
+  <actiondef modulename="event" actionname="update.event" label="m.event.bo.useractionlogger.update-event"/>
+  <actiondef modulename="event" actionname="activate.event" label="m.event.bo.useractionlogger.activate-event"/>
+  <actiondef modulename="event" actionname="update.news" label="m.event.bo.useractionlogger.update-news"/>
+  <actiondef modulename="event" actionname="activate.news" label="m.event.bo.useractionlogger.activate-news"/>
+  <actiondef modulename="event" actionname="insert.news" label="m.event.bo.useractionlogger.insert-news"/>
+  <actiondef modulename="event" actionname="update.highlight" label="m.event.bo.useractionlogger.update-highlight"/>
+</script>
