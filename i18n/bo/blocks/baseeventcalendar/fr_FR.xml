@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.baseeventcalendar" lcid="fr_FR">
+	<key id="title">calendrier</key>
+	<key id="displaymode">mode de rendu</key>
+	<key id="displaymode-help">Mode de rendu du bloc.</key>
+	<key id="filterbymodel">filtrer par type</key>
+	<key id="filterbymodel-help">Choisissez "oui" pour n'afficher que certains types d'actualités ou événements.</key>
+	<key id="includedmodels">types retenus</key>
+	<key id="includedmodels-help">Cochez ici les types d'actualités ou événements que vous souhaitez afficher.</key>
+	<key id="blocktitle">titre du bloc</key>
+	<key id="blocktitle-help">Titre du bloc sur le site.</key>
+</i18n>

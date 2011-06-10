@@ -15,5 +15,5 @@
 	<key id="paginationposition">position de la pagination</key>
 	<key id="paginationposition-help">Précisez ici la position de la pagination.</key>
 	<key id="blocktitle">titre du bloc</key>
-	<key id="blocktitle-help">Titre du bloc sur le site. Laisser vide pour le générer automatiquement.</key>
+	<key id="blocktitle-help">Titre du bloc sur le site.</key>
 </i18n>

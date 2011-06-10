@@ -15,7 +15,7 @@
 		</topic>
 	</website>
 	
-<!--	<rootfolder module="media">
+	<rootfolder module="media">
 		<folder byLabel="Exemple de media Actualité et événements">
 			<media path="modules/event/setup/sample/eComGeneve.jpg" byLabel="eCom Genève" id="photo1" />
 		</folder>
@@ -149,5 +149,5 @@ Plus d'informations sur <a class="link" href="http://www.salon-ecom.com/">www.sa
 		<highlightfolder byLabel="Mises en avant">
 			<highlight byLabel="Tout" />
 		</highlightfolder>
-	</rootfolder> -->
+	</rootfolder>
 </script>

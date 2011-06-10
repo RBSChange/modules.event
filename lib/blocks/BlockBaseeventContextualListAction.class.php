@@ -7,8 +7,7 @@ class event_BlockBaseeventContextualListAction extends event_BlockBaseeventBaseL
 {
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return f_peristentdocument_PersistentDocument 
 	 */
 	protected function getParentDoc($request)
 	{

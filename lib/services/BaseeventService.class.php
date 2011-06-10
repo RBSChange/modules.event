@@ -101,6 +101,38 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		$query = $this->createQuery()->add(Restrictions::eq('website', $website));
 		return $this->findPublished($query, $offset, $limit, $modelNames, $withoutExcludedFromRss);
 	}
+
+	/**
+	 * @param website_persistentdocument_website $website
+	 * @param date_Calendar $startDate
+	 * @param date_Calendar $endDate
+	 * @param string[] $modelNames
+	 * @param boolean $withoutExcludedFromRss
+	 * @return integer
+	 */
+	public function getPublishedCountByWebsiteAndPeriod($website, $startDate, $endDate, $modelNames = null, $withoutExcludedFromRss = false)
+	{
+		$query = $this->createQuery()->add(Restrictions::eq('website', $website));
+		$query->add(Restrictions::andExp(Restrictions::le('date', $endDate->toString()), Restrictions::ge('endDate', $startDate->toString())));
+		return $this->findPublishedCount($query, $modelNames, $withoutExcludedFromRss);
+	}
+	
+	/**
+	 * @param website_persistentdocument_website $website
+	 * @param date_Calendar $startDate
+	 * @param date_Calendar $endDate
+	 * @param integer $offset
+	 * @param integer $limit
+	 * @param string[] $modelNames
+	 * @param boolean $withoutExcludedFromRss
+	 * @return event_persistentdocument_baseevent[]
+	 */
+	public function getPublishedByWebsiteAndPeriod($website, $startDate, $endDate, $offset, $limit, $modelNames = null, $withoutExcludedFromRss = false)
+	{
+		$query = $this->createQuery()->add(Restrictions::eq('website', $website));
+		$query->add(Restrictions::andExp(Restrictions::le('date', $endDate->toString()), Restrictions::ge('endDate', $startDate->toString())));
+		return $this->findPublished($query, $offset, $limit, $modelNames, $withoutExcludedFromRss);
+	}
 	
 	/**
 	 * @param website_persistentdocument_topic $topic
@@ -185,31 +217,82 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
+	 * @param website_persistentdocument_website $website
+	 * @param integer $month
+	 * @param integer $year
 	 * @param string[] $modelNames
 	 * @param boolean $withoutExcludedFromRss
-	 * @return f_persistentdocument_criteria_Query
+	 * @return integer[]
+	 */
+	public function getPublishedDaysCountByWebsiteAndMonth($website, $month, $year, $modelNames = null, $withoutExcludedFromRss = false)
+	{
+		$startDate = date_Calendar::getInstanceFromFormat($year.'-'.$month.'-1', 'Y-m-d');
+		$endDate = date_Calendar::getInstanceFromFormat($year.'-'.$month.'-1', 'Y-m-d')->add(date_Calendar::MONTH, 1)->sub(date_Calendar::SECOND, 1);
+		$startDateString = date_Converter::convertDateToGMT($startDate)->toString();
+		$endDateString = date_Converter::convertDateToGMT($endDate)->toString();
+		$query = $this->createQuery()->add(Restrictions::eq('website', $website));
+		$query->add(Restrictions::andExp(Restrictions::le('date', $endDateString), Restrictions::ge('endDate', $startDateString)));
+		$query = $this->completeQueryForPublished($query, $modelNames, $withoutExcludedFromRss);
+		$query->setProjection(Projections::property('date'), Projections::property('endDate'));
+		
+		$counts = array();
+		foreach ($query->find() as $row)
+		{
+			$eventStartDate = date_Calendar::getInstance(max($row['date'], $startDateString));
+			$eventEndDate = date_Calendar::getInstance(min($row['endDate'], $endDateString));
+			while ($eventStartDate->isBefore($eventEndDate, false))
+			{
+				$day = $eventStartDate->getDay();
+				if (!isset($counts[$day]))
+				{
+					$counts[$day] = 1;
+				}
+				else
+				{
+					$counts[$day]++;
+				}
+				$eventStartDate->add(date_Calendar::DAY, 1);
+			}
+		}
+		return $counts;
+	}
+	
+	/**
+	 * @param f_persistentdocument_criteria_Query $query
+	 * @param string[] $modelNames
+	 * @param boolean $withoutExcludedFromRss
+	 * @return integer
 	 */
 	protected function findPublishedCount($query, $modelNames, $withoutExcludedFromRss)
 	{
-		$query->add(Restrictions::published())->add(Restrictions::isNotEmpty('website'));
-		if ($withoutExcludedFromRss)
-		{
-			$query->add(Restrictions::eq('excludeFromRss', false));
-		}
-		if (is_array($modelNames) && count($modelNames) > 0)
-		{
-			$query->add(Restrictions::in('model', $modelNames));
-		}
+		$query = $this->completeQueryForPublished($query, $modelNames, $withoutExcludedFromRss);
 		$query->setProjection(Projections::rowCount('count'));
 		return f_util_ArrayUtils::firstElement($query->findColumn('count'));
 	}
 	
 	/**
+	 * @param f_persistentdocument_criteria_Query $query
+	 * @param integer $offset
+	 * @param $limit $offset
+	 * @param string[] $modelNames
+	 * @param boolean $withoutExcludedFromRss
+	 * @return event_persistentdocument_baseevent[]
+	 */
+	protected function findPublished($query, $offset, $limit, $modelNames, $withoutExcludedFromRss)
+	{
+		$query = $this->completeQueryForPublished($query, $modelNames, $withoutExcludedFromRss);
+		$query->addOrder(Order::desc('date'))->addOrder(Order::asc('endDate'))->addOrder(Order::desc('label'));
+		$query->setFirstResult($offset)->setMaxResults($limit);
+		return $query->find();
+	}
+	
+	/**
+	 * @param f_persistentdocument_criteria_Query $query
 	 * @param string[] $modelNames
 	 * @param boolean $withoutExcludedFromRss
 	 * @return f_persistentdocument_criteria_Query
 	 */
-	protected function findPublished($query, $offset, $limit, $modelNames, $withoutExcludedFromRss)
+	protected function completeQueryForPublished($query, $modelNames, $withoutExcludedFromRss)
 	{
 		$query->add(Restrictions::published())->add(Restrictions::isNotEmpty('website'));
 		if ($withoutExcludedFromRss)
@@ -220,9 +303,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		{
 			$query->add(Restrictions::in('model', $modelNames));
 		}
-		$query->addOrder(Order::desc('date'))->addOrder(Order::asc('endDate'))->addOrder(Order::desc('label'));
-		$query->setFirstResult($offset)->setMaxResults($limit);
-		return $query->find();
+		return $query;
 	}
 	
 	/**
@@ -352,5 +433,16 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	public function getWebsitesForTweets($document)
 	{
 		return $document->getPublishedWebsiteArray();
+	}
+	
+	/**
+	 * @param event_persistentdocument_event $document
+	 * @param string $moduleName
+	 * @param string $treeType
+	 * @param array<string, string> $nodeAttributes
+	 */
+	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	{
+		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate());
 	}
 }

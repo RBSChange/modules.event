@@ -5,7 +5,7 @@
  */
 class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
 {
-/**
+	/**
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
 	 * @return String
@@ -29,8 +29,7 @@ class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return f_peristentdocument_PersistentDocument 
 	 */
 	protected function getParentDoc($request)
 	{
@@ -40,8 +39,7 @@ class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return boolean 
 	 */
 	protected function isOnDetailPage($request)
 	{

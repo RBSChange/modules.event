@@ -4,6 +4,7 @@
 	model-version="1.0" indexable="true" use-correction="true">
 	<properties>
 		<add name="date" type="DateTime" min-occurs="1" />
+		<add name="endDate" type="DateTime" min-occurs="1" />
 		<add name="topic" type="modules_website/topic" max-occurs="-1" inverse="true" />
 		<add name="website" type="modules_website/website" max-occurs="-1" inverse="true" />
 		<add name="summary" type="XHTMLFragment" localized="true" />

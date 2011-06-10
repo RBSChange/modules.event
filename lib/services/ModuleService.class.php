@@ -60,6 +60,7 @@ class event_ModuleService extends ModuleBaseService
 	
 		$website = DocumentHelper::getDocumentInstance($websiteId, 'modules_website/website');
 		if (TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_baseeventalllist', $website) || 
+			TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_baseeventdaylist', $website) || 
 			TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_category', $website) || 
 			TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_highlight', $website))
 		{

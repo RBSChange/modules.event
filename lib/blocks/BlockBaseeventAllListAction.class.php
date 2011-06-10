@@ -7,8 +7,7 @@ class event_BlockBaseeventAllListAction extends event_BlockBaseeventBaseListActi
 {
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return f_peristentdocument_PersistentDocument 
 	 */
 	protected function getParentDoc($request)
 	{

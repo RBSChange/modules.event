@@ -204,6 +204,65 @@
 			</javascript>
 		</xul>
 	</block>
+	<block type="modules_event_BaseeventCalendar" icon="list-block">
+		<parameters>
+			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
+			<parameter name="filterByModel" type="Boolean" default-value="false" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="blockTitle" type="String" />
+		</parameters>
+		<xul>
+			<javascript>
+				<constructor><![CDATA[
+					var me = this;
+					var fields = this.getFields();
+					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventCalendar'});
+					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
+					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
+				]]></constructor>
+				<method name="onFilterByModelChange">
+					<body><![CDATA[
+						var fields = this.getFields();
+						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
+					]]></body>
+				</method>
+			</javascript>
+		</xul>
+	</block>
+	<block type="modules_event_BaseeventDayList" icon="list-block">
+		<parameters>
+			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
+			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+				<constraints>min:1;max:100</constraints>
+			</parameter>
+			<parameter name="filterByModel" type="Boolean" default-value="false" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="showVisuals" type="Boolean" default-value="true" />
+			<parameter name="showCategories" type="Boolean" default-value="true" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="blockTitle" type="String" />
+		</parameters>
+		<metas>
+			<meta name="date" allow="title,description" />
+		</metas>
+		<xul>
+			<javascript>
+				<constructor><![CDATA[
+					var me = this;
+					var fields = this.getFields();
+					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventDay'});
+					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
+					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
+				]]></constructor>
+				<method name="onFilterByModelChange">
+					<body><![CDATA[
+						var fields = this.getFields();
+						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
+					]]></body>
+				</method>
+			</javascript>
+		</xul>
+	</block>
 	<block type="modules_event_Baseevent" icon="event" dropModels="[modules_event/baseevent]">
 		<parameters>
 			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" from-list="modules_event/detailblocktemplates" />

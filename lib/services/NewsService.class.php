@@ -51,7 +51,20 @@ class event_NewsService extends event_BaseeventService
 	{
 		return $this->pp->createQuery('modules_event/news', false);
 	}
-
+	
+	/**
+	 * @param event_persistentdocument_news $document
+	 * @param Integer $parentNodeId Parent node ID where to save the document (optionnal).
+	 * @return void
+	 */
+	protected function preSave($document, $parentNodeId)
+	{
+		if ($document->getEndDate() != $document->getDate())
+		{
+			$document->setEndDate($document->getDate());
+		}
+	}
+	
 	/**
 	 * @param event_persistentdocument_news $document
 	 * @param string $bockName

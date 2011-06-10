@@ -1,0 +1,26 @@
+<table class="calendar" summary="${trans:m.event.fo.calendar-header-summary,ucf}">
+	<caption>
+		<a tal:condition="exists: previousMonthUrl" class="nav" tal:attributes="href previousMonthUrl" title="${trans:m.event.fo.previous-month,ucf}">&laquo;</a>
+		<tal:block change:date="format 'F Y'; value dateCalendar/toString" />
+		<a tal:condition="exists: nextMonthUrl" class="nav" tal:attributes="href nextMonthUrl" title="${trans:m.event.fo.next-month,ucf}">&raquo;</a>
+	</caption>
+	<thead>
+		<tr>
+			<th scope="col" abbr="${trans:f.date.date.monday,ucf}" title="${trans:f.date.date.monday,ucf}">${trans:f.date.date.initial.monday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.tuesday,ucf}" title="${trans:f.date.date.tuesday,ucf}">${trans:f.date.date.initial.tuesday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.wednesday,ucf}" title="${trans:f.date.date.wednesday,ucf}">${trans:f.date.date.initial.wednesday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.thursday,ucf}" title="${trans:f.date.date.thursday,ucf}">${trans:f.date.date.initial.thursday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.friday,ucf}" title="${trans:f.date.date.friday,ucf}">${trans:f.date.date.initial.friday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.saturday,ucf}" title="${trans:f.date.date.saturday,ucf}">${trans:f.date.date.initial.saturday,ucf}</th>
+			<th scope="col" abbr="${trans:f.date.date.sunday,ucf}" title="${trans:f.date.date.sunday,ucf}">${trans:f.date.date.initial.sunday,ucf}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr tal:repeat="week weeks">
+			<td tal:repeat="day week" class="${day/class}">
+				<a tal:condition="day/number" tal:omit-tag="not:day/url" href="${day/url}">${day/number}</a>
+				<tal:block tal:condition="not: day/number">&nbsp;</tal:block>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -39,6 +39,9 @@
 				<contextaction name="openTreeNodeOrder" />
 				<contextaction name="openFolder" />
 			</contextactions>
+			<columns>
+				<column name="date" label="Date" />
+			</columns>
 		</model>
 		<model name="modules_event/news">
 			<contextactions>

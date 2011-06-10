@@ -6,7 +6,7 @@
 	
 	<topic byDocumentId-attr="">
 		<page byLabel="Liste des actualité et événements" isIndexPage="true" indexingstatus="false" navigationVisibility="hidden"
-			metatitle="Rubrique &quot;{event_baseeventcontextuallist.label}&quot;" description="{event_baseeventcontextuallist.description}">
+			metatitle="Rubrique &quot;{event_baseeventContextualList.label}&quot;" description="{event_baseeventContextualList.description}">
 			<tag name="functional_event_baseevent-list" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventContextualList" />

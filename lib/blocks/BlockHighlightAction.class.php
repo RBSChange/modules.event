@@ -7,8 +7,7 @@ class event_BlockHighlightAction extends event_BlockBaseeventBaseListAction
 {
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return f_peristentdocument_PersistentDocument 
 	 */
 	protected function getParentDoc($request)
 	{
@@ -18,8 +17,7 @@ class event_BlockHighlightAction extends event_BlockBaseeventBaseListAction
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return boolean 
 	 */
 	protected function isOnDetailPage($request)
 	{

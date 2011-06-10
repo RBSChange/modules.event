@@ -74,6 +74,7 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 		$request->setAttribute('paginationPosition', $this->getConfigurationValue('paginationPosition'));
 		
 		// Add the RSS feeds.
+		if ($this->addRssFeeds($request))
 		$params = array('parentref' => $parentDoc->getId(), 'title' => $blockTitle);
 		$this->getContext()->addRssFeed($blockTitle, LinkHelper::getActionUrl('event', 'ViewFeed', $params));
 		
@@ -82,19 +83,26 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return f_peristentdocument_PersistentDocument 
 	 */
 	protected abstract function getParentDoc($request);
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param string[] $modelNames
-	 * @return integer 
+	 * @return boolean 
 	 */
 	protected function isOnDetailPage($request)
 	{
 		return false;
+	}
+	
+	/**
+	 * @param f_mvc_Request $request
+	 * @return boolean 
+	 */
+	protected function addRssFeeds($request)
+	{
+		return true;
 	}
 	
 	/**

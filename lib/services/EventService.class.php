@@ -61,4 +61,15 @@ class event_EventService extends event_BaseeventService
 	{
 		return array('module' => 'event', 'template' => 'Event-Inc-EventResultDetail');
 	}
+	
+	/**
+	 * @param event_persistentdocument_event $document
+	 * @param string $moduleName
+	 * @param string $treeType
+	 * @param array<string, string> $nodeAttributes
+	 */
+	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	{
+		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate()) . ' - ' . date_Formatter::formatBO($document->getUIEndDate());
+	}
 }

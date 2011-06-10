@@ -2,6 +2,7 @@
 <i18n baseKey="m.event.fo" lcid="fr_FR">
 	<key id="contextual-news-and-events">actualités et événements de la rubrique</key>
 	<key id="all-news-and-events">tous les événements et actualités</key>
+	<key id="baseevents-of-day-title">événements et actualités du {date}</key>
 	<key id="category-title">catégorie : {category}</key>
 	<key id="topic-title">rubrique : {topic}</key>
 	<key id="highlight-title">mise en avant : {highlight}</key>
@@ -18,4 +19,6 @@
 	<key id="events-filtered-by-topic-2">. Pour voir le contenu complet de la rubrique, </key>
 	<key id="events-filtered-by-topic-3">cliquez ici</key>
 	<key id="events-filtered-by-topic-4">.</key>
+	<key id="previous-month">mois précédent</key>
+	<key id="next-month">mois suivant</key>
 </i18n>

@@ -6,10 +6,17 @@
 	
 	<topic byDocumentId-attr="">
 		<page byLabel="Actualités et événements du site" indexingstatus="false"
-			description="Actualités et événements du site &quot;{event_baseeventalllist.label}&quot;">
+			description="Actualités et événements du site &quot;{event_baseeventAllList.label}&quot;">
 			<tag name="contextual_website_website_modules_event_baseeventalllist" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventAllList" />
+			</changecontent>
+		</page>
+		<page byLabel="Actualités et événements du jour" indexingstatus="false"
+			metatitle="Actualités et événements du {event_baseeventDayList.date}" description="Actualités et événements du {event_baseeventDayList.date}">
+			<tag name="contextual_website_website_modules_event_baseeventdaylist" />
+			<changecontent for="content-block">
+				<changeblock type="modules_event_BaseeventDayList" />
 			</changecontent>
 		</page>
 		<page byLabel="Détail d'une catégorie" indexingstatus="false" navigationVisibility="hidden"
