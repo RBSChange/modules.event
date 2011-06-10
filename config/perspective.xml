@@ -3,20 +3,54 @@
 	<models>
 		<model name="modules_generic/rootfolder">
 			<children>
+				<child model="modules_generic/folder" />
 				<child model="modules_event/treefolder" />
 				<child model="modules_event/highlightfolder" />
 				<child model="modules_event/categoryfolder" />
 			</children>
 			<drops>
+				<drop model="modules_generic/folder" action="move" />
 				<drop model="modules_event/treefolder" action="move" />
 				<drop model="modules_event/highlightfolder" action="move" />
 				<drop model="modules_event/categoryfolder" action="move" />
 			</drops>
 			<contextactions>
 				<contextaction name="edit" />
-				<contextaction name="openTreeNodeOrder" />
+				<groupactions name="createRootfolder_">
+					<contextaction name="createFolder" />
+					<contextaction name="createTreefolder" />
+					<contextaction name="createHighlightfolder" />
+					<contextaction name="createCategoryfolder" />
+				</groupactions>
 				<contextaction name="initDefaultStructure" />
 				<contextaction name="initLocalStructure" />
+				<contextaction name="openTreeNodeOrder" />
+			</contextactions>
+		</model>
+		<model name="modules_generic/folder">
+			<children>
+				<child model="modules_generic/folder" />
+				<child model="modules_event/treefolder" />
+				<child model="modules_event/highlightfolder" />
+				<child model="modules_event/categoryfolder" />
+			</children>
+			<drops>
+				<drop model="modules_generic/folder" action="move" />
+				<drop model="modules_event/treefolder" action="move" />
+				<drop model="modules_event/highlightfolder" action="move" />
+				<drop model="modules_event/categoryfolder" action="move" />
+			</drops>
+			<contextactions>
+				<contextaction name="edit" />
+				<contextaction name="delete" />
+				<groupactions name="createFolder_">
+					<contextaction name="createFolder" />
+					<contextaction name="createTreefolder" />
+					<contextaction name="createHighlightfolder" />
+					<contextaction name="createCategoryfolder" />
+				</groupactions>
+				<contextaction name="openTreeNodeOrder" />
+				<contextaction name="openFolder" />
 			</contextactions>
 		</model>
 		<model name="modules_event/treefolder">
@@ -33,9 +67,11 @@
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="delete" />
-				<contextaction name="createTreefolder" />
-				<contextaction name="createNews" />
-				<contextaction name="createEvent" />
+				<groupactions name="createTreefolder_">
+					<contextaction name="createTreefolder" />
+					<contextaction name="createNews" />
+					<contextaction name="createEvent" />
+				</groupactions>
 				<contextaction name="openTreeNodeOrder" />
 				<contextaction name="openFolder" />
 			</contextactions>
@@ -72,10 +108,21 @@
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="delete" />
-				<contextaction name="createHighlightfolder" />
-				<contextaction name="createHighlight" />
+				<groupactions name="createHighlightfolder_">
+					<contextaction name="createHighlightfolder" />
+					<contextaction name="createHighlight" />
+				</groupactions>
 				<contextaction name="openTreeNodeOrder" />
 				<contextaction name="openFolder" />
+			</contextactions>
+		</model>
+		<model name="modules_event/highlight">
+			<contextactions>
+				<contextaction name="edit" />
+				<contextaction name="delete" />
+				<contextaction name="activate" />
+				<contextaction name="deactivated" />
+				<contextaction name="reactivate" />
 			</contextactions>
 		</model>
 		<model name="modules_event/categoryfolder">
@@ -90,22 +137,15 @@
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="delete" />
-				<contextaction name="createCategoryfolder" />
-				<contextaction name="createCategory" />
+				<groupactions name="createCategoryfolder_">
+					<contextaction name="createCategoryfolder" />
+					<contextaction name="createCategory" />
+				</groupactions>
 				<contextaction name="openTreeNodeOrder" />
 				<contextaction name="openFolder" />
 			</contextactions>
 		</model>
 		<model name="modules_event/category">
-			<contextactions>
-				<contextaction name="edit" />
-				<contextaction name="delete" />
-				<contextaction name="activate" />
-				<contextaction name="deactivated" />
-				<contextaction name="reactivate" />
-			</contextactions>
-		</model>
-		<model name="modules_event/highlight">
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="delete" />
@@ -144,5 +184,10 @@
 		<action name="createHighlight" single="true" permission="Insert_highlight" icon="add" />
 		<action name="initDefaultStructure" single="true" permission="InitStructure" icon="add" />
 		<action name="initLocalStructure" single="true" permission="InitStructure" icon="add" />
+		<action name="createRootfolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
+		<action name="createFolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
+		<action name="createTreefolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
+		<action name="createHighlightfolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
+		<action name="createCategoryfolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
 	</actions>
 </perspective>

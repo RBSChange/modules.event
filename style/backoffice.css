@@ -8,7 +8,7 @@ treechildren::-moz-tree-image(modules_event_event){
 	list-style-image: url(/changeicons/small/event.png);
 }
 treechildren::-moz-tree-image(modules_event_treefolder){
-	list-style-image: url(/changeicons/small/folder.png);
+	list-style-image: url(/changeicons/small/event-folder.png);
 }
 treechildren::-moz-tree-image(modules_event_highlightfolder){
 	list-style-image: url(/changeicons/small/highlight-folder.png);
