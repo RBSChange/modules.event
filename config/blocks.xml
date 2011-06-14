@@ -250,7 +250,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventDay'});
+					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventDayList'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
