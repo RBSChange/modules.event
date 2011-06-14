@@ -1,0 +1,9 @@
+<h2 change:h="">${blockTitle}</h2>
+
+<h3 change:h="">${trans:m.event.fo.model-selection,ucf}</h3>
+
+<ul change:errors=""></ul>
+
+<ul class="normal">
+	<li tal:repeat="option modelOptions"><a change:currentPageLink="eventParam[modelName] option/value">${option/label}</a></li>
+</ul>

@@ -16,10 +16,8 @@ class event_BlockBaseeventContextualListAction extends event_BlockBaseeventBaseL
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param integer $offset
-	 * @param integer $itemsPerPage
 	 * @param string[] $modelNames
-	 * @return event_persistentdocument_baseevent
+	 * @return string
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{

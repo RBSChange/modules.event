@@ -12,7 +12,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		if ($this->isInBackoffice())
+		if ($this->isInBackofficeEdition())
 		{
 			return website_BlockView::NONE;
 		}
@@ -22,7 +22,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 		$doc = $this->getDocumentParameter();
 		if (!($doc instanceof event_persistentdocument_baseevent) || !$doc->isPublished())
 		{
-			if ($isOnDetailPage)
+			if ($isOnDetailPage && !$this->isInBackofficePreview())
 			{
 				HttpController::getInstance()->redirect("website", "Error404");
 			}

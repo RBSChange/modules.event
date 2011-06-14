@@ -25,7 +25,7 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		if ($this->isInBackoffice())
+		if ($this->isInBackofficeEdition())
 		{
 			return website_BlockView::NONE;
 		}
@@ -34,7 +34,7 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 		$doc = $this->getParentDoc($request);
 		if ($doc === null || !$doc->isPublished())
 		{
-			if ($isOnDetailPage)
+			if ($isOnDetailPage && !$this->isInBackofficePreview())
 			{
 				HttpController::getInstance()->redirect("website", "Error404");
 			}
@@ -75,8 +75,10 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 		
 		// Add the RSS feeds.
 		if ($this->addRssFeeds($request))
-		$params = array('parentref' => $parentDoc->getId(), 'title' => $blockTitle);
-		$this->getContext()->addRssFeed($blockTitle, LinkHelper::getActionUrl('event', 'ViewFeed', $params));
+		{
+			$params = array('parentref' => $parentDoc->getId(), 'title' => $blockTitle);
+			$this->getContext()->addRssFeed($blockTitle, LinkHelper::getActionUrl('event', 'ViewFeed', $params));
+		}
 		
 		return $this->getConfigurationValue('displayMode', website_BlockView::SUCCESS);
 	}
@@ -143,10 +145,8 @@ abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
 		
 	/**
 	 * @param f_mvc_Request $request
-	 * @param integer $offset
-	 * @param integer $itemsPerPage
 	 * @param string[] $modelNames
-	 * @return event_persistentdocument_baseevent
+	 * @return string
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{

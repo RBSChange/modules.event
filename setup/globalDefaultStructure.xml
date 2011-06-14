@@ -33,5 +33,11 @@
 				<changeblock type="modules_event_Highlight" />
 			</changecontent>
 		</page>
+		<page byLabel="Soumission d'une actualité ou d'un événement" indexingstatus="false">
+			<tag name="contextual_website_website_modules_event_newbaseevent" />
+			<changecontent for="content-block">
+				<changeblock type="modules_event_NewBaseevent" />
+			</changecontent>
+		</page>
 	</topic>
 </script>

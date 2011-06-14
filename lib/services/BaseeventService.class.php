@@ -399,6 +399,29 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		$query->add(Restrictions::published())->add(Restrictions::eq('baseevent', $event))->setMaxResults(1);
 		return f_util_ArrayUtils::firstElement($query->find());
 	}
+	
+	/**
+	 * @param f_persistentdocument_PersistentDocument $document
+	 * @param string $forModuleName
+	 * @param array $allowedSections
+	 * @return array
+	 */
+	public function getResume($document, $forModuleName, $allowedSections = null)
+	{
+		$resume = parent::getResume($document, $forModuleName, $allowedSections);
+		
+		if ($document->getAuthorEmail())
+		{
+			$authorInfos = array();
+			$authorInfos['email'] = $document->getAuthorEmail(); 
+			$authorInfos['firstName'] = $document->getAuthorFirstName(); 
+			$authorInfos['lastName'] = $document->getAuthorLastName(); 
+			$authorInfos['websiteUrl'] = $document->getAuthorWebsiteUrl();
+			$resume['authorinfos'] = $authorInfos;
+		}
+		
+		return $resume;
+	}
 
 	/**
 	 * @param event_persistentdocument_baseevent $document
@@ -436,7 +459,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param event_persistentdocument_event $document
+	 * @param event_persistentdocument_baseevent $document
 	 * @param string $moduleName
 	 * @param string $treeType
 	 * @param array<string, string> $nodeAttributes
@@ -444,5 +467,39 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
 	{
 		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate());
+	}
+	
+	/**
+	 * @param event_persistentdocument_baseevent $document
+	 * @return string
+	 */
+	public function getDetailBlockModule($doc)
+	{
+		return $doc->getPersistentModel()->getModuleName();
+	}
+	
+	/**
+	 * @param event_persistentdocument_baseevent $document
+	 * @return string
+	 */
+	public function getDetailBlockName($doc)
+	{
+		return $doc->getPersistentModel()->getDocumentName();
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getNewBlockModule()
+	{
+		return $this->getNewDocumentInstance()->getPersistentModel()->getModuleName();
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getNewBlockName()
+	{
+		return 'new' . ucfirst($this->getNewDocumentInstance()->getPersistentModel()->getDocumentName());
 	}
 }

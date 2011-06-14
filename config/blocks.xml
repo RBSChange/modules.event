@@ -291,4 +291,31 @@
 			<parameter name="showgravatars" type="Boolean" default-value="false" />
 		</parameters>
 	</block>
+	<block type="modules_event_NewBaseevent" icon="add">
+		<parameters>
+			<parameter name="destinationFolder" type="modules_event/treefolder" min-occurs="1" />
+			<parameter name="restrictModel" type="Boolean" default-value="false" />
+			<parameter name="allowedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="allowNotRegistered" type="Boolean" default-value="true" />
+			<parameter name="blockTitle" type="String" />
+		</parameters>
+		<xul>
+			<javascript>
+				<constructor><![CDATA[
+					var me = this;
+					var fields = this.getFields();
+					fields.restrictModel.addEventListener('fieldChanged', function(event) { me.onRestrictModelChange(); }, true);
+					me.addEventListener('gridValuesUpdated', function(event) { me.onRestrictModelChange(); }, true);
+				]]></constructor>
+				<method name="onRestrictModelChange">
+					<body><![CDATA[
+						var fields = this.getFields();
+						this.getElementByAnonId('allowedModels_cnt').collapsed = (fields.restrictModel.value != 'true');
+					]]></body>
+				</method>
+			</javascript>
+		</xul>
+	</block>
+	<block type="modules_event_NewEvent" hidden="true" />
+	<block type="modules_event_NewNews" hidden="true" />
 </blocks>

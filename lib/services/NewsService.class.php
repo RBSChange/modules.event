@@ -63,6 +63,7 @@ class event_NewsService extends event_BaseeventService
 		{
 			$document->setEndDate($document->getDate());
 		}
+		parent::preSave($document, $parentNodeId);
 	}
 	
 	/**

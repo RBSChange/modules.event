@@ -12,7 +12,7 @@ class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
 	 */
 	public function execute($request, $response)
 	{
-		if ($this->isInBackoffice())
+		if ($this->isInBackofficeEdition())
 		{
 			return website_BlockView::NONE;
 		}
@@ -91,10 +91,8 @@ class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param integer $offset
-	 * @param integer $itemsPerPage
 	 * @param string[] $modelNames
-	 * @return event_persistentdocument_baseevent
+	 * @return string
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{

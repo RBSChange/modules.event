@@ -45,7 +45,7 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	 */
 	public function getDetailBlockModule()
 	{
-		return $this->getPersistentModel()->getModuleName();
+		return $this->getDocumentService()->getDetailBlockModule($this);
 	}
 	
 	/**
@@ -53,7 +53,7 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	 */
 	public function getDetailBlockName()
 	{
-		return $this->getPersistentModel()->getDocumentName();
+		return $this->getDocumentService()->getDetailBlockName($this);
 	}
 	
 	/**
@@ -86,5 +86,69 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	public function getRSSDate()
 	{
 		return $this->getDate();
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorEmail()
+	{
+		return $this->getMeta('authorEmail');
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function setAuthorEmail($value)
+	{
+		return $this->setMeta('authorEmail', $value ? $value : null);
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorFirstName()
+	{
+		return $this->getMeta('authorFirstName');
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function setAuthorFirstName($value)
+	{
+		return $this->setMeta('authorFirstName', $value ? $value : null);
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorLastName()
+	{
+		return $this->getMeta('authorLastName');
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function setAuthorLastName($value)
+	{
+		return $this->setMeta('authorLastName', $value ? $value : null);
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorWebsiteUrl()
+	{
+		return $this->getMeta('authorWebsiteUrl');
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function setAuthorWebsiteUrl($value)
+	{
+		return $this->setMeta('authorWebsiteUrl', $value ? $value : null);
 	}
 }

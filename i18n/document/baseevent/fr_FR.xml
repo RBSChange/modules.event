@@ -16,4 +16,8 @@
 	<key id="allowcomments-help">Autoriser ou non les utilisateurs à soumettre de nouveaux commentaires. Ce choix n'a aucun effet sur les commentaires existants.</key>
 	<key id="excludefromrss">exclure des flux RSS</key>
 	<key id="excludefromrss-help">Exclure ou non des flux RSS. Choisissez oui si ce document est en accès restreint.</key>
+	<key id="authoremail">adresse e-mail</key>
+	<key id="authorfirstname">prénom</key>
+	<key id="authorlastname">nom</key>
+	<key id="authorwebsiteurl">site web</key>
 </i18n>

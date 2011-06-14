@@ -53,17 +53,22 @@ class event_BlockBaseeventDayListAction extends event_BlockBaseeventBaseListActi
 	
 	/**
 	 * @param f_mvc_Request $request
-	 * @param integer $offset
-	 * @param integer $itemsPerPage
 	 * @param string[] $modelNames
-	 * @return event_persistentdocument_baseevent
+	 * @return string
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
 		$title = $this->getConfigurationValue('blockTitle');
 		if (!$title)
 		{
-			$date = date_Calendar::getInstanceFromFormat($request->getParameter('date'), 'Y-m-d');
+			if ($request->hasParameter('date'))
+			{
+				$date = date_Calendar::getInstanceFromFormat($request->getParameter('date'), 'Y-m-d');
+			}
+			else
+			{
+				$date = date_Calendar::getInstance();
+			}
 			$params = array('date' => date_Formatter::toDefaultDate($date));
 			$title = LocaleService::getInstance()->transFO('m.event.fo.baseevents-of-day-title', array('ucf'), $params);
 		}
@@ -76,9 +81,17 @@ class event_BlockBaseeventDayListAction extends event_BlockBaseeventBaseListActi
 	 */
 	protected function getPeriod($request)
 	{
-		$date = $request->getParameter('date');
-		$startDate = date_Calendar::getInstanceFromFormat($date, 'Y-m-d')->setHour(0)->setMinute(0)->setSecond(0);
-		$endDate = date_Calendar::getInstanceFromFormat($date, 'Y-m-d')->setHour(23)->setMinute(59)->setSecond(59);
+		if ($request->hasParameter('date'))
+		{
+			$date = $request->getParameter('date');
+			$startDate = date_Calendar::getInstanceFromFormat($date, 'Y-m-d')->setHour(0)->setMinute(0)->setSecond(0);
+			$endDate = date_Calendar::getInstanceFromFormat($date, 'Y-m-d')->setHour(23)->setMinute(59)->setSecond(59);
+		}
+		else
+		{
+			$startDate = date_Calendar::getInstance()->setHour(0)->setMinute(0)->setSecond(0);
+			$endDate = date_Calendar::getInstance()->setHour(23)->setMinute(59)->setSecond(59);
+		}
 		return array($startDate, $endDate);
 	}
 	
@@ -87,7 +100,15 @@ class event_BlockBaseeventDayListAction extends event_BlockBaseeventBaseListActi
 	 */
 	public function getMetas()
 	{
-		$date = date_Calendar::getInstanceFromFormat($this->getRequest()->getParameter('date'), 'Y-m-d');
+		$request = $this->getRequest();
+		if ($request->hasParameter('date'))
+		{
+			$date = date_Calendar::getInstanceFromFormat($request->getParameter('date'), 'Y-m-d');
+		}
+		else
+		{
+			$date = date_Calendar::getInstance();
+		}
 		return array('date' => date_Formatter::toDefaultDate($date));
 	}
 }

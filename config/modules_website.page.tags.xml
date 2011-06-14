@@ -6,4 +6,5 @@
 	<tag labeli18n="m.event.bo.blocks.baseeventdaylist.title" icon="list-block">contextual_website_website_modules_event_baseeventdaylist</tag>
 	<tag labeli18n="m.event.bo.blocks.category.title" icon="category">contextual_website_website_modules_event_category</tag>
 	<tag labeli18n="m.event.bo.blocks.highlight.title" icon="highlight">contextual_website_website_modules_event_highlight</tag>
+	<tag labeli18n="m.event.bo.blocks.newbaseevent.title" icon="add">contextual_website_website_modules_event_newbaseevent</tag>
 </tags>

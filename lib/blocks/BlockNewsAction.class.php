@@ -12,11 +12,6 @@ class event_BlockNewsAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		if ($this->isInBackoffice())
-		{
-			return website_BlockView::NONE;
-		}
-	
 		return website_BlockView::SUCCESS;
 	}
 }

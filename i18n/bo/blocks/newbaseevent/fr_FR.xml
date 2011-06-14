@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.newbaseevent" lcid="fr_FR">
+	<key id="title">soumission d'actualité ou événement</key>
+	<key id="destinationfolder">dossier destination</key>
+	<key id="destinationfolder-help">Dossier où seront classés les documents soumis via ce bloc.</key>
+	<key id="restrictmodel">restreindre le type</key>
+	<key id="restrictmodel-help">Choisssez "oui" pour n'autoriser la soumission que de certains types d'actualités ou d'événements.</key>
+	<key id="allowedmodels">types autorisés</key>
+	<key id="allowedmodels-help">Cochez ici les types d'actualités ou d'événements pouvant être soumis via ce bloc.</key>
+	<key id="allownotregistered">soumission sans être inscrit</key>
+	<key id="allownotregistered-help">Autoriser ou non la soumission d'actualités ou d'événements pour les utilisateurs non-inscrits sur le site.</key>
+	<key id="blocktitle">titre du bloc</key>
+	<key id="blocktitle-help">Titre du bloc sur le site. Laisser vide pour le générer automatiquement.</key>
+</i18n>

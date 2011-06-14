@@ -6,4 +6,5 @@
 	<key id="invalid-topic">Vous devez sélectionner une rubrique.</key>
 	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
 	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
+	<key id="section-author-infos">document soumis depuis le site par</key>
 </i18n>

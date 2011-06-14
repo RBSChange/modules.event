@@ -21,4 +21,25 @@
 	<key id="events-filtered-by-topic-4">.</key>
 	<key id="previous-month">mois précédent</key>
 	<key id="next-month">mois suivant</key>
+	<key id="baseevent-submission">soumission d'une actualité ou d'un événement</key>
+	<key id="model-selection">sélection du type</key>
+	<key id="invalid-model">Le type sélectionné est invalide, veuillez en sélectionner un autre.</key>
+	<key id="restricted-access-must-login">vous devez vous connecter pour effectuer cette opération</key>
+	<key id="event-submission">soumission d'un événement</key>
+	<key id="event-preview">prévisualisation de l'événement</key>
+	<key id="event-input">saisie de l'événement</key>
+	<key id="event-infos">description de l'événement</key>
+	<key id="event-submitted">Votre événement a bien été soumis. Il ne sera publié qu'après validation par l'équipe du site.</key>
+	<key id="news-submission">soumission d'une actualité</key>
+	<key id="news-preview">prévisualisation de l'actualité</key>
+	<key id="news-input">saisie de l'actualité</key>
+	<key id="news-infos">description de l'actualité</key>
+	<key id="news-submitted">Votre actualité a bien été soumise. Elle ne sera publiée qu'après validation par l'équipe du site.</key>
+	<key id="form-preview">prévisualiser</key>
+	<key id="form-submit">soumettre</key>
+	<key id="your-infos">vos coordonnées</key>
+	<key id="your-email">adresse e-mail</key>
+	<key id="your-firstname">prénom</key>
+	<key id="your-lastname">nom</key>
+	<key id="your-websiteurl">site web</key>
 </i18n>
