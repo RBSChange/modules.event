@@ -28,4 +28,14 @@ class event_BlockBaseeventAllListAction extends event_BlockAbstractBaseeventList
 		}
 		return $title;
 	}
+	
+	/**
+	 * @param f_mvc_Request $request
+	 * @return boolean 
+	 */
+	protected function isOnDetailPage($request)
+	{
+		$tag = 'contextual_website_website_modules_event_baseeventalllist';
+		return TagService::getInstance()->hasTag($this->getContext()->getPersistentPage(), $tag);
+	}
 }
