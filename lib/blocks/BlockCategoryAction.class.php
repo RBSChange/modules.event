@@ -3,7 +3,7 @@
  * event_BlockCategoryAction
  * @package modules.event.lib.blocks
  */
-class event_BlockCategoryAction extends event_BlockBaseeventBaseListAction
+class event_BlockCategoryAction extends event_BlockAbstractBaseeventListAction
 {
 	/**
 	 * @param f_mvc_Request $request

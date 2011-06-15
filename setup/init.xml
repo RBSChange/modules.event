@@ -2,6 +2,7 @@
 <script>
 	<binding fileName="modules/list/persistentdocument/import/list_binding.xml" />
 	<binding fileName="modules/event/persistentdocument/import/event_binding.xml" />
+	<binding fileName="modules/notification/persistentdocument/import/notification_binding.xml" />
 
 	<rootfolder module="event">
 		<treefolder byLabel="Actualités et événements" />
@@ -28,5 +29,49 @@
 			description="m.event.list.detailblocktemplates-description">
 			<valueditem label="Par défaut" byValue="Success" />
 		</valuededitablelist>
+	</systemfolder>
+
+	<systemfolder module="notification" relatedmodule="event">
+		<attribute name="body">
+			<![CDATA[Bonjour,<br/><br/>Une actualité ou un événement a été soumis depuis le site.<br /><br />
+			<ul>
+				<li>Libellé : {documentLabel}</li>
+				<li>Date : {documentDate}</li>
+				<li>Summary : {documentSummary}</li>
+				<li>Text : {documentText}</li>
+			</ul>]]>
+		</attribute>
+		<notification
+			label="Soumission d'une actualité ou d'un événement depuis le site"
+			codename="modules_event/baseeventsubmitted"
+			availableparameters="{documentLabel}, {documentDate}, {documentSummary}, {documentText}, {receiverFirstName}, {receiverLastName}, {receiverFullName}, {receiverTitle}, {receiverEmail}"
+			subject="Soumission d'une actualité ou d'un événement depuis le site"
+			body-attr="" />
+		<attribute name="body">
+			<![CDATA[Bonjour,<br/><br/>Un événement a été soumis depuis le site.<br /><br />
+			<ul>
+				<li>Libellé : {documentLabel}</li>
+				<li>Date de début : {documentDate}</li>
+				<li>Date de fin : {documentEndDate}</li>
+				<li>Summary : {documentSummary}</li>
+				<li>Text : {documentText}</li>
+			</ul>]]>
+		</attribute>
+		<notification
+			label="Soumission d'un événement depuis le site"
+			codename="modules_event/baseeventsubmitted_event-event"
+			availableparameters="{documentLabel}, {documentDate}, {documentEndDate}, {documentSummary}, {documentText}, {receiverFirstName}, {receiverLastName}, {receiverFullName}, {receiverTitle}, {receiverEmail}"
+			subject="Soumission d'un événement depuis le site"
+			body-attr="" />
+			
+		<attribute name="body">
+			<![CDATA[Bonjour,<br/><br/>Message à propos de l'actualité ou événement "{documentLabel}" que vous avez soumis sur le site :<br /><br />{message}]]>
+		</attribute>
+		<notification
+			label="Message à l'auteur d'une actualité ou d'un événement"
+			codename="modules_event/messagetoauthor"
+			availableparameters="{message}, {documentLabel}, {documentDate}, {documentEndDate}, {documentSummary}, {documentText}, {receiverFirstName}, {receiverLastName}, {receiverFullName}, {receiverTitle}, {receiverEmail}"
+			subject="Message à propos de &quot;{documentLabel}&quot;"
+			body-attr="" />
 	</systemfolder>
 </script>

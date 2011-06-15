@@ -32,14 +32,6 @@
 		<parameter name="listWidget" />
 		<body><![CDATA[this.createDocumentEditor('modules_event_highlight', listWidget.getSelectedItems()[0].id);]]></body>
 	</action>
-	<handler name="comment-baseevent" event="registerDocumentEditor"><![CDATA[
-		// Action added by comment.implement-on-document
-		var editor = event.originalTarget;
-		if (editor.documentname === 'baseevent')
-		{
-			editor.addTab('comments', '&modules.comment.bo.doceditor.tab.Comments;', 'comments');
-		}
-	]]></handler>
 	<action name="initDefaultStructure">
 		<parameter name="listWidget" />
 		<body><![CDATA[
@@ -79,6 +71,21 @@
 			catch (e)
 			{
 				wCore.error('catalog.initDefaultStructure', [], e);
+			}
+		]]></body>
+	</action>
+	<action name="sendEmailToAuthor">
+		<parameter name="listWidget" />
+		<body><![CDATA[
+			var document = listWidget.getSelectedItems()[0];
+			try
+			{
+				this.getController().openModalDialog(this, 'sendEmailToEventAuthor', {cmpref: document.id, module: this});
+			}
+			catch (e)
+			{
+				wCore.error('sendEmailToAuthor', [], e);
+				this.refreshMainViewDeck();
 			}
 		]]></body>
 	</action>

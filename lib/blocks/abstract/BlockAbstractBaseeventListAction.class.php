@@ -3,7 +3,7 @@
  * event_BlockEventContextualListAction
  * @package modules.event.lib.blocks
  */
-abstract class event_BlockBaseeventBaseListAction extends website_BlockAction
+abstract class event_BlockAbstractBaseeventListAction extends website_BlockAction
 {
 	/**
 	 * @return array

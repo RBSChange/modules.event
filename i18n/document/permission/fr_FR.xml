@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.event.document.permission" lcid="fr_FR">
-  <include id="m.generic.document.permission"/>
+	<include id="m.generic.document.permission" />
+	<key id="notifiedforsubmissions">notifié des soumission sur le site</key>
+	<key id="notifiedforsubmissions-help">Les utilisateur ayant ce rôle sont notifiés lors des soumission d'actualités et événements sur le site. Ce rôle ne donne pas d'autre permission que celle de voir le contenu des documents et doit être complété par les rôles « Rédacteur » et/ou « Validateur » selon les besoins.</key>
 </i18n>

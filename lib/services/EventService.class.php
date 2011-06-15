@@ -72,4 +72,16 @@ class event_EventService extends event_BaseeventService
 	{
 		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate()) . ' - ' . date_Formatter::formatBO($document->getUIEndDate());
 	}
+	
+	/**
+	 * @param array $infos
+	 * @return array
+	 */
+	public function getNotificationParameters($infos)
+	{
+		$document = $infos['document'];
+		$params = parent::getNotificationParameters($infos);
+		$params['documentEndDate'] = date_Formatter::toDefaultDate($document->getUIDate());
+		return $params;
+	}
 }

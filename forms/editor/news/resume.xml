@@ -6,10 +6,11 @@
 		<property name="creationdate" labeli18n="modules.uixul.bo.doceditor.property.Creationdate" />
 	</section>
 	<section name="authorinfos" labeli18n="m.event.bo.general.section-author-infos" image="{IconsBase}/small/user-frontoffice.png">
-		<property name="email" labeli18n="m.event.document.event.authoremail" />
+		<property name="email" class="action" type="sendEmailToAuthor" labeli18n="m.event.document.event.authoremail" />
 		<property name="firstName" labeli18n="m.event.document.event.authorfirstname" />
 		<property name="lastName" labeli18n="m.event.document.event.authorlastname" />
 		<property name="websiteUrl" class="link" labeli18n="m.event.document.event.authorwebsiteurl" />
+		<property name="submissionWebsite" labeli18n="m.event.document.event.submissionwebsite" />
 	</section>
 	<section name="publication" linkedtab="publication" labeli18n="modules.uixul.bo.doceditor.section.Status" image="{IconsBase}/small/status.png">
 		<property name="status" labeli18n="modules.uixul.bo.doceditor.property.Status" />

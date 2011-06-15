@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl" xmlns:xbl="http://www.mozilla.org/xbl" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<binding id="cSendEmailToAuthor" extends="core.wDialog#wDialog">
+		<implementation>
+			<constructor><![CDATA[
+				wCore.debug('cSendEmailToEventAuthor.constructor');
+			]]></constructor>
+
+			<method name="onInitialize">
+				<body><![CDATA[
+					this.autoResize(600, 300);
+				]]></body>
+			</method>
+
+			<method name="onCancel">
+				<body><![CDATA[
+					this.parameters.module.refreshMainViewDeck();
+					this.controller.closeModalDialog();
+				]]></body>
+			</method>
+
+			<method name="onOk">
+				<body><![CDATA[
+					try
+					{
+						document.getAnonymousElementByAttribute(this, 'anonid', 'form-panel').setAttribute('hidden', 'true');
+						document.getAnonymousElementByAttribute(this, 'anonid', 'sending-panel').removeAttribute('hidden');
+						document.getAnonymousElementByAttribute(this, 'anonid', 'message-panel').setAttribute('hidden', 'true');
+						var message = document.getAnonymousElementByAttribute(this, 'anonid', 'message-content').value;
+						var me = this;
+						var callback = function(result) {me.onEmailSent(result);};
+						var parameters = {cmpref: this.parameters.cmpref, message: message};
+						wCore.executeJSON('event', 'SendEmailToAuthor', parameters, callback, true);
+					}
+					catch (e)
+					{
+						wCore.error('onOk', [], e);
+						document.getAnonymousElementByAttribute(this, 'anonid', 'form-panel').removeAttribute('hidden');
+						document.getAnonymousElementByAttribute(this, 'anonid', 'sending-panel').setAttribute('hidden', 'true');
+						document.getAnonymousElementByAttribute(this, 'anonid', 'message-panel').setAttribute('hidden', 'true');
+					}
+				]]></body>
+			</method>
+			
+			<method name="onEmailSent">
+				<parameter name="result" />
+				<body><![CDATA[
+					document.getAnonymousElementByAttribute(this, 'anonid', 'form-panel').setAttribute('hidden', 'true');
+					document.getAnonymousElementByAttribute(this, 'anonid', 'sending-panel').setAttribute('hidden', 'true');
+					document.getAnonymousElementByAttribute(this, 'anonid', 'message-panel').removeAttribute('hidden');
+					
+					if (result.status == 'OK')
+					{
+						this.appendMessage("${transui:m.event.bo.general.email-sent,ucf}");
+					}
+					else
+					{
+						wCore.warn('cSendEmailToAuthor.sendEmail: ' + wCore.dump(result));
+						this.appendMessage(result.contents.errorMessage);
+					}
+				]]></body>
+			</method>
+			
+			<method name="appendMessage">
+				<parameter name="msg" />
+				<body><![CDATA[
+					var messageBox = document.getAnonymousElementByAttribute(this, 'anonid', 'messageBox');
+					var txts = msg.split("\n");
+					for (var i = 0; i < txts.length; i++)
+					{
+						var node = messageBox.appendChild(document.createElement('description'));
+						node.setAttribute('style', 'max-width: 570px');
+						node.textContent = txts[i];
+					}
+				]]></body>
+			</method>
+		</implementation>
+		<xbl:content>
+			<xul:vbox flex="1">
+				<xul:hbox class="dialog-header">
+					<xul:label value="${transui:m.event.bo.general.send-email-to-author,ucf,attr}" class="dialog-title" />
+					<xul:spacer flex="1" />
+					<xul:vbox pack="center">
+						<xul:toolbarbutton image="{IconsBase}/small/delete.png" oncommand="onCancel();"
+							tooltiptexts="${transui:m.uixul.bo.dialog.cancel,ucf,attr}" />
+					</xul:vbox>
+				</xul:hbox>
+				<xul:deck anonid="deck">
+					<xul:vbox anonid="form-panel" flex="1">
+						<xul:vbox align="left" pack="start" style="margin-top: 5px">
+							<xul:label value="${transui:m.event.bo.general.message-content,ucf,attr}" />
+							<xul:textbox anonid="message-content" size="50" multiline="true" style="height: 180px; width: 580px" />
+						</xul:vbox>
+						<xul:hbox flex="1" align="start" pack="center" style="margin: 20px 10px 10px 10px">
+							<xul:button image="{IconsBase}/small/check.png" oncommand="onOk()" label="${transui:m.event.bo.general.send,ucf,attr}" />
+							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${transui:m.uixul.bo.dialog.cancel,ucf,attr}" />
+						</xul:hbox>
+					</xul:vbox>
+					<xul:vbox anonid="sending-panel" flex="1" style="opacity:0.7">
+						<xul:spacer height="15px" />
+						<xul:hbox pack="center">
+							<xul:image src="{HttpHost}/media/backoffice/loading_40.gif" height="40px" width="40px" />
+						</xul:hbox>
+						<xul:spacer height="16px" />
+						<xul:hbox pack="center">
+							<xul:description style="font-size:18px" value="${transui:m.event.bo.general.sending,ucf,attr}" />
+						</xul:hbox>
+					</xul:vbox>
+					<xul:vbox anonid="message-panel" flex="1">
+						<xul:vbox anonid="messageBox" flex="1" />
+						<xul:hbox align="start" pack="center" style="margin: 20px 10px 10px 10px">
+							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${transui:m.event.bo.general.close,ucf,attr}" />
+						</xul:hbox>
+					</xul:vbox>
+				</xul:deck>
+			</xul:vbox>
+		</xbl:content>
+	</binding>
+</bindings>

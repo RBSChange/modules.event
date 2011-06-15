@@ -3,7 +3,7 @@
  * event_BlockBaseeventDayListAction
  * @package modules.event.lib.blocks
  */
-class event_BlockBaseeventDayListAction extends event_BlockBaseeventBaseListAction
+class event_BlockBaseeventDayListAction extends event_BlockAbstractBaseeventListAction
 {
 	/**
 	 * @param f_mvc_Request $request

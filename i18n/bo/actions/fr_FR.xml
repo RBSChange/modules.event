@@ -10,4 +10,5 @@
 	<key id="createhighlight">créer une mise en avant</key>
 	<key id="initdefaultstructure">initialiser les pages globales d'un site</key>
 	<key id="initlocalstructure">initialiser les pages d'une rubrique</key>
+	<key id="sendemailtoauthor">envoyer un e-mail</key>
 </i18n>

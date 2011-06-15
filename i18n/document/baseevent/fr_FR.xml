@@ -20,4 +20,5 @@
 	<key id="authorfirstname">prénom</key>
 	<key id="authorlastname">nom</key>
 	<key id="authorwebsiteurl">site web</key>
+	<key id="submissionwebsite">soumis depuis le site</key>
 </i18n>

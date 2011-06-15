@@ -7,4 +7,12 @@
 	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
 	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
 	<key id="section-author-infos">document soumis depuis le site par</key>
+	<key id="send-email-to-author">envoyer un e-mail à l'auteur</key>
+	<key id="message-content">contenu du message</key>
+	<key id="send">envoyer</key>
+	<key id="sending">envoi en cours</key>
+	<key id="close">fermer cette fenêtre</key>
+	<key id="unexisting-website">un site qui n'existe plus</key>
+	<key id="error-on-mail-sending">Une erreur s'est produit durant l'envoi de l'e-mail.</key>
+	<key id="email-sent">L'e-mail a bien été envoyé.</key>
 </i18n>

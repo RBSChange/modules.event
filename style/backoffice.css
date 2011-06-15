@@ -1,3 +1,7 @@
+wdialog[template="sendEmailToEventAuthor"] .dialog-header{
+	background: url(/changeicons/small/mail.png) transparent center  left no-repeat!important;
+}
+
 treechildren::-moz-tree-image(modules_event_baseevent){
 	list-style-image: url(/changeicons/small/document.png);
 }

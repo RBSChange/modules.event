@@ -21,6 +21,25 @@ class event_BaseeventScriptDocumentElement extends import_ScriptDocumentElement
 		return f_persistentdocument_PersistentDocumentModel::getInstanceFromDocumentModelName('modules_event/baseevent');
 	}
 	
+	/**
+	 * @return array
+	 */
+	protected function getDocumentProperties()
+	{
+		$properties = parent::getDocumentProperties();
+		
+		$event = $this->getPersistentDocument();
+		if (in_array($event->getPublicationstatus(), array('ACTIVE', 'PUBLICATED', 'DEACTIVATED')))
+		{
+			if (!isset($properties['publicationstatus']))
+			{
+				$properties['publicationstatus'] = 'DRAFT';
+			}
+		}
+		
+		return $properties;
+	}
+	
 	public function endProcess()
 	{
 		$document = $this->getPersistentDocument();

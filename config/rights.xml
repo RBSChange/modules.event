@@ -45,6 +45,9 @@
 			<permission name="Deactivated.*" />
 			<permission name="ReActivate.*" />
 		</role>
+		<role name="NotifiedForSubmissions" extend="Guest">
+			<permission name="Load.*" />
+		</role>
 		<role name="Guest" extend="User">
 			<permission name="Enabled" />
 		</role>

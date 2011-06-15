@@ -189,5 +189,6 @@
 		<action name="createTreefolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
 		<action name="createHighlightfolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
 		<action name="createCategoryfolder_" icon="add" label="&amp;modules.event.bo.actions.Create_;" />
+		<action name="sendEmailToAuthor" icon="mail" />
 	</actions>
 </perspective>

@@ -43,7 +43,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		$request->setAttribute('blockTitle', $this->getBlockTitle($request, $modelNames));
 		
 		// Check registered user restriction.
-		if ($configuration->getAllowNotRegistered() && users_UserService::getInstance()->getCurrentFrontEndUser() === null)
+		if (!$configuration->getAllowNotRegistered() && users_UserService::getInstance()->getCurrentFrontEndUser() === null)
 		{
 			$agaviUser = Controller::getInstance()->getContext()->getUser();
 			$agaviUser->setAttribute('illegalAccessPage', $_SERVER["REQUEST_URI"]);

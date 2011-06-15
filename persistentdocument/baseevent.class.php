@@ -99,6 +99,14 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	/**
 	 * @return string
 	 */
+	public function getAuthorEmailAsHtml()
+	{
+		return f_util_HtmlUtils::textToHtml($this->getAuthorEmail());
+	}
+	
+	/**
+	 * @return string
+	 */
 	public function setAuthorEmail($value)
 	{
 		return $this->setMeta('authorEmail', $value ? $value : null);
@@ -110,6 +118,14 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	public function getAuthorFirstName()
 	{
 		return $this->getMeta('authorFirstName');
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorFirstNameAsHtml()
+	{
+		return f_util_HtmlUtils::textToHtml($this->getAuthorFirstName());
 	}
 	
 	/**
@@ -131,9 +147,33 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	/**
 	 * @return string
 	 */
+	public function getAuthorLastNameAsHtml()
+	{
+		return f_util_HtmlUtils::textToHtml($this->getAuthorLastName());
+	}
+	
+	/**
+	 * @return string
+	 */
 	public function setAuthorLastName($value)
 	{
 		return $this->setMeta('authorLastName', $value ? $value : null);
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorFullName()
+	{
+		return $this->getAuthorFirstName() . ' ' . $this->getAuthorLastName();
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getAuthorFullNameAsHtml()
+	{
+		return f_util_HtmlUtils::textToHtml($this->getAuthorFullName());
 	}
 	
 	/**
@@ -147,8 +187,32 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	/**
 	 * @return string
 	 */
+	public function getAuthorWebsiteUrlAsHtml()
+	{
+		return f_util_HtmlUtils::textToHtml($this->getAuthorWebsiteUrl());
+	}
+	
+	/**
+	 * @return string
+	 */
 	public function setAuthorWebsiteUrl($value)
 	{
 		return $this->setMeta('authorWebsiteUrl', $value ? $value : null);
+	}
+	
+	/**
+	 * @return integer
+	 */
+	public function getSubmissionWebsiteId()
+	{
+		return $this->getMeta('submissionWebsiteId');
+	}
+	
+	/**
+	 * @return integer
+	 */
+	public function setSubmissionWebsiteId($value)
+	{
+		return $this->setMeta('submissionWebsiteId', $value ? $value : null);
 	}
 }

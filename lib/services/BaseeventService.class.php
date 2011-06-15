@@ -401,7 +401,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
-	 * @param f_persistentdocument_PersistentDocument $document
+	 * @param event_persistentdocument_baseevent $document
 	 * @param string $forModuleName
 	 * @param array $allowedSections
 	 * @return array
@@ -417,6 +417,21 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 			$authorInfos['firstName'] = $document->getAuthorFirstName(); 
 			$authorInfos['lastName'] = $document->getAuthorLastName(); 
 			$authorInfos['websiteUrl'] = $document->getAuthorWebsiteUrl();
+			
+			$websiteId = $document->getSubmissionWebsiteId();
+			if ($websiteId)
+			{
+				try 
+				{
+					$website = website_persistentdocument_website::getInstanceById($websiteId);
+					$authorInfos['submissionWebsite'] = $website->getLabel();
+				}
+				catch (Exception $e)
+				{
+					$authorInfos['submissionWebsite'] = LocaleService::getInstance()->transBO('m.event.bo.general.unexisting-website');
+				}
+			}
+			
 			$resume['authorinfos'] = $authorInfos;
 		}
 		
@@ -467,6 +482,101 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
 	{
 		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate());
+	}
+	
+	/**
+	 * @param event_persistentdocument_baseevent $event
+	 * @param event_persistentdocument_treefolder $folder
+	 * @param string $websiteId
+	 * @param string $lang
+	 */
+	public function sendSubmissionNotification($event, $folder, $websiteId = null, $lang = null)
+	{
+		$model = $event->getPersistentModel();
+		$suffix = $model->getModuleName() . '-' . $model->getDocumentName();
+		$ns = notification_NotificationService::getInstance();
+		$notif = $ns->getConfiguredByCodeNameAndSuffix('modules_event/baseeventsubmitted', $suffix, $websiteId, $lang);
+		if ($notif instanceof notification_persistentdocument_notification)
+		{
+			$permissionService = f_permission_PermissionService::getInstance();
+			$roleName = $permissionService->resolveRole('NotifiedForSubmissions', $folder->getId());
+			$userIds = $permissionService->getUsersByRoleAndDocumentId($roleName, $folder->getId());
+			$callback = array($event->getDocumentService(), 'getNotificationParameters');
+			$params = array('document' => $event);
+			foreach ($userIds as $userId)
+			{
+				$user = users_persistentdocument_user::getInstanceById($userId);
+				$user->getDocumentService()->sendNotificationToUserCallback($notif, $user, $callback, $params);
+			}
+		}
+	}
+	
+	/**
+	 * @param event_persistentdocument_baseevent $event
+	 * @param string $message
+	 * @return boolean
+	 */
+	public function sendMessageToAuthor($event, $message)
+	{
+		$email = $event->getAuthorEmail();
+		if (!$email)
+		{
+			return false;
+		}
+		
+		$model = $event->getPersistentModel();
+		$suffix = $model->getModuleName() . '-' . $model->getDocumentName();
+		$websiteId = $event->getSubmissionWebsiteId();
+		$lang = $event->getI18nInfo()->getVo();
+		$ns = notification_NotificationService::getInstance();
+		$notif = $ns->getConfiguredByCodeNameAndSuffix('modules_event/messagetoauthor', $suffix, $websiteId, $lang);
+		if ($notif instanceof notification_persistentdocument_notification)
+		{
+			$callback = array($event->getDocumentService(), 'getNotificationParameters');
+			$params = array('document' => $event);
+			$userId = $event->getAuthorid();
+			if ($userId)
+			{
+				$params['specificParams'] = array('message' => f_util_HtmlUtils::textToHtml($message));
+				$user = users_persistentdocument_user::getInstanceById($userId);
+				return $user->getDocumentService()->sendNotificationToUserCallback($notif, $user, $callback, $params);
+			}
+			else 
+			{
+				$params['specificParams'] = array(
+					'message' => f_util_HtmlUtils::textToHtml($message),
+					'receiverFirstName' => $event->getAuthorFirstNameAsHtml(),
+					'receiverLastName' => $event->getAuthorLastNameAsHtml(),
+					'receiverFullName' => $user->getAuthorFullNameAsHtml(),
+					'receiverTitle' => '',
+					'receiverEmail' => $event->getAuthorEmailAsHtml()
+				);
+				$recipients = new mail_MessageRecipients($event->getAuthorEmail());
+				return $notif->getDocumentService()->sendNotificationCallback($notif, $recipients, $callback, $params);
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * @param array $infos
+	 * @return array
+	 */
+	public function getNotificationParameters($infos)
+	{
+		$document = $infos['document'];
+		$params = array(
+			'documentLabel' => $document->getLabelAsHtml(),
+			'documentDate' => date_Formatter::toDefaultDate($document->getUIDate()),
+			'documentSummary' => $document->getSummaryAsHtml(),
+			'documentText' => $document->getTextAsHtml(),
+		);
+		
+		if (isset($infos['specificParams']) && is_array($infos['specificParams']))
+		{
+			return array_merge($params, $infos['specificParams']);
+		}
+		return $params;
 	}
 	
 	/**

@@ -1,0 +1,3 @@
+wdialog[template="sendEmailToEventAuthor"]{
+	-moz-binding: url(binding:modules.event.cEventEditor#cSendEmailToAuthor);
+}
