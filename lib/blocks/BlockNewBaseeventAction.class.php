@@ -20,8 +20,9 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		$configuration = $this->getConfiguration();
 		
 		// Check the destinationfolder.
-		if (!($configuration->getDestinationFolder() instanceof event_persistentdocument_treefolder))
+		if (!($configuration->getDestinationFolderSafe() instanceof event_persistentdocument_treefolder))
 		{
+			$response->write('<!-- Invalid treefolder -->');
 			return website_BlockView::NONE;
 		}
 		
