@@ -2,7 +2,7 @@
 <rights>
 	<actions>
 		<document name="rootfolder">
-			<action name="InitDefaultStructure" />
+			<action name="InitStructure" />
 		</document>
 		<document name="folder" />
 		<document name="baseevent" />
@@ -21,6 +21,7 @@
 			<permission name="SavePermissions.*" />
 			<permission name="GetPreferencesDocument" />
 			<permission name="EditLocale" />
+			<permission name="InitStructure" />
 		</role>
 		<role name="Writer" extend="Guest">
 			<permission name="Order" />

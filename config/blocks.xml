@@ -11,7 +11,7 @@
 			<parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="true" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
 		<metas>
@@ -23,7 +23,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventContextualList'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventContextualList'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
@@ -46,7 +46,7 @@
 			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
 			<parameter name="linkToDetailPage" type="Boolean" default-value="false" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
@@ -59,7 +59,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventAllList'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventAllList'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
@@ -128,7 +128,7 @@
 			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
 			<parameter name="linkToDetailPage" type="Boolean" default-value="true" />
 		</parameters>
 		<metas>
@@ -140,7 +140,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'Category'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'Category'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
@@ -165,7 +165,7 @@
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
 			<parameter name="random" type="Boolean" default-value="false" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
 			<parameter name="linkToDetailPage" type="Boolean" default-value="true" />
 		</parameters>
 		<metas>
@@ -177,7 +177,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'Highlight'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'Highlight'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					fields.random.addEventListener('fieldChanged', function(event) { me.onRandomChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onRandomChange(); me.onFilterByModelChange(); }, true);
@@ -217,7 +217,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventCalendar'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventCalendar'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
@@ -240,7 +240,7 @@
 			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_event/linkspositions" />
+			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
 		<metas>
@@ -251,7 +251,7 @@
 				<constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
-					fields.displayMode.replaceItems({cmpref: 'modules_event/blocktemplates', blockModule: 'event', blockName: 'BaseeventDayList'});
+					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventDayList'});
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onFilterByModelChange(); }, true);
 				]]></constructor>
@@ -269,7 +269,7 @@
 			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" from-list="modules_event/detailblocktemplates" />
 			<parameter name="linkToTopic" type="Boolean" default-value="true" />
 			<parameter name="linkToAll" type="Boolean" default-value="true" />
-			<parameter name="navigationPosition" type="String" default-value="none" from-list="modules_event/linkspositions" />
+			<parameter name="navigationPosition" type="String" default-value="none" from-list="modules_website/linkspositions" />
 		</parameters>
 		<metas>
 			<meta name="label" allow="title,description" />
