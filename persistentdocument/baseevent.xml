@@ -5,8 +5,8 @@
 	<properties>
 		<add name="date" type="DateTime" min-occurs="1" />
 		<add name="endDate" type="DateTime" min-occurs="1" />
-		<add name="topic" type="modules_website/topic" max-occurs="-1" inverse="true" />
-		<add name="website" type="modules_website/website" max-occurs="-1" inverse="true" />
+		<add name="topic" type="modules_website/topic" max-occurs="-1" />
+		<add name="website" type="modules_website/website" max-occurs="-1" />
 		<add name="summary" type="XHTMLFragment" localized="true" />
 		<add name="text" type="XHTMLFragment" localized="true" />
 		<add name="linkedpage" type="modules_website/page" />

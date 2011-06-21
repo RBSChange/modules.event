@@ -28,6 +28,11 @@ class event_BlockBaseeventAction extends website_BlockAction
 			}
 			return website_BlockView::NONE;
 		}
+		else if ($isOnDetailPage)
+		{
+			$this->getContext()->addCanonicalParam('topicId', null, 'event');
+		}
+		
 		$config = $this->getConfiguration();
 		$request->setAttribute('doc', $this->getDocumentParameter());
 		$request->setAttribute('cmpref', $doc->getId());
@@ -37,7 +42,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 		$request->setAttribute('navigationPosition', $config->getNavigationPosition());
 		$request->setAttribute('linkToTopic', $config->getLinkToTopic());
 		$request->setAttribute('linkToAll', $config->getLinkToAll());
-		
+
 		return $this->forward($doc->getDetailBlockModule(), $doc->getDetailBlockName());
 	}
 	

@@ -5,7 +5,6 @@
 	<binding fileName="modules/event/persistentdocument/import/event_binding.xml" />
 	
 	<website byTag="default_modules_website_default-website">
-		<execute method="setDocumentIdAttribute" />
 		<topic byLabel="Actualités et événements" id="events1">
 			<topic byLabel="Actualités et événements RBS change" id="events2" />
 			<topic byLabel="Mises à jour majeures" id="events3" />

@@ -393,11 +393,23 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	 * @param event_persistentdocument_baseevent $event
 	 * @param website_persistentdocument_website $website
 	 */
-	public function getPrimaryTopicForWebsite($event, $website)
+	public function getPrimaryTopicForWebsite($document, $website)
 	{
+		$topics = $document->getPublishedTopicArray();
+		$topicIds = DocumentHelper::getIdArrayFromDocumentArray($topics);
+				
 		$query = website_TopicService::getInstance()->createQuery()->add(Restrictions::descendentOf($website->getId()));
-		$query->add(Restrictions::published())->add(Restrictions::eq('baseevent', $event))->setMaxResults(1);
-		return f_util_ArrayUtils::firstElement($query->find());
+		$query->add(Restrictions::published())->add(Restrictions::in('id', $topicIds))->setProjection(Projections::property('id'));
+		$ids = $query->findColumn('id');
+		
+		foreach ($topics as $topic)
+		{
+			if (in_array($topic->getId(), $ids))
+			{
+				return $topic;
+			}
+		}
+		return null;
 	}
 	
 	/**
