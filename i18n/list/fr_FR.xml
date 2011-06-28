@@ -2,6 +2,7 @@
 <i18n baseKey="m.event.list" lcid="fr_FR">
 	<key id="availablemodels-label">types d'événements disponibles</key>
 	<key id="availablemodels-description">Liste des types d'événements disponibles.</key>
+	<key id="blocktemplates-success">par défaut</key>
 	<key id="detailblocktemplates-label">templates de détail disponibles</key>
 	<key id="detailblocktemplates-description">Liste des templates disponibles pour le bloc de détail des actualités et événements.</key>
 </i18n>
