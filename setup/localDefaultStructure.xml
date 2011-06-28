@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <script>
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
-
-	<attribute name="template" default="true">webfactory/tplTwo</attribute>
 	
 	<topic byDocumentId-attr="">
 		<page byLabel="Liste des actualité et événements" isIndexPage="true" indexingstatus="false" navigationVisibility="hidden"
