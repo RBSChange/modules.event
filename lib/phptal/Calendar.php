@@ -19,6 +19,12 @@ class PHPTAL_Php_Attribute_CHANGE_calendar extends ChangeTalAttribute
 	 */
 	public static function renderCalendar($params)
 	{
+		$context = website_BlockController::getInstance()->getContext();
+		if (Framework::getConfigurationValue('modules/event/add-calendar-styles') == 'true')
+		{
+			$context->addStyle('modules.event.calendar-default');
+		}
+		
 		$moduleName = self::getFromParams('templateModule', $params);
 		$moduleName = $moduleName ? $moduleName : 'event';
 		$templateName = self::getFromParams('templateName', $params, 'default');
