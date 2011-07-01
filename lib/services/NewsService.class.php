@@ -71,7 +71,7 @@ class event_NewsService extends event_BaseeventService
 	 * @param string $bockName
 	 * @return array with entries 'module' and 'template'. 
 	 */
-	public function getSolrserachResultItemTemplate($document, $bockName)
+	public function getSolrsearchResultItemTemplate($document, $bockName)
 	{
 		return array('module' => 'event', 'template' => 'Event-Inc-NewsResultDetail');
 	}
