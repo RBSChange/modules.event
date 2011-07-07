@@ -1,13 +1,13 @@
-<h2 change:h="">${trans:m.event.fo.news-submission,ucf}</h2>
+<h1 change:h="">${trans:m.event.fo.news-submission,ucf}</h1>
 
 <tal:block tal:condition="news">
-	<h3 change:h="">${trans:m.event.fo.news-preview,ucf}</h3>
+	<h2 change:h="">${trans:m.event.fo.news-preview,ucf}</h2>
 	<div class="preview">
 		<tal:block change:include="module 'event'; template 'Event-Inc-News-Detail'; type 'html'; doc news; isOnDetailPage 'true'" />
 	</div>
 </tal:block>
 
-<h3 change:h="">${trans:m.event.fo.news-input,ucf}</h3>
+<h2 change:h="">${trans:m.event.fo.news-input,ucf}</h2>
 
 <form change:form="beanClass event_persistentdocument_news; beanName news" class="cmxform">
 	<div change:errors=""></div>

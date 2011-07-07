@@ -1,16 +1,31 @@
-<tal:block tal:define="doc item/getDocument">
-	<img tal:condition="doc/getListVisual" change:media="document doc/getListVisual; format 'modules.event.frontoffice/listvisual'; class 'float-right'" />
-	<p class="event-infos">
+<p class="normal">${item/getHighlightedText}<span>${trans:m.solrsearch.frontoffice.end-description,ucf,etc}</span></p>
+<dl class="inline-list" tal:define="doc item/getDocument">
+	<tal:block tal:condition="showTypes">
+		<dt>${trans:m.solrsearch.frontoffice.type,ucf}</dt> 
+		<dd>
+			<tal:block tal:condition="item/hasTypeLabel">${item/getTypeLabel}</tal:block>
+			<tal:block tal:condition="not:item/hasTypeLabel">${trans:m.event.document.news.document-name,ucf}</tal:block>
+			<span> - </span>
+		</dd>
+	</tal:block>
+	<tal:block tal:condition="showDates">
+		<dt>${trans:m.solrsearch.frontoffice.creationdate,ucf}</dt>
+		<dd><tal:block change:datetime="doc/getCreationDate; formatI18n framework.datetime.short" /><span> - </span></dd>
+		<tal:block tal:condition="php: item.getDocument().getCreationDate() < item.getDocument().getModificationDate()">
+			<dt>${trans:m.solrsearch.frontoffice.modificationdate,ucf}</dt>
+			<dd><tal:block change:datetime="doc/getModificationDate; formatI18n framework.datetime.short" /><span> - </span></dd>
+		</tal:block>
+	</tal:block>
+	<dt>${trans:m.event.fo.date,ucf}</dt>
+	<dd>
 		<tal:block change:date="formatI18n f.date.date.default-date-format; value doc/getDate" />
-	</p>
-	<p>
-		<strong>${trans:m.solrsearch.frontoffice.description,lab,ucf}</strong>
-		${item/getHighlightedText}<span>${trans:m.solrsearch.frontoffice.end-description,ucf,etc}</span>
-	</p>
-	<div>
-		<strong>${trans:m.event.fo.categories,lab,ucf}</strong>
-		<ul tal:condition="doc/getPublishedCategoryCount" class="event-categories">
-			<li tal:repeat="category doc/getPublishedCategoryArray"><a change:link="document category">${category/getLabelAsHtml}</a></li>
-		</ul>
-	</div>
-</tal:block>
+		<span tal:condition="doc/getPublishedCategoryCount"> - </span>
+	</dd>
+	<tal:block tal:condition="doc/getPublishedCategoryCount">
+		<dt>${trans:m.event.fo.categories,ucf}</dt>
+		<dd tal:repeat="category doc/getPublishedCategoryArray">
+			<a change:link="document category">${category/getLabelAsHtml}</a>
+			<span tal:condition="not: repeat/category/end">, </span>
+		</dd>
+	</tal:block>
+</dl>

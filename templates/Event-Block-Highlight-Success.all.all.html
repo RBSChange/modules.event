@@ -1,9 +1,9 @@
-<h2 change:h="">
+<h1 change:h="">
 	${blockTitle}
 	<a class="link rss-link" change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle" title="${trans:m.event.fo.highlight-rss-link,ucf}"><img change:img="front/rss.gif" alt="${trans:m.event.fo.highlight-rss-link,ucf}" /></a>
-</h2>
+</h1>
 
-<div tal:condition="contextdocument/getDescription">${contextdocument/getDescriptionAsHtml}</div>
+<div class="normal" tal:condition="contextdocument/getDescription">${contextdocument/getDescriptionAsHtml}</div>
 
 <tal:block change:include="type 'html'; transmitAll 'true'" module="event" template="Event-Inc-Baseevent-List" />
 

@@ -9,6 +9,9 @@
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventAllList" />
 			</changecontent>
+			<changecontent for="sidebar-block">
+				<changeblock type="modules_event_CategoryAllList" />
+			</changecontent>
 		</page>
 		<page byLabel="Actualités et événements du jour" indexingstatus="false"
 			metatitle="Actualités et événements du {event_baseeventDayList.date}" description="Actualités et événements du {event_baseeventDayList.date}">

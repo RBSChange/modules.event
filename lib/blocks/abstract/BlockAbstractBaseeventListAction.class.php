@@ -58,6 +58,7 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 			{
 				$page = 1;
 			}
+			$this->getContext()->addCanonicalParam('page', $page > 1 ? $page : null, $this->getModuleName());
 			$offset = ($page - 1) * $itemsPerPage;
 	
 			$docs = $this->getDocs($request, $offset, $itemsPerPage, $modelNames);

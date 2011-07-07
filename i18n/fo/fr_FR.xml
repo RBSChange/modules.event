@@ -42,4 +42,6 @@
 	<key id="your-firstname">prénom</key>
 	<key id="your-lastname">nom</key>
 	<key id="your-websiteurl">site web</key>
+	<key id="date">date</key>
+	<key id="period">période</key>
 </i18n>

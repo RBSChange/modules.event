@@ -9,6 +9,9 @@
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventContextualList" />
 			</changecontent>
+			<changecontent for="sidebar-block">
+				<changeblock type="modules_event_CategoryContextualList" />
+			</changecontent>
 		</page>
 		<page byLabel="Détail d'une actualité ou d'un événement" indexingstatus="false" navigationVisibility="hidden"
 			metatitle="{event_baseevent.type} &quot;{event_baseevent.label}&quot;" description="{event_baseevent.datetime} - {event_baseevent.summary}">
