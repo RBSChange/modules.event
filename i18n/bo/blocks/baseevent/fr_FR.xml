@@ -5,7 +5,10 @@
 	<key id="linktotopic-help">Activer ou non le lien vers les actualités et événements de la même rubrique.</key>
 	<key id="linktoall">lien vers tout</key>
 	<key id="linktoall-help">Activer ou non le lien vers la liste de tous les événements et actualités.</key>
-	<key id="navigationposition">position des liens de navigation</key>
+	<key id="showtime">afficher les heures</key>
+	<key id="showtime-help">Afficher ou non les heures et minutes dans les dates.</key>	<key id="navigationposition">position des liens de navigation</key>
+	<key id="showcategories">afficher les catégories</key>
+	<key id="showcategories-help">Afficher ou non la liste des catégories du document.</key>
 	<key id="navigationposition-help">Précisez ici la position des liens de navigation.</key>
 	<key id="displaymode">mode de rendu</key>
 	<key id="displaymode-help">Mode de rendu du bloc.</key>

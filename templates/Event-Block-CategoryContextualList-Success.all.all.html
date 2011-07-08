@@ -1,5 +1,8 @@
-<dl class="menu-list">
+<dl tal:condition="configuration/getShowTitle" class="menu-list">
 	<dt tal:condition="blockTitle">${blockTitle}</dt>
 	<dt tal:condition="not: blockTitle">${trans:m.event.fo.contextual-categories,ucf}</dt>
 	<dd tal:repeat="row categoriesInfos"><a change:link="document row/category; eventParam[topicId] topic/getId">${row/category/getLabelAsHtml}</a> (${row/count})</dd>
 </dl>
+<ul tal:condition="not: configuration/getShowTitle" class="menu-list">
+	<li tal:repeat="row categoriesInfos"><a change:link="document row/category; eventParam[topicId] topic/getId">${row/category/getLabelAsHtml}</a> (${row/count})</li>
+</ul>

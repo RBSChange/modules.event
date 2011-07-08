@@ -42,6 +42,8 @@ class event_BlockBaseeventAction extends website_BlockAction
 		$request->setAttribute('navigationPosition', $config->getNavigationPosition());
 		$request->setAttribute('linkToTopic', $config->getLinkToTopic());
 		$request->setAttribute('linkToAll', $config->getLinkToAll());
+		$request->setAttribute('showTime', $config->getShowTime());
+		$request->setAttribute('showCategories', $config->getShowCategories());
 
 		return $this->forward($doc->getDetailBlockModule(), $doc->getDetailBlockName());
 	}

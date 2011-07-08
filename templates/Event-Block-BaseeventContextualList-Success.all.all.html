@@ -1,4 +1,4 @@
-<h1 change:h="">
+<h1 tal:condition="blockTitle" change:h="">
 	${blockTitle}
 	<a class="link rss-link" change:link="module event; action ViewFeed; parentref contextdocument/getId; title blockTitle" title="${trans:m.event.fo.topic-rss-link,ucf}"><img change:img="front/rss.gif" alt="${trans:m.event.fo.topic-rss-link,ucf}" /></a>
 </h1>

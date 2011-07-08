@@ -71,7 +71,10 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 		$parentDoc = $this->getParentDoc($request);
 		$request->setAttribute('contextdocument', $parentDoc);
 		$blockTitle = $this->getBlockTitle($request, $modelNames);
-		$request->setAttribute('blockTitle', $blockTitle);
+		if ($this->getConfigurationValue('showTitle', true))
+		{
+			$request->setAttribute('blockTitle', $blockTitle);
+		}
 		$request->setAttribute('paginationPosition', $this->getConfigurationValue('paginationPosition'));
 		
 		// Add the RSS feeds.
@@ -151,7 +154,13 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
-		return $this->getConfigurationValue('blockTitle');
+		$title = $this->getConfigurationValue('blockTitle');
+		if (!$title)
+		{
+			return null;
+		}
+		$containter = $this->getParentDoc($request);
+		return str_replace('{CONTAINER_LABEL}', $containter->getLabelAsHtml(), $this->getConfigurationValue('blockTitle'));
 	}
 
 	/**

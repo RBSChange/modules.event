@@ -21,7 +21,7 @@ class event_BlockBaseeventContextualListAction extends event_BlockAbstractBaseev
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
-		$title = $this->getConfigurationValue('blockTitle');
+		$title = parent::getBlockTitle($request, $modelNames);
 		if (!$title)
 		{
 			$doc = $this->getParentDoc($request);

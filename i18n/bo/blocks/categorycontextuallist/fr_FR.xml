@@ -2,4 +2,6 @@
 <i18n baseKey="m.event.bo.blocks.categorycontextuallist" lcid="fr_FR">
 	<include id="m.event.bo.blocks.categorylistbase" />
 	<key id="title">liste contextuelle des catégories</key>
+	<key id="showtitle">afficher le titre du bloc</key>
+	<key id="showtitle-help">Afficher ou non le titre du bloc.</key>
 </i18n>

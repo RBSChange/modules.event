@@ -21,7 +21,7 @@ class event_BlockBaseeventAllListAction extends event_BlockAbstractBaseeventList
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
-		$title = $this->getConfigurationValue('blockTitle');
+		$title = parent::getBlockTitle($request, $modelNames);
 		if (!$title)
 		{
 			$title = LocaleService::getInstance()->transFO('m.event.fo.baseevents-from-website-title', array('ucf'));

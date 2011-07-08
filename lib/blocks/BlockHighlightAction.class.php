@@ -83,7 +83,7 @@ class event_BlockHighlightAction extends event_BlockAbstractBaseeventListAction
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
-		$title = $this->getConfigurationValue('blockTitle');
+		$title = parent::getBlockTitle($request, $modelNames);
 		if (!$title)
 		{
 			$doc = $this->getParentDoc($request);

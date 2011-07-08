@@ -1,5 +1,5 @@
-<ul class="mini-navigation" tal:condition="php: (navigationPosition == 'top' || navigationPosition == 'both') AND (isOnDetailPage || linkToAll)">
-	<li tal:condition="isOnDetailPage">
+<ul class="mini-navigation" tal:condition="php: (navigationPosition == 'top' || navigationPosition == 'both') AND ((linkToTopic AND isOnDetailPage) || linkToAll)">
+	<li tal:condition="php: linkToTopic AND isOnDetailPage">
 		<a change:link="tag functional_event_baseevent-list">${trans:m.event.fo.contextual-news-and-events,ucf}</a>
 	</li>
 	<li tal:condition="linkToAll">
@@ -9,8 +9,8 @@
 
 <tal:block change:include="type 'html'; transmitAll 'true'" module="event" template="Event-Inc-Event-Detail" />
 
-<ul class="mini-navigation" tal:condition="php: (navigationPosition == 'bottom' || navigationPosition == 'both') AND (isOnDetailPage || linkToAll)">
-	<li tal:condition="isOnDetailPage">
+<ul class="mini-navigation" tal:condition="php: (navigationPosition == 'bottom' || navigationPosition == 'both') AND ((linkToTopic AND isOnDetailPage) || linkToAll)">
+	<li tal:condition="php: linkToTopic AND isOnDetailPage">
 		<a change:link="tag functional_event_baseevent-list">${trans:m.event.fo.contextual-news-and-events,ucf}</a>
 	</li>
 	<li tal:condition="linkToAll">

@@ -6,11 +6,11 @@
 		<field name="topic" />
 		<field name="category" />
 		<field name="text" />
-		<field name="detailvisual" />
+		<field name="detailvisual" allowfile="true" />
 	</section>
 	<section labeli18n="modules.uixul.bo.doceditor.fieldsgroup.Advanced">
 		<field name="summary" />
-		<field name="listvisual" />
+		<field name="listvisual" allowfile="true" />
 		<field name="linkedpage" />
 		<field name="allowComments" />
 		<field name="excludeFromRss" />

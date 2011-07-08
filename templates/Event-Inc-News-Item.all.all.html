@@ -1,10 +1,12 @@
 <h2 change:h=""><a change:link="document doc; eventParam[topicId] topicId">${doc/getLabelAsHtml}</a></h2>
-<p class="normal event-infos">
-	<tal:block change:date="formatI18n f.date.date.default-date-format; value doc/getDate" />
-</p>
 <tal:block tal:condition="configuration/getShowVisuals">
 	<img tal:condition="doc/getListvisual" change:media="document doc/getListvisual; class 'document-visual'; format 'modules.event.frontoffice/listvisual'" />
 </tal:block>
+
+<p class="normal event-infos">
+	<tal:block tal:condition="configuration/getShowTime" change:datetime="format 'classic'; value doc/getDate" />
+	<tal:block tal:condition="not:configuration/getShowTime" change:date="format 'classic'; value doc/getDate" />
+</p>
 <div class="normal event-summary" tal:condition="doc/getSummary" tal:content="doc/getSummaryAsHtml"></div>
 
 <tal:block tal:condition="configuration/getShowCategories">

@@ -58,7 +58,7 @@ class event_BlockBaseeventDayListAction extends event_BlockAbstractBaseeventList
 	 */
 	protected function getBlockTitle($request, $modelNames)
 	{
-		$title = $this->getConfigurationValue('blockTitle');
+		$title = parent::getBlockTitle($request, $modelNames);
 		if (!$title)
 		{
 			if ($request->hasParameter('date'))
