@@ -1,5 +1,5 @@
 <h2 change:h=""><a change:link="document doc; eventParam[topicId] topicId">${doc/getLabelAsHtml}</a></h2>
-<tal:block tal:condition="displayVisual">
+<tal:block tal:condition="configuration/getShowVisuals">
 	<img tal:condition="doc/getListvisual" change:media="document doc/getListvisual; class 'document-visual'; format 'modules.event.frontoffice/listvisual'" />
 </tal:block>
 
@@ -24,3 +24,4 @@
 		</dd>
 	</dl>
 </tal:block>
+<div class="cleaner"></div>
