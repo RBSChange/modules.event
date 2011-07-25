@@ -6,7 +6,7 @@
 /**
  * @package order.lib.phptal
  */
-class PHPTAL_Php_Attribute_CHANGE_calendar extends ChangeTalAttribute 
+class PHPTAL_Php_Attribute_CHANGE_Calendar extends ChangeTalAttribute 
 {
 	protected function evaluateAll()
 	{
