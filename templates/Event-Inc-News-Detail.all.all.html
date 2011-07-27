@@ -1,7 +1,7 @@
 <h1 change:h=""><a tal:omit-tag="isOnDetailPage" change:link="document doc">${doc/getLabelAsHtml}</a></h1>
 <p class="normal event-infos">
-	<tal:block tal:condition="showTime" change:datetime="format 'classic'; value doc/getDate" />
-	<tal:block tal:condition="not:showTime" change:date="format 'classic'; value doc/getDate" />
+	<tal:block tal:condition="showTime" tal:replace="datetime:doc/getDate,from=gmt" />
+	<tal:block tal:condition="not:showTime" tal:replace="date:doc/getDate,from=gmt" />
 </p>
 
 <img tal:condition="doc/getDetailvisual" change:media="document doc/getDetailvisual; class 'visual'; format 'modules.event.frontoffice/detailvisual'; zoom 'true'" />

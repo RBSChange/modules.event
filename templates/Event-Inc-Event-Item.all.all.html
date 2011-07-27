@@ -5,12 +5,12 @@
 
 <p class="normal event-infos">
 	<tal:block tal:condition="configuration/getShowTime">
-		<tal:block change:datetime="format 'classic'; value doc/getDate" />
-		<tal:block tal:condition="not: doc/onOneMinute"> - <tal:block change:datetime="format 'classic'; value doc/getEndDate" /></tal:block>		
+		<tal:block tal:replace="datetime:doc/getDate,from=gmt" />
+		<tal:block tal:condition="not: doc/onOneMinute"> - <tal:block tal:replace="datetime:doc/getEndDate,from=gmt" /></tal:block>		
 	</tal:block>
 	<tal:block tal:condition="not:configuration/getShowTime">
-		<tal:block change:date="format 'classic'; value doc/getDate" />
-		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block change:date="format 'classic'; value doc/getEndDate" /></tal:block>		
+		<tal:block tal:replace="date:doc/getDate,from=gmt" />
+		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block tal:replace="date:doc/getEndDate,from=gmt" /></tal:block>		
 	</tal:block>
 </p>
 <div class="normal event-summary" tal:condition="doc/getSummary" tal:content="doc/getSummaryAsHtml"></div>

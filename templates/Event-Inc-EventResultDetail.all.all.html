@@ -10,16 +10,16 @@
 	</tal:block>
 	<tal:block tal:condition="showDates">
 		<dt>${trans:m.solrsearch.frontoffice.creationdate,ucf}</dt>
-		<dd><tal:block change:datetime="value doc/getCreationdate; format 'classic'" /><span> - </span></dd>
+		<dd><tal:block tal:replace="datetime:doc/getCreationdate,from=gmt" /><span> - </span></dd>
 		<tal:block tal:condition="php: item.getDocument().getCreationdate() < item.getDocument().getModificationdate()">
 			<dt>${trans:m.solrsearch.frontoffice.modificationdate,ucf}</dt>
-			<dd><tal:block change:datetime="value doc/getModificationdate; formatI18n framework.datetime.short" /><span> - </span></dd>
+			<dd><tal:block tal:replace="datetime:doc/getModificationdate,from=gmt,trans:f.datetime.short" /><span> - </span></dd>
 		</tal:block>
 	</tal:block>
 	<dt>${trans:m.event.fo.period,ucf}</dt>
 	<dd>
-		<tal:block change:date="value doc/getDate; format 'classic'" />
-		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block change:date="value doc/getEndDate; format 'classic'" /></tal:block>
+		<tal:block tal:replace="date:doc/getDate,from=gmt" />
+		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block tal:replace="date:doc/getEndDate,from=gmt" /></tal:block>
 		<span tal:condition="doc/getPublishedCategories"> - </span>
 	</dd>
 	<tal:block tal:condition="doc/getPublishedCategories">

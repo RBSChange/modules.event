@@ -4,8 +4,8 @@
 </tal:block>
 
 <p class="normal event-infos">
-	<tal:block tal:condition="configuration/getShowTime" change:datetime="format 'classic'; value doc/getDate" />
-	<tal:block tal:condition="not:configuration/getShowTime" change:date="format 'classic'; value doc/getDate" />
+	<tal:block tal:condition="configuration/getShowTime" tal:replace="datetime:doc/getDate,from=gmt" />
+	<tal:block tal:condition="not:configuration/getShowTime" tal:replace="date:doc/getDate,from=gmt" />
 </p>
 <div class="normal event-summary" tal:condition="doc/getSummary" tal:content="doc/getSummaryAsHtml"></div>
 
