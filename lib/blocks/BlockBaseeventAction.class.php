@@ -17,7 +17,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 			return website_BlockView::NONE;
 		}
 	
-		$context = $this->getPage();
+		$context = $this->getContext();
 		$isOnDetailPage = TagService::getInstance()->hasTag($context->getPersistentPage(), 'functional_event_baseevent-detail');
 		$doc = $this->getDocumentParameter();
 		if (!($doc instanceof event_persistentdocument_baseevent) || !$doc->isPublished())
@@ -30,7 +30,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 		}
 		else if ($isOnDetailPage)
 		{
-			$this->getContext()->addCanonicalParam('topicId', null, 'event');
+			$context->addCanonicalParam('topicId', null, 'event');
 		}
 		
 		$config = $this->getConfiguration();
