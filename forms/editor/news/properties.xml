@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <panel>
-	<section labeli18n="modules.uixul.bo.doceditor.fieldsgroup.Title">
+	<section labeli18n="m.uixul.bo.doceditor.fieldsgroup.title">
 		<field name="label" />
 		<field name="date" />
 		<field name="topic" />
@@ -8,14 +8,14 @@
 		<field name="text" />
 		<field name="detailvisual" allowfile="true" />
 	</section>
-	<section labeli18n="modules.uixul.bo.doceditor.fieldsgroup.Advanced">
+	<section labeli18n="m.uixul.bo.doceditor.fieldsgroup.advanced">
 		<field name="summary" />
 		<field name="listvisual" allowfile="true" />
 		<field name="linkedpage" />
 		<field name="allowComments" />
 		<field name="excludeFromRss" />
 	</section>
-	<section labeli18n="modules.uixul.bo.doceditor.fieldsgroup.Publication">
+	<section labeli18n="m.uixul.bo.doceditor.fieldsgroup.publication">
 		<field name="startpublicationdate" />
 		<field name="endpublicationdate" />
 	</section>
