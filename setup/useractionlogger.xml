@@ -11,4 +11,7 @@
   <actiondef modulename="event" actionname="activate.news" label="m.event.bo.useractionlogger.activate-news"/>
   <actiondef modulename="event" actionname="insert.news" label="m.event.bo.useractionlogger.insert-news"/>
   <actiondef modulename="event" actionname="update.highlight" label="m.event.bo.useractionlogger.update-highlight"/>
+  <actiondef modulename="event" actionname="insert.treefolder" label="m.event.bo.useractionlogger.insert-treefolder"/>
+  <actiondef modulename="event" actionname="insert.category" label="m.event.bo.useractionlogger.insert-category"/>
+  <actiondef modulename="event" actionname="insert.event" label="m.event.bo.useractionlogger.insert-event"/>
 </script>
