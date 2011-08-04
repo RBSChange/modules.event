@@ -76,7 +76,7 @@
 				<contextaction name="openFolder" />
 			</contextactions>
 			<columns>
-				<column name="date" label="Date" />
+				<column name="date" />
 			</columns>
 		</model>
 		<model name="modules_event/news">
