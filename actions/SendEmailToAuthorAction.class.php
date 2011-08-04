@@ -3,11 +3,11 @@
  * event_SendEmailToAuthorAction
  * @package modules.event.actions
  */
-class event_SendEmailToAuthorAction extends f_action_BaseJSONAction
+class event_SendEmailToAuthorAction extends change_JSONAction
 {
 	/**
-	 * @param Context $context
-	 * @param Request $request
+	 * @param change_Context $context
+	 * @param change_Request $request
 	 */
 	public function _execute($context, $request)
 	{

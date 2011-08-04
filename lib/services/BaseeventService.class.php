@@ -366,7 +366,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		}
 		else
 		{
-			$request = HttpController::getInstance()->getContext()->getRequest();
+			$request = change_Controller::getInstance()->getContext()->getRequest();
 			if ($request->hasModuleParameter('event', 'topicId'))
 			{
 				$topicId = $request->getModuleParameter('event', 'topicId');

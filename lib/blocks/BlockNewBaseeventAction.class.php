@@ -46,7 +46,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		// Check registered user restriction.
 		if (!$configuration->getAllowNotRegistered() && users_UserService::getInstance()->getCurrentFrontEndUser() === null)
 		{
-			$agaviUser = Controller::getInstance()->getContext()->getUser();
+			$agaviUser = change_Controller::getInstance()->getContext()->getUser();
 			$agaviUser->setAttribute('illegalAccessPage', $_SERVER["REQUEST_URI"]);
 			return 'Forbidden';
 		}

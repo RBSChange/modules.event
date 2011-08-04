@@ -3,11 +3,11 @@
  * event_ViewFeedAction
  * @package modules.event.actions
  */
-class event_ViewFeedAction extends f_action_BaseAction
+class event_ViewFeedAction extends change_Action
 {
 	/**
-	 * @param Context $context
-	 * @param Request $request
+	 * @param change_Context $context
+	 * @param change_Request $request
 	 */
 	public function _execute($context, $request)
 	{		

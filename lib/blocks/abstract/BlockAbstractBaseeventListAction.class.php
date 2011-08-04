@@ -36,7 +36,7 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 		{
 			if ($isOnDetailPage && !$this->isInBackofficePreview())
 			{
-				HttpController::getInstance()->redirect("website", "Error404");
+				change_Controller::getInstance()->redirect("website", "Error404");
 			}
 			return website_BlockView::NONE;
 		}
