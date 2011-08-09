@@ -9,8 +9,10 @@
 	<key id="text">contenu</key>
 	<key id="linkedpage">page liée</key>
 	<key id="linkedpage-help">Si renseignée, cette page remplace la page de détail.</key>
-	<key id="listvisual">visuel pour l'affichage en liste</key>
 	<key id="detailvisual">visuel</key>
+	<key id="detailvisual-help">Visuel utilisé dans l'affichage de détail. Ce visuel n'est pas utilisé pour l'affichage en liste.</key>
+	<key id="listvisual">visuel pour l'affichage en liste</key>
+	<key id="listvisual-help">Visuel utilisé pour l'affichage en liste.</key>
 	<key id="category">catégories</key>
 	<key id="allowcomments">autoriser les commentaires</key>
 	<key id="allowcomments-help">Autoriser ou non les utilisateurs à soumettre de nouveaux commentaires. Ce choix n'a aucun effet sur les commentaires existants.</key>
