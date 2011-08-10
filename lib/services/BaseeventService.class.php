@@ -563,8 +563,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 					'receiverTitle' => '',
 					'receiverEmail' => $event->getAuthorEmailAsHtml()
 				);
-				$recipients = new mail_MessageRecipients($event->getAuthorEmail());
-				return $notif->getDocumentService()->sendNotificationCallback($notif, $recipients, $callback, $params);
+				return $notif->getDocumentService()->sendNotificationCallback($notif, change_MailService::getInstance()->getRecipientsArray(array($event->getAuthorEmail())), $callback, $params);
 			}
 		}
 		return false;
