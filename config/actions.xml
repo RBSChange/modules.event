@@ -89,4 +89,28 @@
 			}
 		]]></body>
 	</action>
+	<handler name="comment-basevent" event="registerDocumentEditor"><![CDATA[
+		// Action added by comment.implement-on-document
+		var editor = event.originalTarget;
+		switch (editor.documentname)
+		{
+			case 'event':
+			case 'news':
+				editor.addTab('comments', '&modules.comment.bo.doceditor.tab.Comments;', 'comments');
+				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
+				{
+					editor.addTab('tweets', "&modules.twitterconnect.bo.doceditor.tab.Tweets;", 'tweet');
+				}
+				break;
+					
+			case 'treefolder':
+			case 'category':
+			case 'highlight':
+				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
+				{
+					editor.addTab('containertweets', "&modules.twitterconnect.bo.doceditor.tab.Automatic-tweets;", 'tweet-planner');
+				}
+				break;
+		}
+	]]></handler>
 </actions>
