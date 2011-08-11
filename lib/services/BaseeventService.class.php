@@ -478,6 +478,17 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	
 	/**
 	 * @param event_persistentdocument_baseevent $document
+	 * @return f_persistentdocument_PersistentDocument[]
+	 */
+	public function getContainersForTweets($document)
+	{
+		$containers = $document->getCategoryArray();
+		$containers[] = $this->getParentOf($document);
+		return $containers;
+	}
+		
+	/**
+	 * @param event_persistentdocument_baseevent $document
 	 * @return website_persistentdocument_website[]
 	 */
 	public function getWebsitesForTweets($document)
