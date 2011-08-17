@@ -25,7 +25,7 @@
 	<tal:block tal:condition="doc/getPublishedCategories">
 		<dt>${trans:m.event.fo.categories,ucf}</dt>
 		<dd tal:repeat="category doc/getPublishedCategoryArray">
-			<a change:link="document category">${category/getLabelAsHtml}</a>
+			<a change:link="document category">${structure category/getLabelAsHtml}</a>
 			<span tal:condition="not: repeat/category/end">, </span>
 		</dd>
 	</tal:block>
