@@ -17,7 +17,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	{
 		if (self::$instance === null)
 		{
-			self::$instance = self::getServiceClassInstance(get_class());
+			self::$instance = new self();
 		}
 		return self::$instance;
 	}
@@ -521,7 +521,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		$notif = $ns->getConfiguredByCodeNameAndSuffix('modules_event/baseeventsubmitted', $suffix, $websiteId, $lang);
 		if ($notif instanceof notification_persistentdocument_notification)
 		{
-			$permissionService = f_permission_PermissionService::getInstance();
+			$permissionService = change_PermissionService::getInstance();
 			$roleName = $permissionService->resolveRole('NotifiedForSubmissions', $folder->getId());
 			$userIds = $permissionService->getUsersByRoleAndDocumentId($roleName, $folder->getId());
 			$callback = array($event->getDocumentService(), 'getNotificationParameters');

@@ -17,7 +17,7 @@ class event_ListAvailablemodelsService extends BaseService implements list_ListI
 	{
 		if (self::$instance === null)
 		{
-			self::$instance = self::getServiceClassInstance(get_class());
+			self::$instance = new self();
 		}
 		return self::$instance;
 	}
