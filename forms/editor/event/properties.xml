@@ -7,11 +7,11 @@
 		<field name="topic" />
 		<field name="category" hidehelp="true" />
 		<field name="text" hidehelp="true" />
-		<field name="detailvisual" allowfile="true" />
+		<field name="detailvisual" allowfile="true" hidehelp="true" />
 	</section>
 	<section labeli18n="modules.uixul.bo.doceditor.fieldsgroup.Advanced">
 		<field name="summary" hidehelp="true" />
-		<field name="listvisual" allowfile="true" />
+		<field name="listvisual" allowfile="true" hidehelp="true"/>
 		<field name="linkedpage" />
 		<field name="allowComments" />
 		<field name="excludeFromRss" />
