@@ -11,13 +11,13 @@
 		<dependency>
 			<name>change-module/filter</name>
 			<versions>
-				<version>3.5.0</version>
+				<version>3.5.1</version>
 			</versions>
 		</dependency>
 		<dependency>
 			<name>change-module/comment</name>
 			<versions>
-				<version>3.5.0</version>
+				<version>3.5.1</version>
 			</versions>
 		</dependency>
 	</dependencies>
