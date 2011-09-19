@@ -1,28 +1,3 @@
 wdialog[template="sendEmailToEventAuthor"] .dialog-header{
 	background: url(/changeicons/small/mail.png) transparent center  left no-repeat!important;
 }
-
-treechildren::-moz-tree-image(modules_event_baseevent){
-	list-style-image: url(/changeicons/small/document.png);
-}
-treechildren::-moz-tree-image(modules_event_news){
-	list-style-image: url(/changeicons/small/news.png);
-}
-treechildren::-moz-tree-image(modules_event_event){
-	list-style-image: url(/changeicons/small/event.png);
-}
-treechildren::-moz-tree-image(modules_event_treefolder){
-	list-style-image: url(/changeicons/small/event-folder.png);
-}
-treechildren::-moz-tree-image(modules_event_highlightfolder){
-	list-style-image: url(/changeicons/small/highlight-folder.png);
-}
-treechildren::-moz-tree-image(modules_event_categoryfolder){
-	list-style-image: url(/changeicons/small/category-folder.png);
-}
-treechildren::-moz-tree-image(modules_event_category){
-	list-style-image: url(/changeicons/small/category.png);
-}
-treechildren::-moz-tree-image(modules_event_highlight){
-	list-style-image: url(/changeicons/small/highlight.png);
-}
