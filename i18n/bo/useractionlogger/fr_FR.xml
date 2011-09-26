@@ -26,4 +26,6 @@
   <key id="log-insert-category">log insert category</key>
   <key id="insert-event">insert.event {lang} {documentlabel}</key>
   <key id="log-insert-event">log insert event</key>
+  <key id="deletecorrection-news">deletecorrection.news {documentlabel} {correctionofid} {lang}</key>
+  <key id="log-deletecorrection-news">log deletecorrection news</key>
 </i18n>
