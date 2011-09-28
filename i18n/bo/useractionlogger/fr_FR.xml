@@ -28,4 +28,6 @@
   <key id="log-insert-event">log insert event</key>
   <key id="deletecorrection-news">deletecorrection.news {documentlabel} {correctionofid} {lang}</key>
   <key id="log-deletecorrection-news">log deletecorrection news</key>
+  <key id="move-news">move.news {destinationlabel} {lang} {documentlabel}</key>
+  <key id="log-move-news">log move news</key>
 </i18n>

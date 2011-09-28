@@ -15,4 +15,5 @@
   <actiondef modulename="event" actionname="insert.category" label="m.event.bo.useractionlogger.insert-category"/>
   <actiondef modulename="event" actionname="insert.event" label="m.event.bo.useractionlogger.insert-event"/>
   <actiondef modulename="event" actionname="deletecorrection.news" label="m.event.bo.useractionlogger.deletecorrection-news"/>
+  <actiondef modulename="event" actionname="move.news" label="m.event.bo.useractionlogger.move-news"/>
 </script>
