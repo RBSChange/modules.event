@@ -1,27 +1,34 @@
-<h1 change:h=""><a tal:omit-tag="isOnDetailPage" change:link="document doc">${structure doc/getLabelAsHtml}</a></h1>
-<p class="normal event-infos">
-	<tal:block tal:condition="showTime">
-		<tal:block tal:replace="datetime:doc/getDate,from=gmt" />
-		<tal:block tal:condition="not: doc/onOneMinute"> - <tal:block tal:replace="datetime:doc/getEndDate,from=gmt" /></tal:block>		
-	</tal:block>
-	<tal:block tal:condition="not:showTime">
-		<tal:block tal:replace="date:doc/getDate,from=gmt" />
-		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block tal:replace="date:doc/getEndDate,from=gmt" /></tal:block>		
-	</tal:block>
-</p>
+<div class="vevent">
+    <h1 change:h="" class="summary"><a tal:omit-tag="isOnDetailPage" change:link="document doc">${structure doc/getLabelAsHtml}</a></h1>
+    <p class="normal event-infos">
+	    <tal:block tal:condition="showTime">
+		    <tal:block tal:replace="datetime:doc/getDate,from=gmt" />
+		    <tal:block tal:condition="not: doc/onOneMinute"> - <tal:block tal:replace="datetime:doc/getEndDate,from=gmt" /></tal:block>		
+	    </tal:block>
+	    <tal:block tal:condition="not:showTime">
+		    <tal:block tal:replace="date:doc/getDate,from=gmt" />
+		    <tal:block tal:condition="not: doc/onOneDay"> - <tal:block tal:replace="date:doc/getEndDate,from=gmt" /></tal:block>		
+	    </tal:block>
+    </p>
 
-<img tal:condition="doc/getDetailvisual" change:media="document doc/getDetailvisual; class 'visual'; format 'modules.event.frontoffice/detailvisual'; zoom 'true'" />
+    <img tal:condition="doc/getDetailvisual" change:media="document doc/getDetailvisual; class 'visual'; format 'modules.event.frontoffice/detailvisual'; zoom 'true'" />
 
-<div class="normal event-summary" tal:condition="doc/getSummary">${structure doc/getSummaryAsHtml}</div>
+    <div class="normal event-summary" tal:condition="doc/getSummary">${structure doc/getSummaryAsHtml}</div>
 
-<div class="normal event-contents" tal:condition="doc/getText">${structure doc/getTextAsHtml}</div>
+    <div class="normal event-contents" tal:condition="doc/getText">${structure doc/getTextAsHtml}</div>
 
-<tal:block tal:condition="showCategories">
-	<dl class="inline-list" tal:condition="doc/getPublishedCategoryCount">
-		<dt>${trans:modules.event.fo.categories,ucf}</dt>
-		<dd tal:repeat="category doc/getPublishedCategoryArray">
-			<a change:link="document category">${structure category/getLabelAsHtml}</a>
-			<span tal:condition="not: repeat/category/end">, </span>
-		</dd>
-	</dl>
-</tal:block>
+    <tal:block tal:condition="showCategories">
+	    <dl class="inline-list" tal:condition="doc/getPublishedCategoryCount">
+		    <dt>${trans:modules.event.fo.categories,ucf}</dt>
+		    <dd tal:repeat="category doc/getPublishedCategoryArray">
+			    <a change:link="document category; class-add category">${structure category/getLabelAsHtml}</a>
+			    <span tal:condition="not: repeat/category/end">, </span>
+		    </dd>
+	    </dl>
+    </tal:block>
+    <!-- microformat hidden informations -->
+    <div style="display: none">
+	<span class="dtstart">${php: date('c', date_Calendar::getInstance(doc.getDate()).getTimestamp())}</span>
+	<span class="dtend">${php: date('c', date_Calendar::getInstance(doc.getEndDate()).getTimestamp())}</span>
+    </div>
+</div>
