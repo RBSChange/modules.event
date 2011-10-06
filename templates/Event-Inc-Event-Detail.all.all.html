@@ -28,7 +28,7 @@
     </tal:block>
     <!-- microformat hidden informations -->
     <div style="display: none">
-	<span class="dtstart">${php: date('c', date_Calendar::getInstance(doc.getDate()).getTimestamp())}</span>
-	<span class="dtend">${php: date('c', date_Calendar::getInstance(doc.getEndDate()).getTimestamp())}</span>
+	<span class="dtstart">${datetime:doc/getDate,'c'}</span>
+	<span class="dtend">${datetime:doc/getEndDate, 'c'}</span>
     </div>
 </div>
