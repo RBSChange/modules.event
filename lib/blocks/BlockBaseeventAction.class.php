@@ -44,7 +44,8 @@ class event_BlockBaseeventAction extends website_BlockAction
 		$request->setAttribute('linkToAll', $config->getLinkToAll());
 		$request->setAttribute('showTime', $config->getShowTime());
 		$request->setAttribute('showCategories', $config->getShowCategories());
-
+		$request->setAttribute('displayMode', $config->getDisplayMode());
+		
 		return $this->forward($doc->getDetailBlockModule(), $doc->getDetailBlockName());
 	}
 	

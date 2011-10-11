@@ -12,6 +12,6 @@ class event_BlockNewsAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		return website_BlockView::SUCCESS;
+		return $request->getAttribute('displayMode', website_BlockView::SUCCESS);
 	}
 }
