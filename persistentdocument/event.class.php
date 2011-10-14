@@ -22,6 +22,6 @@ class event_persistentdocument_event extends event_persistentdocument_eventbase
 	{
 		$start = date_Calendar::getInstance($this->getDate());
 		$end = date_Calendar::getInstance($this->getEndDate());
-		return $start->getMinute() == $end->getMinute() && $start->getHour() == $end->getHour() && $this->isOneDay();
+		return $start->getMinute() == $end->getMinute() && $start->getHour() == $end->getHour() && $this->onOneDay();
 	}
 }
