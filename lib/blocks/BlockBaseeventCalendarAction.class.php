@@ -28,7 +28,7 @@ class event_BlockBaseeventCalendarAction extends website_BlockAction
 		}
 		$request->setAttribute('date', date_Formatter::format($date, 'Y-m-d'));
 		
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		$modelNames = null;
 		$filterByModel = $this->findLocalParameterValue('filterByModel');
 		if ($filterByModel === true || $filterByModel === 'true')

@@ -33,7 +33,7 @@ class event_ViewFeedAction extends change_Action
 				$getter = 'getPublishedBy' . ucfirst($parent->getPersistentModel()->getDocumentName());
 				if (!f_util_ClassUtils::methodExists($bes, $getter))
 				{
-					throw new Exception('No method ' . $getter . ' in ' . getClass($bes));
+					throw new Exception('No method ' . $getter . ' in ' . get_class($bes));
 				}
 				foreach ($bes->{$getter}($parent, 0, $limit, null, true) as $doc)
 				{
@@ -59,7 +59,7 @@ class event_ViewFeedAction extends change_Action
 				$description .= " : " . $e->getMessage();
 			}
 			$writer->setDescription($description);
-			$writer->setLink(website_WebsiteModuleService::getInstance()->getCurrentWebsite()->getUrl());
+			$writer->setLink(website_WebsiteService::getInstance()->getCurrentWebsite()->getUrl());
 		}
 		$this->setContentType('text/xml');
 		echo $writer->toString();

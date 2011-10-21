@@ -40,7 +40,7 @@ class event_BlockHighlightAction extends event_BlockAbstractBaseeventListAction
 		}
 		else if ($configuration->getOnlyFromCurrentWebsite())
 		{
-			$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+			$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 			return $highlight->getDocumentService()->getPublishedBaseeventCountByWebsite($highlight, $website, $modelNames);
 		}
 		else
@@ -63,7 +63,7 @@ class event_BlockHighlightAction extends event_BlockAbstractBaseeventListAction
 		$website = null;
 		if ($configuration->getOnlyFromCurrentWebsite())
 		{
-			$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+			$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		}
 		
 		if ($configuration->getRandom())

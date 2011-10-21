@@ -127,7 +127,7 @@ class event_CategoryService extends f_persistentdocument_DocumentService
 	{
 		$bes = event_BaseeventService::getInstance();
 		$writer = new rss_FeedWriter();
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		foreach ($bes->getPublishedByCategoryAndWebsite($category, $website, 0, $limit, null, true) as $doc)
 		{
 			$writer->addItem($doc);
@@ -142,7 +142,7 @@ class event_CategoryService extends f_persistentdocument_DocumentService
 	public function getDisplayPage($document)
 	{
 		$tag = 'contextual_website_website_modules_event_category';
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		return TagService::getInstance()->getDocumentByContextualTag($tag, $website);
 	}
 	

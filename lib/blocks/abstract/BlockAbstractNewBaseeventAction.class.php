@@ -48,7 +48,7 @@ abstract class event_BlockAbstractNewBaseeventAction extends website_BlockAction
 		$event->setAuthorFirstName($request->getParameter('authorFirstName'));
 		$event->setAuthorLastName($request->getParameter('authorLastName'));
 		$event->setAuthorWebsiteUrl($request->getParameter('authorWebsiteUrl'));
-		$event->setSubmissionWebsiteId(website_WebsiteModuleService::getInstance()->getCurrentWebsite()->getId());
+		$event->setSubmissionWebsiteId(website_WebsiteService::getInstance()->getCurrentWebsite()->getId());
 	}
 	
 	/**

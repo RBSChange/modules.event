@@ -24,7 +24,7 @@ class event_BlockCategoryAllListAction extends website_BlockAction
 		}
 		
 		$cs = event_CategoryService::getInstance();
-		$website = website_WebsiteModuleService::getInstance()->getCurrentWebsite();
+		$website = website_WebsiteService::getInstance()->getCurrentWebsite();
 		$request->setAttribute('website', $website);
 		$categoriesInfos = $cs->getPublishedInfosByWebsite($website, $modelNames);
 		if (count($categoriesInfos) > 0)

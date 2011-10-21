@@ -373,7 +373,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 			}
 			else
 			{
-				$topic = $this->getPrimaryTopicForWebsite($document, website_WebsiteModuleService::getInstance()->getCurrentWebsite());
+				$topic = $this->getPrimaryTopicForWebsite($document, website_WebsiteService::getInstance()->getCurrentWebsite());
 				$topicId = $topic ? $topic->getId() : null;
 			}
 			
