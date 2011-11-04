@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blocks>
-	<block type="modules_event_BaseeventContextualList" icon="list-block">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="true" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showVisuals" type="Boolean" default-value="true" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="title,description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+  <block type="modules_event_BaseeventContextualList" icon="list-block">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="true"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showVisuals" type="Boolean" default-value="true"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="description" allow="title,description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventContextualList'});
@@ -31,44 +32,45 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_BaseeventAllList" icon="list-block">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showVisuals" type="Boolean" default-value="true" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
-			<parameter name="linkToDetailPage" type="Boolean" default-value="false" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="title,description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_BaseeventAllList" icon="list-block">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showVisuals" type="Boolean" default-value="true"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions"/>
+      <parameter name="linkToDetailPage" type="Boolean" default-value="false"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="description" allow="title,description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventAllList'});
@@ -77,31 +79,31 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_CategoryContextualList" icon="list-block">
-		<parameters>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_CategoryContextualList" icon="list-block">
+    <parameters>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
@@ -109,31 +111,31 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_CategoryAllList" icon="list-block">
-		<parameters>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_CategoryAllList" icon="list-block">
+    <parameters>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.filterByModel.addEventListener('fieldChanged', function(event) { me.onFilterByModelChange(); }, true);
@@ -141,44 +143,45 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_Category" icon="category" dropModels="modules_event/category">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showVisuals" type="Boolean" default-value="true" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
-			<parameter name="linkToDetailPage" type="Boolean" default-value="true" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="title,description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_Category" icon="category" dropModels="modules_event/category">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showVisuals" type="Boolean" default-value="true"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions"/>
+      <parameter name="linkToDetailPage" type="Boolean" default-value="true"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="description" allow="title,description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'Category'});
@@ -187,46 +190,47 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_Highlight" icon="highlight" dropModels="modules_event/highlight">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-			<parameter name="onlyFromCurrentWebsite" type="Boolean" default-value="true" />
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showVisuals" type="Boolean" default-value="true" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="random" type="Boolean" default-value="false" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
-			<parameter name="linkToDetailPage" type="Boolean" default-value="true" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="title,description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_Highlight" icon="highlight" dropModels="modules_event/highlight">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+      <parameter name="onlyFromCurrentWebsite" type="Boolean" default-value="true"/>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showVisuals" type="Boolean" default-value="true"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="random" type="Boolean" default-value="false"/>
+      <parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions"/>
+      <parameter name="linkToDetailPage" type="Boolean" default-value="true"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="description" allow="title,description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'Highlight'});
@@ -236,20 +240,20 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-				<method name="onRandomChange">
-					<body><![CDATA[
+        </method>
+        <method name="onRandomChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						if (fields.random.value != 'true')
 						{
@@ -261,21 +265,21 @@
 							fields.paginationPosition.value = 'none';
 						}
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_BaseeventCalendar" icon="list-block">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_BaseeventCalendar" icon="list-block">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventCalendar'});
@@ -284,42 +288,43 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_BaseeventDayList" icon="list-block">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showVisuals" type="Boolean" default-value="true" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions" />
-			<parameter name="showTitle" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<metas>
-			<meta name="date" allow="title,description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_BaseeventDayList" icon="list-block">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+      <parameter name="filterByModel" type="Boolean" default-value="false"/>
+      <parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showVisuals" type="Boolean" default-value="true"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="paginationPosition" type="String" default-value="bottom" from-list="modules_website/linkspositions"/>
+      <parameter name="showTitle" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <metas>
+      <meta name="date" allow="title,description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.displayMode.replaceItems({cmpref: 'modules_website/blocktemplates', blockModule: 'event', blockName: 'BaseeventDayList'});
@@ -328,76 +333,76 @@
 					fields.showTitle.addEventListener('fieldChanged', function(event) { me.onShowTitle(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowTitleChange(); }, true);
 				]]></constructor>
-				<method name="onShowTitle">
-					<body><![CDATA[
+        <method name="onShowTitle">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('blockTitle_cnt').collapsed = (fields.showTitle.value != 'true');
 					]]></body>
-				</method>
-				<method name="onFilterByModelChange">
-					<body><![CDATA[
+        </method>
+        <method name="onFilterByModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('includedModels_cnt').collapsed = (fields.filterByModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_Baseevent" icon="event" dropModels="[modules_event/baseevent]">
-		<parameters>
-			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" from-list="modules_event/detailblocktemplates" />
-			<parameter name="showTime" type="Boolean" default-value="false" />
-			<parameter name="showCategories" type="Boolean" default-value="true" />
-			<parameter name="linkToTopic" type="Boolean" default-value="true" />
-			<parameter name="linkToAll" type="Boolean" default-value="true" />
-			<parameter name="navigationPosition" type="String" default-value="none" from-list="modules_website/linkspositions" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="summary" allow="title,description" />
-			<meta name="type" allow="title,description" />
-			<meta name="date" allow="title,description" />
-			<meta name="datetime" allow="title,description" />
-		</metas>
-	</block>
-	<block type="modules_event_Event" hidden="true" />
-	<block type="modules_event_News" hidden="true" />
-	<block type="modules_event_CommentsOnBaseevent" icon="comments">
-		<parameters>
-			<parameter name="nbitemperpage" type="Integer" default-value="25" />
-			<parameter name="allowNotRegistered" type="Boolean" default-value="true" />
-			<parameter name="enableRating" type="Boolean" default-value="false" />
-			<parameter name="showRatingDistribution" type="Boolean" default-value="false" />
-			<parameter name="displaySortOptions" type="Boolean" default-value="true" />
-			<parameter name="enableEvaluation" type="Boolean" default-value="false" />
-			<parameter name="showgravatars" type="Boolean" default-value="false" />
-		</parameters>
-	</block>
-	<block type="modules_event_NewBaseevent" icon="add">
-		<parameters>
-			<parameter name="destinationFolder" type="modules_event/treefolder" min-occurs="1" />
-			<parameter name="restrictModel" type="Boolean" default-value="false" />
-			<parameter name="allowedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
-			<parameter name="allowNotRegistered" type="Boolean" default-value="true" />
-			<parameter name="blockTitle" type="String" />
-		</parameters>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_Baseevent" icon="event" dropModels="[modules_event/baseevent]">
+    <parameters>
+      <parameter name="displayMode" type="String" min-occurs="1" default-value="Success" from-list="modules_event/detailblocktemplates"/>
+      <parameter name="showTime" type="Boolean" default-value="false"/>
+      <parameter name="showCategories" type="Boolean" default-value="true"/>
+      <parameter name="linkToTopic" type="Boolean" default-value="true"/>
+      <parameter name="linkToAll" type="Boolean" default-value="true"/>
+      <parameter name="navigationPosition" type="String" default-value="none" from-list="modules_website/linkspositions"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="summary" allow="title,description"/>
+      <meta name="type" allow="title,description"/>
+      <meta name="date" allow="title,description"/>
+      <meta name="datetime" allow="title,description"/>
+    </metas>
+  </block>
+  <block type="modules_event_Event" hidden="true"/>
+  <block type="modules_event_News" hidden="true"/>
+  <block type="modules_event_CommentsOnBaseevent" icon="comments">
+    <parameters>
+      <parameter name="nbitemperpage" type="Integer" default-value="25"/>
+      <parameter name="allowNotRegistered" type="Boolean" default-value="true"/>
+      <parameter name="enableRating" type="Boolean" default-value="false"/>
+      <parameter name="showRatingDistribution" type="Boolean" default-value="false"/>
+      <parameter name="displaySortOptions" type="Boolean" default-value="true"/>
+      <parameter name="enableEvaluation" type="Boolean" default-value="false"/>
+      <parameter name="showgravatars" type="Boolean" default-value="false"/>
+    </parameters>
+  </block>
+  <block type="modules_event_NewBaseevent" icon="add">
+    <parameters>
+      <parameter name="destinationFolder" type="modules_event/treefolder" min-occurs="1"/>
+      <parameter name="restrictModel" type="Boolean" default-value="false"/>
+      <parameter name="allowedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1"/>
+      <parameter name="allowNotRegistered" type="Boolean" default-value="true"/>
+      <parameter name="blockTitle" type="String"/>
+    </parameters>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.restrictModel.addEventListener('fieldChanged', function(event) { me.onRestrictModelChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onRestrictModelChange(); }, true);
 				]]></constructor>
-				<method name="onRestrictModelChange">
-					<body><![CDATA[
+        <method name="onRestrictModelChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						this.getElementByAnonId('allowedModels_cnt').collapsed = (fields.restrictModel.value != 'true');
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
-	<block type="modules_event_NewEvent" hidden="true" />
-	<block type="modules_event_NewNews" hidden="true" />
+        </method>
+      </javascript>
+    </xul>
+  </block>
+  <block type="modules_event_NewEvent" hidden="true"/>
+  <block type="modules_event_NewNews" hidden="true"/>
 </blocks>
