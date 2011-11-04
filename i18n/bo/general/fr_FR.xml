@@ -2,8 +2,6 @@
 <i18n baseKey="m.event.bo.general" lcid="fr_FR">
 	<key id="module-name">actualités et événements</key>
 	<key id="system-folder-name">actualités et événements</key>
-	<key id="unknown-structure-initialization-script">Script d'initialisation "{script}" inconnu.</key>
-	<key id="invalid-topic">Vous devez sélectionner une rubrique.</key>
 	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
 	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
 	<key id="section-author-infos">document soumis depuis le site par</key>
