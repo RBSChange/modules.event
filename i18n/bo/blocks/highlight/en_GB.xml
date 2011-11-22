@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.highlight" lcid="en_GB">
+	<include id="m.event.bo.blocks.baseeventlistbase" />
+  <key id="linktodetailpage">link to the complete list</key>
+  <key id="linktodetailpage-help">Activates or deactivates the link to the complete list of highlighted items. In any case, this link will be omitted on the details page of the highlight.</key>
+  <key id="onlyfromcurrentwebsite">restrict to current site</key>
+  <key id="onlyfromcurrentwebsite-help">Select "yes" to restrict the list to items present in at least one topic of the current site.</key>
+  <key id="random">random selection</key>
+  <key id="random-help">If activated, items to display will be randomly selected among the highlighted items.</key>
+  <key id="title">highlight details</key>
+</i18n>

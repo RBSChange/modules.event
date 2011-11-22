@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.baseeventcontextuallist" lcid="en_GB">
+	<include id="m.event.bo.blocks.baseeventlistbase" />
+  <key id="showdetailsincurrenttopic">details page in the topic</key>
+  <key id="showdetailsincurrenttopic-help">Select "yes" for the documents to be displayed in the current topic. Select "no" for them to be displayed in their primary topic.</key>
+  <key id="title">contextual list of news and events</key>
+</i18n>

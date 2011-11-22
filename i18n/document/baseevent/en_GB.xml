@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.document.baseevent" lcid="en_GB">
+	<include id="m.generic.document.document" />
+  <key id="allowcomments">allow comments</key>
+  <key id="allowcomments-help">Allows or forbids users from submitting new comments. This choice has no consequences on existing comments.</key>
+  <key id="authoremail">email address</key>
+  <key id="authorfirstname">first name</key>
+  <key id="authorlastname">last name</key>
+  <key id="authorwebsiteurl">website</key>
+  <key id="category">categories</key>
+  <key id="date">date</key>
+  <key id="detailvisual">visual element</key>
+  <key id="detailvisual-help">Visual element used in the details display. This visual element is not used for the list display.</key>
+  <key id="document-name">baseevent</key>
+  <key id="excludefromrss">exclude from RSS feeds</key>
+  <key id="excludefromrss-help">Excludes RSS feeds or not. Choose "yes" if access to this document is restricted.</key>
+  <key id="linkedpage">page linked</key>
+  <key id="linkedpage-help">If filled in, this page replaces the details page.</key>
+  <key id="listvisual">visual element for the list display</key>
+  <key id="listvisual-help">Visual element used for the list display.</key>
+  <key id="submissionwebsite">submitted from the site</key>
+  <key id="summary">summary</key>
+  <key id="text">content</key>
+  <key id="topic">topics</key>
+  <key id="topic-help">Topics in which this document is implanted.</key>
+</i18n>

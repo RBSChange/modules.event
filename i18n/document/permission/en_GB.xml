@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.document.permission" lcid="en_GB">
+	<include id="m.generic.document.permission" />
+  <key id="notifiedforsubmissions">notified of submissions from the site</key>
+  <key id="notifiedforsubmissions-help">Users having this role are notified when news and events are submitted from the site. This role does not bestow any permission other than reading the documents content and must be complemented with the roles of "Writer" and/or "Validator" as needed.</key>
+</i18n>

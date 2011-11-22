@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.categorycontextuallist" lcid="en_GB">
+	<include id="m.event.bo.blocks.categorylistbase" />
+  <key id="showtitle">display block title</key>
+  <key id="showtitle-help">Displays or hides the block's title.</key>
+  <key id="title">contextual list of categories</key>
+</i18n>

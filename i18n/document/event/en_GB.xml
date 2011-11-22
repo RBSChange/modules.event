@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.document.event" lcid="en_GB">
+	<include id="m.event.document.baseevent" />
+  <key id="date">start date</key>
+  <key id="document-name">event</key>
+  <key id="enddate">end date</key>
+</i18n>
