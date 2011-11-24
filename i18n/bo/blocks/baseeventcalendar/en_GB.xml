@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.baseeventcalendar" lcid="en_GB">
+  <key id="blocktitle">block title</key>
+  <key id="blocktitle-help">Title of the block on the site.</key>
+  <key id="displaymode">rendering mode</key>
+  <key id="displaymode-help">Block rendering mode.</key>
+  <key id="filterbymodel">filter by type</key>
+  <key id="filterbymodel-help">Select "yes" to show only certain types of news and events.</key>
+  <key id="includedmodels">types selected</key>
+  <key id="includedmodels-help">Check here the types of news or events that you wish to show.</key>
+  <key id="title">calendar</key>
+</i18n>

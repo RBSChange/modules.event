@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.general" lcid="en_GB">
+  <key id="close">close this window</key>
+  <key id="email-sent">The email was successfully sent.</key>
+  <key id="error-on-mail-sending">An error occurred while sending the email.</key>
+  <key id="message-content">content of the message</key>
+  <key id="module-name">news and events</key>
+  <key id="section-author-infos">document submitted from the website by</key>
+  <key id="send">send</key>
+  <key id="send-email-to-author">send an email to the author</key>
+  <key id="sending">sending operation in progress</key>
+  <key id="some-pages-already-initialized">Some of the global pages have already been initialised for this site.</key>
+  <key id="system-folder-name">news and events</key>
+  <key id="topic-already-contains-some-of-this-pages">This topic already contains some of the pages.</key>
+  <key id="unexisting-website">a site which no longer exists</key>
+</i18n>

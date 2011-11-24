@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.baseeventalllist" lcid="en_GB">
+  <include id="m.event.bo.blocks.baseeventlistbase"/>
+  <key id="linktodetailpage">link to the complete list</key>
+  <key id="linktodetailpage-help">Activates or deactivates the link to the complete list of items on the site. In any case, this link will be omitted on the page tagged as the list of the site's items.</key>
+  <key id="title">list of the site's news and events</key>
+</i18n>

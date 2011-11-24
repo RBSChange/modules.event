@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.actions" lcid="en_GB">
+  <key id="create_">create</key>
+  <key id="createcategory">create a category</key>
+  <key id="createcategoryfolder">create a categories folder</key>
+  <key id="createevent">create event</key>
+  <key id="createhighlight">create highlight</key>
+  <key id="createhighlightfolder">create highlights folder</key>
+  <key id="createnews">create news</key>
+  <key id="createtreefolder">create a sorting folder</key>
+  <key id="initdefaultstructure">initialise the global pages of a site</key>
+  <key id="initlocalstructure">initialise the pages of a topic</key>
+  <key id="sendemailtoauthor">send email</key>
+</i18n>

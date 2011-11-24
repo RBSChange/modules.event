@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.bo.blocks.newbaseevent" lcid="en_GB">
+  <key id="allowedmodels">types allowed</key>
+  <key id="allowedmodels-help">Check here the types of news or events which can be submitted through this block.</key>
+  <key id="allownotregistered">submit without being registered</key>
+  <key id="allownotregistered-help">Allow or forbid news or events to be submitted by users who are not registered members of the site.</key>
+  <key id="blocktitle">block title</key>
+  <key id="blocktitle-help">Title of the block on the site. Leave blank in order to generate it automatically.</key>
+  <key id="destinationfolder">target folder</key>
+  <key id="destinationfolder-help">Folder where the documents submitted through this block will be filed.</key>
+  <key id="restrictmodel">restrict type</key>
+  <key id="restrictmodel-help">Select "yes" to allow the submission of certain types of news or events only.</key>
+  <key id="title">submit news or event</key>
+</i18n>

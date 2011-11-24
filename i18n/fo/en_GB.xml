@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.event.fo" lcid="en_GB">
+  <key id="all-categories">all categories</key>
+  <key id="all-news-and-events">all news and events</key>
+  <key id="back-to-topic">back to topic {topic}</key>
+  <key id="baseevent-submission">submission of an event or news</key>
+  <key id="baseevents-from-website-title">site news and events</key>
+  <key id="baseevents-of-day-title">events and news on {date}</key>
+  <key id="categories">categories</key>
+  <key id="category-rss-link">category's RSS feed</key>
+  <key id="category-title">category: {category}</key>
+  <key id="contextual-categories">topic categories</key>
+  <key id="contextual-news-and-events">topic news and events</key>
+  <key id="date">date</key>
+  <key id="event-infos">event description</key>
+  <key id="event-input">enter event</key>
+  <key id="event-preview">event preview</key>
+  <key id="event-submission">submit event</key>
+  <key id="event-submitted">Your event was submitted successfully. It will be published after validation by the site's team.</key>
+  <key id="events-filtered-by-topic-1">this list is restricted to documents in the topic</key>
+  <key id="events-filtered-by-topic-2">. In order to see the full content of the topic, </key>
+  <key id="events-filtered-by-topic-3">click here</key>
+  <key id="events-filtered-by-topic-4">.</key>
+  <key id="form-preview">preview</key>
+  <key id="form-submit">submit</key>
+  <key id="highlight-rss-link">RSS feed for the highlight</key>
+  <key id="highlight-title">highlight: {highlight}</key>
+  <key id="invalid-model">The type that you selected is invalid, please select another one.</key>
+  <key id="model-selection">selection of type</key>
+  <key id="news-infos">news description</key>
+  <key id="news-input">enter news</key>
+  <key id="news-preview">news preview</key>
+  <key id="news-submission">submit news</key>
+  <key id="news-submitted">Your news was submitted successfully. It will be published after validation by the site's team.</key>
+  <key id="next-month">next month</key>
+  <key id="period">period</key>
+  <key id="previous-month">previous month</key>
+  <key id="restricted-access-must-login">you need to log in to perform this operation</key>
+  <key id="topic-rss-link">topic RSS feed</key>
+  <key id="topic-title">topic: {topic}</key>
+  <key id="view-complete-list">see the complete list</key>
+  <key id="your-email">email address</key>
+  <key id="your-firstname">first name</key>
+  <key id="your-infos">your contact information</key>
+  <key id="your-lastname">last name</key>
+  <key id="your-websiteurl">website</key>
+</i18n>
