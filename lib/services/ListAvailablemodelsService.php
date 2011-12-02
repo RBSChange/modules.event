@@ -35,7 +35,10 @@ class event_ListAvailablemodelsService extends BaseService implements list_ListI
 		foreach ($baseModel->getChildrenNames() as $modelName)
 		{
 			$model = f_persistentdocument_PersistentDocumentModel::getInstanceFromDocumentModelName($modelName);
-			$items[] = new list_Item($ls->transBO($model->getLabelKey(), array('ucf')), $modelName);
+			if ($model->getName() == $modelName)
+			{
+				$items[] = new list_Item($ls->transBO($model->getLabelKey(), array('ucf')), $modelName);
+			}
 		}
 		
 		return $items;

@@ -71,7 +71,10 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		foreach ($modelNames as $modelName)
 		{
 			$model = f_persistentdocument_PersistentDocumentModel::getInstanceFromDocumentModelName($modelName);
-			$modelOptions[] = array('label' => $ls->transFO($model->getLabelKey(), array('ucf')), 'value' => $modelName);
+			if ($model->getName() == $modelName)
+			{
+				$modelOptions[] = array('label' => $ls->transFO($model->getLabelKey(), array('ucf')), 'value' => $modelName);
+			}
 		}
 		$request->setAttribute('modelOptions', $modelOptions);
 		return 'ModelSelection';
