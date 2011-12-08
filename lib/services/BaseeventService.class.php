@@ -390,6 +390,34 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
+	 * @param website_UrlRewritingService $urlRewritingService
+	 * @param event_persistentdocument_baseevent $document
+	 * @param website_persistentdocument_website $website
+	 * @param string $lang
+	 * @param array $parameters
+	 * @return f_web_Link | null
+	 */
+	public function getWebLink($urlRewritingService, $document, $website, $lang, $parameters)
+	{
+		if (isset($parameters['eventParam[topicId]']))
+		{
+			$topicId = $parameters['eventParam[topicId]'];
+		}
+		elseif (isset($parameters['eventParam']) && isset($parameters['eventParam']['topicId']))
+		{
+			$topicId = $parameters['eventParam']['topicId'];
+		}
+		else { return null; }
+		
+		$twebsite = website_WebsiteService::getInstance()->getByDescendentId($topicId);
+		if ($twebsite !== null && $twebsite !== $website)
+		{
+			return $urlRewritingService->getDocumentLinkForWebsite($document, $twebsite, $lang, $parameters);
+		}		
+		return null;
+	}
+
+	/**
 	 * @param event_persistentdocument_baseevent $event
 	 * @param website_persistentdocument_website $website
 	 */
