@@ -37,7 +37,7 @@ class event_ListAvailablemodelsService extends BaseService implements list_ListI
 			$model = f_persistentdocument_PersistentDocumentModel::getInstanceFromDocumentModelName($modelName);
 			if ($model->getName() == $modelName)
 			{
-				$items[] = new list_Item($ls->transBO($model->getLabelKey(), array('ucf')), $modelName);
+				$items[] = new list_Item($ls->trans($model->getLabelKey(), array('ucf')), $modelName);
 			}
 		}
 		

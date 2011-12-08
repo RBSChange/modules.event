@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/4.0.xsd" model-version="1.0" indexable="true" use-correction="true">
-  <properties>
-    <property name="date" type="DateTime" min-occurs="1"/>
-    <property name="endDate" type="DateTime" min-occurs="1"/>
-    <property name="topic" type="modules_website/topic" max-occurs="-1"/>
-    <property name="website" type="modules_website/website" max-occurs="-1"/>
-    <property name="summary" type="XHTMLFragment" localized="true" indexed="description"/>
-    <property name="text" type="XHTMLFragment" localized="true" indexed="description"/>
-    <property name="linkedpage" type="modules_website/page"/>
-    <property name="listvisual" type="modules_media/media"/>
-    <property name="detailvisual" type="modules_media/media"/>
-    <property name="category" type="modules_event/category" max-occurs="-1" inverse="true"/>
-    <property name="excludeFromRss" type="Boolean" default-value="false"/>
-    <property name="allowComments" type="Boolean" default-value="true"/>
-  </properties>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/4.0.xsd"
+	model-version="1.0" indexable="true" use-correction="true">
+	<properties>
+		<property name="date" type="DateTime" min-occurs="1" />
+		<property name="endDate" type="DateTime" min-occurs="1" />
+		<property name="topic" type="modules_website/topic" max-occurs="-1" />
+		<property name="website" type="modules_website/website" max-occurs="-1" />
+		<property name="summary" type="XHTMLFragment" localized="true" indexed="description" />
+		<property name="text" type="XHTMLFragment" localized="true" indexed="description" />
+		<property name="linkedpage" type="modules_website/page" />
+		<property name="listvisual" type="modules_media/media" />
+		<property name="detailvisual" type="modules_media/media" />
+		<property name="category" type="modules_event/category" max-occurs="-1" inverse="true" />
+		<property name="excludeFromRss" type="Boolean" default-value="false" />
+		<property name="allowComments" type="Boolean" default-value="true" />
+	</properties>
 </document>

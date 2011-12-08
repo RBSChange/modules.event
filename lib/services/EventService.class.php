@@ -64,13 +64,16 @@ class event_EventService extends event_BaseeventService
 	
 	/**
 	 * @param event_persistentdocument_event $document
+	 * @param array<string, string> $attributes
+	 * @param integer $mode
 	 * @param string $moduleName
-	 * @param string $treeType
-	 * @param array<string, string> $nodeAttributes
 	 */
-	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	public function completeBOAttributes($document, &$attributes, $mode, $moduleName)
 	{
-		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate()) . ' - ' . date_Formatter::formatBO($document->getUIEndDate());
+		if ($mode & DocumentHelper::MODE_CUSTOM)
+		{
+			$attributes['date'] = date_Formatter::toDefaultDateTimeBO($document->getUIDate()) . ' - ' . date_Formatter::toDefaultDateTimeBO($document->getUIEndDate());
+		}
 	}
 	
 	/**

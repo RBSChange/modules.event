@@ -498,13 +498,16 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	
 	/**
 	 * @param event_persistentdocument_baseevent $document
+	 * @param array<string, string> $attributes
+	 * @param integer $mode
 	 * @param string $moduleName
-	 * @param string $treeType
-	 * @param array<string, string> $nodeAttributes
 	 */
-	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	public function completeBOAttributes($document, &$attributes, $mode, $moduleName)
 	{
-		$nodeAttributes['date'] = date_Formatter::formatBO($document->getUIDate());
+		if ($mode & DocumentHelper::MODE_CUSTOM)
+		{
+			$attributes['date'] = date_Formatter::toDefaultDateTimeBO($document->getUIDate());
+		}
 	}
 	
 	/**
