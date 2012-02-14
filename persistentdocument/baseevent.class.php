@@ -77,7 +77,7 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	 */
 	public function getRSSGuid()
 	{
-		return $this->getDocumentModelName() . '/'. RequestContext::getInstance()->getLang() .  '#' . $this->getId();
+		return LinkHelper::getPermalink($this);
 	}
 	
 	/**
