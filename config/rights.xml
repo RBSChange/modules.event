@@ -13,6 +13,10 @@
 		<document name="categoryfolder" />
 		<document name="category" />
 		<document name="highlight" />
+		<document name="comment">
+			<action name="Validate" />
+			<action name="Trusted" />
+		</document>
 	</actions>
 	<roles>
 		<role name="Admin">
@@ -45,6 +49,7 @@
 			<permission name="Cancel.*" />
 			<permission name="Deactivated.*" />
 			<permission name="ReActivate.*" />
+			<permission name="Validate.comment" />
 		</role>
 		<role name="NotifiedForSubmissions" extend="Guest">
 			<permission name="Load.*" />
@@ -55,5 +60,11 @@
 		<role name="User">
 			<permission name="List.*" />
 		</role>
+		<frontendrole name="FrontValidator" extend="Trusted">
+			<permission name="Validate.comment" />
+		</frontendrole>
+		<frontendrole name="Trusted">
+			<permission name="Trusted.comment" />
+		</frontendrole>
 	</roles>
 </rights>

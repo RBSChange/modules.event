@@ -3,4 +3,7 @@
 	<include id="m.generic.document.permission" />
   <key id="notifiedforsubmissions">notified of submissions from the site</key>
   <key id="notifiedforsubmissions-help">Users having this role are notified when news and events are submitted from the site. This role does not bestow any permission other than reading the documents content and must be complemented with the roles of "Writer" and/or "Validator" as needed.</key>
+  <key id="trusted">trusted user</key>
+  <key id="trusted-help">This is a user whose comments will be published directly without going through the validation phase.</key>
+  <key id="frontvalidator">validator</key>
 </i18n>
