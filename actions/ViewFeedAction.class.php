@@ -33,7 +33,7 @@ class event_ViewFeedAction extends f_action_BaseAction
 				$getter = 'getPublishedBy' . ucfirst($parent->getPersistentModel()->getDocumentName());
 				if (!f_util_ClassUtils::methodExists($bes, $getter))
 				{
-					throw new Exception('No method ' . $getter . ' in ' . getClass($bes));
+					throw new Exception('No method ' . $getter . ' in ' . get_class($bes));
 				}
 				foreach ($bes->{$getter}($parent, 0, $limit, null, true) as $doc)
 				{

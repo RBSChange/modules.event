@@ -1,7 +1,7 @@
 <table class="calendar" summary="${trans:m.event.fo.calendar-header-summary,ucf}">
 	<caption>
 		<a tal:condition="exists: previousMonthUrl" class="nav" tal:attributes="href previousMonthUrl" title="${trans:m.event.fo.previous-month,ucf}">&laquo;</a>
-		<tal:block change:date="format 'F Y'; value dateCalendar/toString" />
+		${date:dateCalendar/toString,'F Y'}
 		<a tal:condition="exists: nextMonthUrl" class="nav" tal:attributes="href nextMonthUrl" title="${trans:m.event.fo.next-month,ucf}">&raquo;</a>
 	</caption>
 	<thead>

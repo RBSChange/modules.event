@@ -123,7 +123,7 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 		$getter = 'getPublishedCountBy'.ucfirst($parentDoc->getPersistentModel()->getDocumentName());
 		if (!f_util_ClassUtils::methodExists($bes, $getter))
 		{
-			throw new Exception('No method ' . $getter . ' in ' . getClass($bes));
+			throw new Exception('No method ' . $getter . ' in ' . get_class($bes));
 		}
 		return $bes->{$getter}($parentDoc, $modelNames);
 	}
@@ -142,7 +142,7 @@ abstract class event_BlockAbstractBaseeventListAction extends website_BlockActio
 		$getter = 'getPublishedBy'.ucfirst($parentDoc->getPersistentModel()->getDocumentName());
 		if (!f_util_ClassUtils::methodExists($bes, $getter))
 		{
-			throw new Exception('No method ' . $getter . ' in ' . getClass($bes));
+			throw new Exception('No method ' . $getter . ' in ' . get_class($bes));
 		}
 		return $bes->{$getter}($parentDoc, $offset, $itemsPerPage, $modelNames);
 	}
