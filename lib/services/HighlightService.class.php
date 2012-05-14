@@ -88,7 +88,8 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function getPublishedBaseevents($highlight, $offset, $limit, $modelNames)
 	{
-		return $this->getQueryIntersection($highlight, null, $modelNames)->findAtOffset($offset, $limit);
+		$count = null;
+		return $this->getQueryIntersection($highlight, null, $modelNames)->findAtOffset($offset, $limit, $count, 'DESC');
 	}
 	
 	/**
@@ -124,7 +125,8 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function getPublishedBaseeventsByWebsite($highlight, $website, $offset, $limit, $modelNames)
 	{
-		return $this->getQueryIntersection($highlight, $website, $modelNames)->findAtOffset($offset, $limit);
+		$count = null;
+		return $this->getQueryIntersection($highlight, $website, $modelNames)->findAtOffset($offset, $limit, $count, 'DESC');
 	}
 	
 	/**
