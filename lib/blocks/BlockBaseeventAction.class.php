@@ -69,7 +69,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 			$uidate = date_Calendar::getInstance($doc->getUIDate());
 			return array(
 				'label' => $doc->getLabel(), 
-				'summary' => f_util_StringUtils::htmlToText($doc->getSummary()),
+				'summary' => f_util_HtmlUtils::htmlToText($doc->getSummary()),
 				'type' => LocaleService::getInstance()->transFO($doc->getPersistentModel()->getLabelKey(), array('ucf')),
 			 	'date' => date_Formatter::toDefaultDate($uidate),
 			 	'datetime' => date_Formatter::toDefaultDateTime($uidate)

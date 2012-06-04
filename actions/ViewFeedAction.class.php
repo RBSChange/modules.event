@@ -44,7 +44,7 @@ class event_ViewFeedAction extends change_Action
 			// Set the link, title and description of the feed.
 			$title = $request->getModuleParameter('event', 'title');
 			$writer->setTitle($title ? $title : $parent->getLabel());
-			$writer->setDescription(f_util_StringUtils::htmlToText($parent->getDescriptionAsHtml()));
+			$writer->setDescription(f_util_HtmlUtils::htmlToText($parent->getDescriptionAsHtml()));
 			$writer->setLink(LinkHelper::getDocumentUrl($parent));
 		}
 		catch (Exception $e)
