@@ -13,12 +13,12 @@
 		<dd>${datetime:doc/getUICreationdate}<span class="separator"> - </span></dd>
 		<tal:block tal:condition="php: item.getDocument().getCreationdate() LT item.getDocument().getModificationdate()">
 			<dt>${trans:m.solrsearch.frontoffice.modificationdate,ucf}</dt>
-			<dd>${datetime:value doc/getUIModificationdate}<span class="separator"> - </span></dd>
+			<dd>${datetime:doc/getUIModificationdate}<span class="separator"> - </span></dd>
 		</tal:block>
 	</tal:block>
 	<dt>${trans:m.event.fo.date,ucf}</dt>
 	<dd>
-		${datedoc/getUIDate}<span tal:condition="doc/getPublishedCategoryCount" class="separator"> - </span>
+		${date:doc/getUIDate}<span tal:condition="doc/getPublishedCategoryCount" class="separator"> - </span>
 	</dd>
 	<tal:block tal:condition="doc/getPublishedCategoryCount">
 		<dt>${trans:m.event.fo.categories,ucf}</dt>
