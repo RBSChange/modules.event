@@ -87,7 +87,7 @@ class event_BlockHighlightAction extends event_BlockAbstractBaseeventListAction
 		if (!$title)
 		{
 			$doc = $this->getParentDoc($request);
-			$title = LocaleService::getInstance()->transFO('m.event.fo.highlight-title', array('ucf', 'html'), array('highlight' => $doc->getLabel()));
+			$title = LocaleService::getInstance()->trans('m.event.fo.highlight-title', array('ucf', 'html'), array('highlight' => $doc->getLabel()));
 		}
 		return $title;
 	}

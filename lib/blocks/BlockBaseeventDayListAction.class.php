@@ -70,7 +70,7 @@ class event_BlockBaseeventDayListAction extends event_BlockAbstractBaseeventList
 				$date = date_Calendar::getInstance();
 			}
 			$params = array('date' => date_Formatter::toDefaultDate($date));
-			$title = LocaleService::getInstance()->transFO('m.event.fo.baseevents-of-day-title', array('ucf'), $params);
+			$title = LocaleService::getInstance()->trans('m.event.fo.baseevents-of-day-title', array('ucf'), $params);
 		}
 		return $title;
 	}

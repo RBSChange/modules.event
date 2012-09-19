@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.blocks.baseeventlistbase" lcid="en_GB">
-  <key id="blocktitle">block title</key>
-  <key id="blocktitle-help">Title of the block on the site. If left blank, it will be generated automatically. In order to integrate the container's label, use the substitution parameter "{CONTAINER_LABEL}".</key>
-  <key id="displaymode">rendering mode</key>
-  <key id="displaymode-help">Block rendering mode.</key>
-  <key id="filterbymodel">filter by type</key>
-  <key id="filterbymodel-help">Select "yes" to show only certain types of news and events.</key>
-  <key id="includedmodels">types selected</key>
-  <key id="includedmodels-help">Check here the types of news or events that you wish to show.</key>
-  <key id="itemsperpage">elements per page</key>
-  <key id="itemsperpage-help">Specify the maximum number of elements to display on each page here.</key>
-  <key id="paginationposition">position of the pagination</key>
-  <key id="paginationposition-help">Specify the position of the pagination here.</key>
-  <key id="showcategories">display the categories</key>
-  <key id="showcategories-help">Displays or hides the listed news and events categories.</key>
-  <key id="showtime">display time</key>
-  <key id="showtime-help">Shows or hides the time (hour and minutes) in dates.</key>
-  <key id="showtitle">display block title</key>
-  <key id="showtitle-help">Displays or hides the block's title.</key>
-  <key id="showvisuals">display the visual elements</key>
-  <key id="showvisuals-help">Displays or hides the listed news and event visual elements.</key>
+	<key id="blocktitle">block title</key>
+	<key id="blocktitle-help">Title of the block on the site. If left blank, it will be generated automatically. In order to integrate the container's label, use the substitution parameter "{CONTAINER_LABEL}".</key>
+	<key id="displaymode">rendering mode</key>
+	<key id="displaymode-help">Block rendering mode.</key>
+	<key id="filterbymodel">filter by type</key>
+	<key id="filterbymodel-help">Select "yes" to show only certain types of news and events.</key>
+	<key id="includedmodels">types selected</key>
+	<key id="includedmodels-help">Check here the types of news or events that you wish to show.</key>
+	<key id="itemsperpage">elements per page</key>
+	<key id="itemsperpage-help">Specify the maximum number of elements to display on each page here.</key>
+	<key id="paginationposition">position of the pagination</key>
+	<key id="paginationposition-help">Specify the position of the pagination here.</key>
+	<key id="showcategories">display the categories</key>
+	<key id="showcategories-help">Displays or hides the listed news and events categories.</key>
+	<key id="showtime">display time</key>
+	<key id="showtime-help">Shows or hides the time (hour and minutes) in dates.</key>
+	<key id="showtitle">display block title</key>
+	<key id="showtitle-help">Displays or hides the block's title.</key>
+	<key id="showvisuals">display the visual elements</key>
+	<key id="showvisuals-help">Displays or hides the listed news and event visual elements.</key>
 </i18n>

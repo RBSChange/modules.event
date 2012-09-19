@@ -1,27 +1,10 @@
 <?php
 /**
- * event_NewsService
  * @package modules.event
+ * @method event_NewsService getInstance()
  */
 class event_NewsService extends event_BaseeventService
 {
-	/**
-	 * @var event_NewsService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_NewsService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_news
 	 */
@@ -38,7 +21,7 @@ class event_NewsService extends event_BaseeventService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/news');
+		return $this->getPersistentProvider()->createQuery('modules_event/news');
 	}
 	
 	/**
@@ -49,12 +32,12 @@ class event_NewsService extends event_BaseeventService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/news', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/news', false);
 	}
 	
 	/**
 	 * @param event_persistentdocument_news $document
-	 * @param Integer $parentNodeId Parent node ID where to save the document (optionnal).
+	 * @param integer $parentNodeId Parent node ID where to save the document (optionnal).
 	 * @return void
 	 */
 	protected function preSave($document, $parentNodeId)

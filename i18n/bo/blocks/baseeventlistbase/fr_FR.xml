@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.blocks.baseeventlistbase" lcid="fr_FR">
 	<key id="displaymode">mode de rendu</key>
 	<key id="displaymode-help">Mode de rendu du bloc.</key>

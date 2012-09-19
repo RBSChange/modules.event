@@ -1,27 +1,10 @@
 <?php
 /**
- * @package modules.event.lib.services
+ * @package modules.event
+ * @method event_ModuleService getInstance()
  */
 class event_ModuleService extends ModuleBaseService
 {
-	/**
-	 * Singleton
-	 * @var event_ModuleService
-	 */
-	private static $instance = null;
-
-	/**
-	 * @return event_ModuleService
-	 */
-	public static function getInstance()
-	{
-		if (is_null(self::$instance))
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-	
 	/**
 	 * @param f_peristentdocument_PersistentDocument $container
 	 * @param array $attributes
@@ -54,7 +37,7 @@ class event_ModuleService extends ModuleBaseService
 		// Check container.
 		if (!$container instanceof website_persistentdocument_topic)
 		{
-			throw new BaseException('Invalid topic', 'm.website.bo.actions.invalid-topic');
+			throw new BaseException('Invalid topic', 'm.event.bo.general.Invalid-topic');
 		}
 		$websiteId = $container->getDocumentService()->getWebsiteId($container);
 	
@@ -64,7 +47,7 @@ class event_ModuleService extends ModuleBaseService
 			TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_category', $website) || 
 			TagService::getInstance()->hasDocumentByContextualTag('contextual_website_website_modules_event_highlight', $website))
 		{
-			throw new BaseException('Some pages of the global structure are already initialized', 'modules.event.bo.general.Some-pages-already-initialized');
+			throw new BaseException('Invalid topic', 'm.website.bo.actions.invalid-topic');
 		}
 		
 		// Set atrtibutes.
@@ -84,7 +67,7 @@ class event_ModuleService extends ModuleBaseService
 		// Check container.
 		if (!$container instanceof website_persistentdocument_topic)
 		{
-			throw new BaseException('Invalid topic', 'm.website.bo.actions.invalid-topic');
+			throw new BaseException('Invalid topic', 'm.event.bo.general.Invalid-topic');
 		}
 		
 		$query = website_PageService::getInstance()->createQuery()->add(Restrictions::orExp(
@@ -94,7 +77,7 @@ class event_ModuleService extends ModuleBaseService
 		$query->add(Restrictions::childOf($container->getId()))->setProjection(Projections::rowCount('count'));
 		if (f_util_ArrayUtils::firstElement($query->findColumn('count')) > 0)
 		{
-			throw new BaseException('This topic already contains some of this pages', 'modules.event.bo.general.Topic-already-contains-some-of-this-pages');
+			throw new BaseException('Invalid topic', 'm.website.bo.actions.invalid-topic');
 		}
 		
 		// Set atrtibutes.

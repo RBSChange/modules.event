@@ -96,10 +96,10 @@
 		{
 			case 'event':
 			case 'news':
-				editor.addTab('comments', '&modules.comment.bo.doceditor.tab.Comments;', 'comments');
+				editor.addTab('comments', "${trans:m.comment.bo.doceditor.tab.comments,ucf,js}", 'comments');
 				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
 				{
-					editor.addTab('tweets', "&modules.twitterconnect.bo.doceditor.tab.Tweets;", 'tweet');
+					editor.addTab('tweets', "${trans:m.twitterconnect.bo.doceditor.tab.tweets,ucf,js}", 'tweet');
 				}
 				break;
 					
@@ -108,7 +108,7 @@
 			case 'highlight':
 				if (getController().checkModuleVersion('twitterconnect', '3.0.3'))
 				{
-					editor.addTab('containertweets', "&modules.twitterconnect.bo.doceditor.tab.Automatic-tweets;", 'tweet-planner');
+					editor.addTab('containertweets', "${trans:m.twitterconnect.bo.doceditor.tab.automatic-tweets,ucf,js}", 'tweet-planner');
 				}
 				break;
 		}

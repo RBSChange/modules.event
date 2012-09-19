@@ -5,15 +5,15 @@
  */
 class event_EventScriptDocumentElement extends event_BaseeventScriptDocumentElement
 {
-    /**
-     * @return event_persistentdocument_event
-     */
-    protected function initPersistentDocument()
-    {
-    	return event_EventService::getInstance()->getNewDocumentInstance();
-    }
-    
-    /**
+	/**
+	 * @return event_persistentdocument_event
+	 */
+	protected function initPersistentDocument()
+	{
+		return event_EventService::getInstance()->getNewDocumentInstance();
+	}
+	
+	/**
 	 * @return f_persistentdocument_PersistentDocumentModel
 	 */
 	protected function getDocumentModel()

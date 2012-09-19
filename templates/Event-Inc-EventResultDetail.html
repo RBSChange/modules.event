@@ -5,28 +5,27 @@
 		<dd>
 			<tal:block tal:condition="item/hasTypeLabel">${item/getTypeLabel}</tal:block>
 			<tal:block tal:condition="not:item/hasTypeLabel">${trans:m.event.document.event.document-name,ucf}</tal:block>
-			<span> - </span>
+			<span class="separator"> - </span>
 		</dd>
 	</tal:block>
 	<tal:block tal:condition="showDates">
 		<dt>${trans:m.solrsearch.frontoffice.creationdate,ucf}</dt>
-		<dd><tal:block tal:replace="datetime:doc/getCreationdate,from=gmt" /><span> - </span></dd>
-		<tal:block tal:condition="php: item.getDocument().getCreationdate() < item.getDocument().getModificationdate()">
+		<dd>${datetime:doc/getUICreationdate}<span class="separator"> - </span></dd>
+		<tal:block tal:condition="php: item.getDocument().getCreationdate() LT item.getDocument().getModificationdate()">
 			<dt>${trans:m.solrsearch.frontoffice.modificationdate,ucf}</dt>
-			<dd><tal:block tal:replace="datetime:doc/getModificationdate,from=gmt,trans:f.datetime.short" /><span> - </span></dd>
+			<dd>${datetime:doc/getUIModificationdate}<span class="separator"> - </span></dd>
 		</tal:block>
 	</tal:block>
 	<dt>${trans:m.event.fo.period,ucf}</dt>
 	<dd>
-		<tal:block tal:replace="date:doc/getDate,from=gmt" />
-		<tal:block tal:condition="not: doc/onOneDay"> - <tal:block tal:replace="date:doc/getEndDate,from=gmt" /></tal:block>
-		<span tal:condition="doc/getPublishedCategories"> - </span>
+		${date:doc/getUIDate}
+		<tal:block tal:condition="not: doc/onOneDay"><span class="separator"> - </span>${date:doc/getUIEndDate}</tal:block>
+		<span tal:condition="doc/getPublishedCategoryCount" class="separator"> - </span>
 	</dd>
-	<tal:block tal:condition="doc/getPublishedCategories">
+	<tal:block tal:condition="doc/getPublishedCategoryCount">
 		<dt>${trans:m.event.fo.categories,ucf}</dt>
 		<dd tal:repeat="category doc/getPublishedCategoryArray">
-			<a change:link="document category">${structure category/getLabelAsHtml}</a>
-			<span tal:condition="not: repeat/category/end">, </span>
+			<a change:link="document category">${category/getLabel}</a><span tal:condition="not: repeat/category/end" class="puntuation">, </span>
 		</dd>
 	</tal:block>
 </dl>

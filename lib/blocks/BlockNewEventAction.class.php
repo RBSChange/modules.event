@@ -9,7 +9,7 @@ class event_BlockNewEventAction extends event_BlockAbstractNewBaseeventAction
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
 	 * @param event_persistentdocument_event $event
-	 * @return String
+	 * @return string
 	 */
 	public function executeSubmit($request, $response, event_persistentdocument_event $event)
 	{
@@ -20,7 +20,7 @@ class event_BlockNewEventAction extends event_BlockAbstractNewBaseeventAction
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
 	 * @param event_persistentdocument_event $event
-	 * @return String
+	 * @return string
 	 */
 	public function executePreview($request, $response, event_persistentdocument_event $event)
 	{

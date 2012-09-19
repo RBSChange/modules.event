@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <tags>
 	<tag labeli18n="m.event.bo.blocks.baseevent.title" icon="event">functional_event_baseevent-detail</tag>
 	<tag labeli18n="m.event.bo.blocks.baseeventcontextuallist.title" icon="list-block">functional_event_baseevent-list</tag>

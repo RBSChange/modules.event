@@ -1,0 +1,33 @@
+<div class="vevent">
+	<h1 change:h="" class="summary"><a tal:omit-tag="isOnDetailPage" change:link="document doc">${structure doc/getLabelAsHtml}</a></h1>
+	<p class="normal event-infos">
+		<tal:block tal:condition="showTime">
+			${datetime:doc/getUIDate}
+			<tal:block tal:condition="not: doc/onOneMinute"><span class="separator"> - </span>${datetime:doc/getUIEndDate}</tal:block>		
+		</tal:block>
+		<tal:block tal:condition="not:showTime">
+			${date:doc/getUIDate}
+			<tal:block tal:condition="not: doc/onOneDay"><span class="separator"> - </span>${date:doc/getUIEndDate}</tal:block>		
+		</tal:block>
+	</p>
+	
+	<img tal:condition="doc/getDetailvisual" change:media="document doc/getDetailvisual; class 'visual'; format 'modules.event.frontoffice/detailvisual'; zoom 'true'" />
+	
+	<div class="normal event-summary" tal:condition="doc/getSummary">${structure doc/getSummaryAsHtml}</div>
+	
+	<div class="normal event-contents" tal:condition="doc/getText">${structure doc/getTextAsHtml}</div>
+	
+	<tal:block tal:condition="showCategories">
+		<dl class="inline-list" tal:condition="doc/getPublishedCategoryCount">
+			<dt>${trans:modules.event.fo.categories,ucf}</dt>
+			<dd tal:repeat="category doc/getPublishedCategoryArray">
+				<a change:link="document category; class-add category">${structure category/getLabelAsHtml}</a><span tal:condition="not: repeat/category/end" class="punctuation">, </span>
+			</dd>
+		</dl>
+	</tal:block>
+	<!-- microformat hidden informations -->
+	<div style="display: none">
+		<span class="dtstart">${datetime:doc/getDate,'c'}</span>
+		<span class="dtend">${datetime:doc/getEndDate, 'c'}</span>
+	</div>
+</div>

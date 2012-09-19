@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.list" lcid="en_GB">
-  <key id="availablemodels-description">List of available event types.</key>
-  <key id="availablemodels-label">available event types</key>
-  <key id="blocktemplates-success">by default</key>
-  <key id="detailblocktemplates-description">List of available templates for the news and events details block.</key>
-  <key id="detailblocktemplates-label">available templates for details</key>
+	<key id="availablemodels-description">List of available event types.</key>
+	<key id="availablemodels-label">available event types</key>
+	<key id="blocktemplates-success">by default</key>
+	<key id="detailblocktemplates-description">List of available templates for the news and events details block.</key>
+	<key id="detailblocktemplates-label">available templates for details</key>
 </i18n>

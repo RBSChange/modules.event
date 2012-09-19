@@ -1,0 +1,20 @@
+<h2 change:h=""><a change:link="document doc; eventParam[topicId] topicId">${structure doc/getLabelAsHtml}</a></h2>
+<tal:block tal:condition="configuration/getShowVisuals">
+	<img tal:condition="doc/getListvisual" change:media="document doc/getListvisual; class 'document-visual'; format 'modules.event.frontoffice/listvisual'" />
+</tal:block>
+
+<p class="normal event-infos">
+	<tal:block tal:condition="showTime">${datetime:doc/getUIDate}</tal:block>
+	<tal:block tal:condition="not:showTime">${date:doc/getUIDate}</tal:block>
+</p>
+<div class="normal event-summary" tal:condition="doc/getSummary">${structure doc/getSummaryAsHtml}</div>
+
+<tal:block tal:condition="configuration/getShowCategories">
+	<dl class="inline-list" tal:condition="doc/getPublishedCategoryCount">
+		<dt>${trans:modules.event.fo.categories,ucf}</dt>
+		<dd tal:repeat="category doc/getPublishedCategoryArray">
+			<a change:link="document category">${structure category/getLabelAsHtml}</a><span tal:condition="not: repeat/category/end" class="punctuation">, </span>
+		</dd>
+	</dl>
+</tal:block>
+<div class="cleaner"></div>

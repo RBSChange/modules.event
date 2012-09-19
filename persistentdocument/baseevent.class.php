@@ -5,7 +5,6 @@
  */
 class event_persistentdocument_baseevent extends event_persistentdocument_baseeventbase implements rss_Item
 {
-
 	/**
 	 * @return string
 	 */
@@ -58,6 +57,14 @@ class event_persistentdocument_baseevent extends event_persistentdocument_baseev
 	 * @return string
 	 */
 	public function getRSSGuid()
+	{
+		return LinkHelper::getPermalink($this);
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getRSSLink()
 	{
 		return LinkHelper::getDocumentUrl($this);
 	}

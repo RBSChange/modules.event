@@ -8,7 +8,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 	/**
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
-	 * @return String
+	 * @return string
 	 */
 	public function execute($request, $response)
 	{
@@ -63,7 +63,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		$ls = LocaleService::getInstance();
 		if ($selectedModelName && !in_array($selectedModelName, $modelNames))
 		{
-			$this->addError($ls->transFO('m.event.fo.invalid-model', array('ucf')));
+			$this->addError($ls->trans('m.event.fo.invalid-model', array('ucf')));
 		}
 		
 		$modelOptions = array();
@@ -72,7 +72,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 			$model = f_persistentdocument_PersistentDocumentModel::getInstanceFromDocumentModelName($modelName);
 			if ($model->getName() == $modelName)
 			{
-				$modelOptions[] = array('label' => $ls->transFO($model->getLabelKey(), array('ucf')), 'value' => $modelName);
+				$modelOptions[] = array('label' => $ls->trans($model->getLabelKey(), array('ucf')), 'value' => $modelName);
 			}
 		}
 		$request->setAttribute('modelOptions', $modelOptions);
@@ -89,7 +89,7 @@ class event_BlockNewBaseeventAction extends website_BlockAction
 		$title = $this->getConfiguration()->getBlockTitle();
 		if (!$title)
 		{
-			$title = LocaleService::getInstance()->transFO('m.event.fo.baseevent-submission', array('ucf', 'html'));
+			$title = LocaleService::getInstance()->trans('m.event.fo.baseevent-submission', array('ucf', 'html'));
 		}
 		return $title;
 	}

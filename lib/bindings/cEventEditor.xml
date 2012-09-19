@@ -53,7 +53,7 @@
 					
 					if (result.status == 'OK')
 					{
-						this.appendMessage("${transui:m.event.bo.general.email-sent,ucf}");
+						this.appendMessage("${trans:m.event.bo.general.email-sent,ucf}");
 					}
 					else
 					{
@@ -80,22 +80,22 @@
 		<xbl:content>
 			<xul:vbox flex="1">
 				<xul:hbox class="dialog-header">
-					<xul:label value="${transui:m.event.bo.general.send-email-to-author,ucf,attr}" class="dialog-title" />
+					<xul:label value="${trans:m.event.bo.general.send-email-to-author,ucf,attr}" class="dialog-title" />
 					<xul:spacer flex="1" />
 					<xul:vbox pack="center">
 						<xul:toolbarbutton image="{IconsBase}/small/delete.png" oncommand="onCancel();"
-							tooltiptexts="${transui:m.uixul.bo.dialog.cancel,ucf,attr}" />
+							tooltiptexts="${trans:m.uixul.bo.dialog.cancel,ucf,attr}" />
 					</xul:vbox>
 				</xul:hbox>
 				<xul:deck anonid="deck">
 					<xul:vbox anonid="form-panel" flex="1">
 						<xul:vbox align="left" pack="start" style="margin-top: 5px">
-							<xul:label value="${transui:m.event.bo.general.message-content,ucf,attr}" />
+							<xul:label value="${trans:m.event.bo.general.message-content,ucf,attr}" />
 							<xul:textbox anonid="message-content" size="50" multiline="true" style="height: 180px; width: 580px" />
 						</xul:vbox>
 						<xul:hbox flex="1" align="start" pack="center" style="margin: 20px 10px 10px 10px">
-							<xul:button image="{IconsBase}/small/check.png" oncommand="onOk()" label="${transui:m.event.bo.general.send,ucf,attr}" />
-							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${transui:m.uixul.bo.dialog.cancel,ucf,attr}" />
+							<xul:button image="{IconsBase}/small/check.png" oncommand="onOk()" label="${trans:m.event.bo.general.send,ucf,attr}" />
+							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${trans:m.uixul.bo.dialog.cancel,ucf,attr}" />
 						</xul:hbox>
 					</xul:vbox>
 					<xul:vbox anonid="sending-panel" flex="1" style="opacity:0.7">
@@ -105,13 +105,13 @@
 						</xul:hbox>
 						<xul:spacer height="16px" />
 						<xul:hbox pack="center">
-							<xul:description style="font-size:18px" value="${transui:m.event.bo.general.sending,ucf,attr}" />
+							<xul:description style="font-size:18px" value="${trans:m.event.bo.general.sending,ucf,attr}" />
 						</xul:hbox>
 					</xul:vbox>
 					<xul:vbox anonid="message-panel" flex="1">
 						<xul:vbox anonid="messageBox" flex="1" />
 						<xul:hbox align="start" pack="center" style="margin: 20px 10px 10px 10px">
-							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${transui:m.event.bo.general.close,ucf,attr}" />
+							<xul:button image="{IconsBase}/small/delete.png" oncommand="onCancel()" label="${trans:m.event.bo.general.close,ucf,attr}" />
 						</xul:hbox>
 					</xul:vbox>
 				</xul:deck>

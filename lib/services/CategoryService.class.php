@@ -1,27 +1,10 @@
 <?php
 /**
- * event_CategoryService
  * @package modules.event
+ * @method event_CategoryService getInstance()
  */
 class event_CategoryService extends f_persistentdocument_DocumentService
 {
-	/**
-	 * @var event_CategoryService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_CategoryService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_category
 	 */
@@ -38,7 +21,7 @@ class event_CategoryService extends f_persistentdocument_DocumentService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/category');
+		return $this->getPersistentProvider()->createQuery('modules_event/category');
 	}
 	
 	/**
@@ -49,7 +32,7 @@ class event_CategoryService extends f_persistentdocument_DocumentService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/category', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/category', false);
 	}
 	
 	/**

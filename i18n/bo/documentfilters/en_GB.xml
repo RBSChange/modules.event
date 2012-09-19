@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.documentfilters" lcid="en_GB">
-  <key id="baseeventfilter-label">document property</key>
-  <key id="baseeventfilter-text">with {property}</key>
-  <key id="or-query-on-baseevent">news and events which match one of the following criteria</key>
-  <key id="query-on-baseevent">news and events which match all of the following criteria</key>
+	<key id="baseeventfilter-label">document property</key>
+	<key id="baseeventfilter-text">with {property}</key>
+	<key id="or-query-on-baseevent">news and events which match one of the following criteria</key>
+	<key id="query-on-baseevent">news and events which match all of the following criteria</key>
 </i18n>

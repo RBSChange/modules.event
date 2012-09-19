@@ -10,7 +10,7 @@ class event_ViewFeedAction extends change_Action
 	 * @param change_Request $request
 	 */
 	public function _execute($context, $request)
-	{		
+	{
 		try 
 		{
 			$parentId = $request->getModuleParameter('event', 'parentref');		
@@ -51,8 +51,8 @@ class event_ViewFeedAction extends change_Action
 		{
 			$ls = LocaleService::getInstance();
 			$writer = new rss_FeedWriter();
-			$writer->setTitle($ls->transFO('m.rss.fo.invalid-rss-feed-title', array('ucf')));
-			$description = $ls->transFO('m.rss.fo.invalid-rss-feed-description', array('ucf'));
+			$writer->setTitle($ls->trans('m.rss.fo.invalid-rss-feed-title', array('ucf')));
+			$description = $ls->trans('m.rss.fo.invalid-rss-feed-description', array('ucf'));
 			if (Framework::isInfoEnabled())
 			{
 				Framework::exception($e);

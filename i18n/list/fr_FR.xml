@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.list" lcid="fr_FR">
 	<key id="availablemodels-label">types d'événements disponibles</key>
 	<key id="availablemodels-description">Liste des types d'événements disponibles.</key>

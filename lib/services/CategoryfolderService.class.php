@@ -1,27 +1,10 @@
 <?php
 /**
- * event_CategoryfolderService
  * @package modules.event
+ * @method event_CategoryfolderService getInstance()
  */
 class event_CategoryfolderService extends generic_FolderService
 {
-	/**
-	 * @var event_CategoryfolderService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_CategoryfolderService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_categoryfolder
 	 */
@@ -38,7 +21,7 @@ class event_CategoryfolderService extends generic_FolderService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/categoryfolder');
+		return $this->getPersistentProvider()->createQuery('modules_event/categoryfolder');
 	}
 	
 	/**
@@ -49,6 +32,6 @@ class event_CategoryfolderService extends generic_FolderService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/categoryfolder', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/categoryfolder', false);
 	}
 }

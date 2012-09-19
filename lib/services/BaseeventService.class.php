@@ -1,27 +1,10 @@
 <?php
 /**
- * event_BaseeventService
  * @package modules.event
+ * @method event_BaseeventService getInstance()
  */
 class event_BaseeventService extends f_persistentdocument_DocumentService
 {
-	/**
-	 * @var event_BaseeventService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_BaseeventService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_baseevent
 	 */
@@ -38,7 +21,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/baseevent');
+		return $this->getPersistentProvider()->createQuery('modules_event/baseevent');
 	}
 	
 	/**
@@ -49,7 +32,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/baseevent', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/baseevent', false);
 	}
 	
 	/**
@@ -308,7 +291,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	
 	/**
 	 * @param event_persistentdocument_baseevent $document
-	 * @param Integer $parentNodeId Parent node ID where to save the document (optionnal => can be null !).
+	 * @param integer $parentNodeId Parent node ID where to save the document (optionnal => can be null !).
 	 * @return void
 	 */
 	protected function preSave($document, $parentNodeId)
@@ -468,7 +451,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 				}
 				catch (Exception $e)
 				{
-					$authorInfos['submissionWebsite'] = LocaleService::getInstance()->transBO('m.event.bo.general.unexisting-website');
+					$authorInfos['submissionWebsite'] = LocaleService::getInstance()->trans('m.event.bo.general.unexisting-website');
 				}
 			}
 			
@@ -487,12 +470,12 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	{
 		$label = array(
 			'name' => 'label',
-			'label' => LocaleService::getInstance()->transBO('m.event.document.baseevent.label', array('ucf')),
+			'label' => LocaleService::getInstance()->trans('m.event.document.baseevent.label', array('ucf')),
 			'maxLength' => 80
 		);
 		$shortUrl = array(
 			'name' => 'shortUrl', 
-			'label' => LocaleService::getInstance()->transBO('m.twitterconnect.bo.general.short-url', array('ucf')),
+			'label' => LocaleService::getInstance()->trans('m.twitterconnect.bo.general.short-url', array('ucf')),
 			'maxLength' => 30
 		);
 		if ($document !== null)
@@ -593,7 +576,8 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 			{
 				$params['specificParams'] = array('message' => f_util_HtmlUtils::textToHtml($message));
 				$user = users_persistentdocument_user::getInstanceById($userId);
-				return $user->getDocumentService()->sendNotificationToUserCallback($notif, $user, $callback, $params);
+				$notif->registerCallback($event->getDocumentService(), 'getNotificationParameters', $params);
+				$notif->sendToUser($user);
 			}
 			else 
 			{
@@ -604,8 +588,9 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 					'receiverFullName' => $user->getAuthorFullNameAsHtml(),
 					'receiverTitle' => '',
 					'receiverEmail' => $event->getAuthorEmailAsHtml()
-				);
-				return $notif->getDocumentService()->sendNotificationCallback($notif, change_MailService::getInstance()->getRecipientsArray(array($event->getAuthorEmail())), $callback, $params);
+				);				
+				$notif->registerCallback($event->getDocumentService(), 'getNotificationParameters', $params);
+				$notif->send($event->getAuthorEmail());
 			}
 		}
 		return false;

@@ -8,7 +8,7 @@ abstract class event_BlockAbstractNewBaseeventAction extends website_BlockAction
 	/**
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
-	 * @return String
+	 * @return string
 	 */
 	public function execute($request, $response)
 	{
@@ -26,7 +26,7 @@ abstract class event_BlockAbstractNewBaseeventAction extends website_BlockAction
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
 	 * @param event_persistentdocument_baseevent $event
-	 * @return String
+	 * @return string
 	 */
 	public function executeSubmit($request, $response, $event)
 	{

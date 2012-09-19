@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.blocks.baseevent" lcid="en_GB">
-  <key id="displaymode">rendering mode</key>
-  <key id="displaymode-help">Block rendering mode.</key>
-  <key id="linktoall">link to all</key>
-  <key id="linktoall-help">Activates or deactivates the link to the list of all events and news.</key>
-  <key id="linktotopic">link to the topic</key>
-  <key id="linktotopic-help">Activates or deactivates the link to the news and events of the same topic.</key>
-  <key id="navigationposition">position of the navigation links</key>
-  <key id="navigationposition-help">Specify the position of the navigation links here.</key>
-  <key id="showcategories">display the categories</key>
-  <key id="showcategories-help">Displays or hides the list of categories of the document.</key>
-  <key id="showtime">display time</key>
-  <key id="showtime-help">Shows or hides the time (hour and minutes) in dates.</key>
-  <key id="title">news or event details</key>
+	<key id="displaymode">rendering mode</key>
+	<key id="displaymode-help">Block rendering mode.</key>
+	<key id="linktoall">link to all</key>
+	<key id="linktoall-help">Activates or deactivates the link to the list of all events and news.</key>
+	<key id="linktotopic">link to the topic</key>
+	<key id="linktotopic-help">Activates or deactivates the link to the news and events of the same topic.</key>
+	<key id="navigationposition">position of the navigation links</key>
+	<key id="navigationposition-help">Specify the position of the navigation links here.</key>
+	<key id="showcategories">display the categories</key>
+	<key id="showcategories-help">Displays or hides the list of categories of the document.</key>
+	<key id="showtime">display time</key>
+	<key id="showtime-help">Shows or hides the time (hour and minutes) in dates.</key>
+	<key id="title">news or event details</key>
 </i18n>

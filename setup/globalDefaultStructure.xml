@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <script>
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
-	
 	<topic byDocumentId-attr="">
-		<page byLabel="Actualités et événements du site" indexingstatus="false"
-			description="Actualités et événements du site &quot;{event_baseeventAllList.label}&quot;">
+		<page byLabel="Actualités et événements du site" indexingstatus="false" description="Actualités et événements du site &quot;{event_baseeventAllList.label}&quot;">
 			<tag name="contextual_website_website_modules_event_baseeventalllist" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventAllList" />
@@ -13,22 +11,19 @@
 				<changeblock type="modules_event_CategoryAllList" />
 			</changecontent>
 		</page>
-		<page byLabel="Actualités et événements du jour" indexingstatus="false"
-			metatitle="Actualités et événements du {event_baseeventDayList.date}" description="Actualités et événements du {event_baseeventDayList.date}">
+		<page byLabel="Actualités et événements du jour" indexingstatus="false" metatitle="Actualités et événements du {event_baseeventDayList.date}" description="Actualités et événements du {event_baseeventDayList.date}">
 			<tag name="contextual_website_website_modules_event_baseeventdaylist" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventDayList" />
 			</changecontent>
 		</page>
-		<page byLabel="Détail d'une catégorie" indexingstatus="false" navigationVisibility="hidden"
-			metatitle="Catégorie &quot;{event_category.label}&quot;" description="{event_category.description}">
+		<page byLabel="Détail d'une catégorie" indexingstatus="false" navigationVisibility="hidden" metatitle="Catégorie &quot;{event_category.label}&quot;" description="{event_category.description}">
 			<tag name="contextual_website_website_modules_event_category" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_Category" />
 			</changecontent>
 		</page>
-		<page byLabel="Détail d'une mise en avant" indexingstatus="false" navigationVisibility="hidden"
-			metatitle="Mise en avant &quot;{event_highlight.label}&quot;" description="{event_highlight.description}">
+		<page byLabel="Détail d'une mise en avant" indexingstatus="false" navigationVisibility="hidden" metatitle="Mise en avant &quot;{event_highlight.label}&quot;" description="{event_highlight.description}">
 			<tag name="contextual_website_website_modules_event_highlight" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_Highlight" />

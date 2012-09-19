@@ -1,14 +1,14 @@
 <?php
 /**
- * event_BlockBaseeventAction
- * @package modules.event.lib.blocks
+ * @package modules.event
+ * @method event_BlockBaseeventAction getConfiguration()
  */
 class event_BlockBaseeventAction extends website_BlockAction
 {
 	/**
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
-	 * @return String
+	 * @return string
 	 */
 	public function execute($request, $response)
 	{
@@ -30,7 +30,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 		}
 		else if ($isOnDetailPage)
 		{
-			$context->addCanonicalParam('topicId', null, 'event');
+			$this->getContext()->addCanonicalParam('topicId', null, 'event');
 		}
 		
 		$config = $this->getConfiguration();
@@ -44,7 +44,8 @@ class event_BlockBaseeventAction extends website_BlockAction
 		$request->setAttribute('linkToAll', $config->getLinkToAll());
 		$request->setAttribute('showTime', $config->getShowTime());
 		$request->setAttribute('showCategories', $config->getShowCategories());
-
+		$request->setAttribute('displayMode', $config->getDisplayMode());
+		
 		return $this->forward($doc->getDetailBlockModule(), $doc->getDetailBlockName());
 	}
 	
@@ -70,7 +71,7 @@ class event_BlockBaseeventAction extends website_BlockAction
 			return array(
 				'label' => $doc->getLabel(), 
 				'summary' => f_util_HtmlUtils::htmlToText($doc->getSummary()),
-				'type' => LocaleService::getInstance()->transFO($doc->getPersistentModel()->getLabelKey(), array('ucf')),
+				'type' => LocaleService::getInstance()->trans($doc->getPersistentModel()->getLabelKey(), array('ucf')),
 			 	'date' => date_Formatter::toDefaultDate($uidate),
 			 	'datetime' => date_Formatter::toDefaultDateTime($uidate)
 			);

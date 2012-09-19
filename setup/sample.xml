@@ -3,7 +3,6 @@
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
 	<binding fileName="modules/media/persistentdocument/import/media_binding.xml" />
 	<binding fileName="modules/event/persistentdocument/import/event_binding.xml" />
-	
 	<website byTag="default_modules_website_default-website">
 		<topic byLabel="Actualités et événements" id="events1">
 			<topic byLabel="Actualités et événements RBS change" id="events2" />
@@ -13,14 +12,12 @@
 			<binding fileName="modules/event/setup/globalDefaultStructure.xml" />
 		</topic>
 	</website>
-	
 	<rootfolder module="media">
 		<folder byLabel="Exemple de media Actualité et événements">
 			<media path="modules/event/setup/sample/eComGeneve.jpg" byLabel="eCom Genève" id="photo1" />
 		</folder>
 	</rootfolder>
-	
-  	<rootfolder module="event">
+	<rootfolder module="event">
 		<categoryfolder byLabel="Catégories">
 			<category byLabel="RBS Change" id="cat-change" />
 			<category byLabel="eCommerce" id="cat-ecom" />
@@ -36,15 +33,15 @@ eCom est une opportunité unique de rencontrer les meilleurs spécialistes locau
 Plus d'informations sur <a class="link" href="http://www.salon-ecom.com/">www.salon-ecom.com</a></p>]]></attribute>
 				<attribute name="text"><![CDATA[<p class="normal">Venez nous rencontrer pour découvrir ou vous renseigner à propos de RBS Change sur le stand B20.</p>
 <p class="normal">
-	Assistez à notre conférence Salle 2 de  13h55 à 14h45 :<br />
+	Assistez à notre conférence Salle 2 de	13h55 à 14h45 :<br />
 	<strong>Les bénéfices d’un logiciel de gestion de contenu pour les applications e-commerce</strong> par Jean-Michel Ramseyer
 </p>
 <p class="normal"><strong>Date et horaire</strong><br />Mardi 24 mai de 9h00 à 18h30</p>
 <p class="normal">
 	<strong>Lieu</strong><br />
-    Centre des conventions de la Praille<br />
-    Ramada Encore<br />
-    Genève
+	Centre des conventions de la Praille<br />
+	Ramada Encore<br />
+	Genève
 </p>
 <p class="normal">
 	<strong>Accès</strong><br />
@@ -146,7 +143,7 @@ Plus d'informations sur <a class="link" href="http://www.salon-ecom.com/">www.sa
 			</treefolder>
 		</treefolder>
 		<highlightfolder byLabel="Mises en avant">
-			<attribute name="query"><![CDATA[{"operator":"and","elements":[{"class":"event_BaseeventFilter","parameters":{"property":["modules_event/baseevent.date","ge","2010-07-01 00:00:00"]}},{"class":"event_BaseeventFilter","parameters":{"property":["modules_event/baseevent.date","le","2010-12-31 23:59:59"]}}]}]]></attribute>		
+			<attribute name="query"><![CDATA[{"operator":"and","elements":[{"class":"event_BaseeventFilter","parameters":{"property":["modules_event/baseevent.date","ge","2010-07-01 00:00:00"]}},{"class":"event_BaseeventFilter","parameters":{"property":["modules_event/baseevent.date","le","2010-12-31 23:59:59"]}}]}]]></attribute>
 			<highlight byLabel="Second semestre 2010" query-attr="" />
 		</highlightfolder>
 	</rootfolder>

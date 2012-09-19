@@ -1,27 +1,10 @@
 <?php
 /**
- * event_ListAvailablemodelsService
- * @package modules.event.lib.services
+ * @package modules.event
+ * @method event_ListAvailablemodelsService getInstance()
  */
-class event_ListAvailablemodelsService extends BaseService implements list_ListItemsService
+class event_ListAvailablemodelsService extends change_BaseService implements list_ListItemsService
 {
-	/**
-	 * @var event_ListAvailablemodelsService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_ListAvailablemodelsService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @see list_persistentdocument_dynamiclist::getItems()
 	 * @return list_Item[]

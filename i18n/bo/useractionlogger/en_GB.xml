@@ -1,33 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.useractionlogger" lcid="en_GB">
-  <key id="activate-event">activate.event {lang} {documentlabel}</key>
-  <key id="activate-news">activate.news {lang} {documentlabel}</key>
-  <key id="delete-event">delete.event {documentlabel} {lang}</key>
-  <key id="delete-highlight">delete.highlight {documentlabel} {lang}</key>
-  <key id="delete-news">delete.news {documentlabel} {lang}</key>
-  <key id="insert-highlight">insert.highlight {lang} {documentlabel}</key>
-  <key id="insert-news">insert.news {lang} {documentlabel}</key>
-  <key id="log-activate-event">log activate event</key>
-  <key id="log-activate-news">log activate news</key>
-  <key id="log-delete-event">log delete event</key>
-  <key id="log-delete-highlight">log delete highlight</key>
-  <key id="log-delete-news">log delete news</key>
-  <key id="log-insert-highlight">log insert highlight</key>
-  <key id="log-insert-news">log insert news</key>
-  <key id="log-update-event">log update event</key>
-  <key id="log-update-highlight">log update highlight</key>
-  <key id="log-update-news">log update news</key>
-  <key id="update-event">update.event {lang} {documentlabel}</key>
-  <key id="update-highlight">update.highlight {lang} {documentlabel}</key>
-  <key id="update-news">update.news {lang} {documentlabel}</key>
-  <key id="insert-treefolder"/>
-  <key id="log-insert-treefolder"/>
-  <key id="insert-category"/>
-  <key id="log-insert-category"/>
-  <key id="insert-event"/>
-  <key id="log-insert-event"/>
-  <key id="deletecorrection-news"/>
-  <key id="log-deletecorrection-news"/>
-  <key id="move-news"/>
-  <key id="log-move-news"/>
+	<key id="activate-event">activate.event {lang} {documentlabel}</key>
+	<key id="activate-news">activate.news {lang} {documentlabel}</key>
+	<key id="delete-event">delete.event {documentlabel} {lang}</key>
+	<key id="delete-highlight">delete.highlight {documentlabel} {lang}</key>
+	<key id="delete-news">delete.news {documentlabel} {lang}</key>
+	<key id="insert-highlight">insert.highlight {lang} {documentlabel}</key>
+	<key id="insert-news">insert.news {lang} {documentlabel}</key>
+	<key id="log-activate-event">log activate event</key>
+	<key id="log-activate-news">log activate news</key>
+	<key id="log-delete-event">log delete event</key>
+	<key id="log-delete-highlight">log delete highlight</key>
+	<key id="log-delete-news">log delete news</key>
+	<key id="log-insert-highlight">log insert highlight</key>
+	<key id="log-insert-news">log insert news</key>
+	<key id="log-update-event">log update event</key>
+	<key id="log-update-highlight">log update highlight</key>
+	<key id="log-update-news">log update news</key>
+	<key id="update-event">update.event {lang} {documentlabel}</key>
+	<key id="update-highlight">update.highlight {lang} {documentlabel}</key>
+	<key id="update-news">update.news {lang} {documentlabel}</key>
 </i18n>

@@ -1,27 +1,10 @@
 <?php
 /**
- * event_EventService
  * @package modules.event
+ * @method event_EventService getInstance()
  */
 class event_EventService extends event_BaseeventService
 {
-	/**
-	 * @var event_EventService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_EventService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_event
 	 */
@@ -38,7 +21,7 @@ class event_EventService extends event_BaseeventService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/event');
+		return $this->getPersistentProvider()->createQuery('modules_event/event');
 	}
 	
 	/**
@@ -49,7 +32,7 @@ class event_EventService extends event_BaseeventService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/event', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/event', false);
 	}
 	
 	/**
@@ -61,7 +44,7 @@ class event_EventService extends event_BaseeventService
 	{
 		return array('module' => 'event', 'template' => 'Event-Inc-EventResultDetail');
 	}
-	
+		
 	/**
 	 * @param event_persistentdocument_event $document
 	 * @param array<string, string> $attributes

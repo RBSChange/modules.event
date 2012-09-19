@@ -1,27 +1,10 @@
 <?php
 /**
- * event_HighlightService
  * @package modules.event
+ * @method event_HighlightService getInstance()
  */
 class event_HighlightService extends f_persistentdocument_DocumentService
 {
-	/**
-	 * @var event_HighlightService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_HighlightService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_highlight
 	 */
@@ -38,7 +21,7 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/highlight');
+		return $this->getPersistentProvider()->createQuery('modules_event/highlight');
 	}
 	
 	/**
@@ -49,7 +32,7 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/highlight', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/highlight', false);
 	}
 	
 	/**
@@ -88,7 +71,8 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function getPublishedBaseevents($highlight, $offset, $limit, $modelNames)
 	{
-		return $this->getQueryIntersection($highlight, null, $modelNames)->findAtOffset($offset, $limit);
+		$count = null;
+		return $this->getQueryIntersection($highlight, null, $modelNames)->findAtOffset($offset, $limit, $count, 'DESC');
 	}
 	
 	/**
@@ -124,7 +108,8 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function getPublishedBaseeventsByWebsite($highlight, $website, $offset, $limit, $modelNames)
 	{
-		return $this->getQueryIntersection($highlight, $website, $modelNames)->findAtOffset($offset, $limit);
+		$count = null;
+		return $this->getQueryIntersection($highlight, $website, $modelNames)->findAtOffset($offset, $limit, $count, 'DESC');
 	}
 	
 	/**

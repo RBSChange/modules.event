@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <blocks>
 	<block type="modules_event_BaseeventContextualList" icon="list-block">
 		<parameters>
@@ -8,7 +8,7 @@
 				<constraint name="max" max="100" />
 			</parameter>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="true" />
 			<parameter name="showTime" type="Boolean" default-value="false" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
@@ -55,7 +55,7 @@
 				<constraint name="max" max="100" />
 			</parameter>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTime" type="Boolean" default-value="false" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
@@ -97,7 +97,7 @@
 	<block type="modules_event_CategoryContextualList" icon="list-block">
 		<parameters>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTitle" type="Boolean" default-value="true" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
@@ -129,7 +129,7 @@
 	<block type="modules_event_CategoryAllList" icon="list-block">
 		<parameters>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTitle" type="Boolean" default-value="true" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
@@ -166,7 +166,7 @@
 				<constraint name="max" max="100" />
 			</parameter>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTime" type="Boolean" default-value="false" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
@@ -214,7 +214,7 @@
 			</parameter>
 			<parameter name="onlyFromCurrentWebsite" type="Boolean" default-value="true" />
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTime" type="Boolean" default-value="false" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
@@ -273,7 +273,7 @@
 		<parameters>
 			<parameter name="displayMode" type="String" min-occurs="1" default-value="Success" fieldtype="dropdownlist" />
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTitle" type="Boolean" default-value="true" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>
@@ -311,7 +311,7 @@
 				<constraint name="max" max="100" />
 			</parameter>
 			<parameter name="filterByModel" type="Boolean" default-value="false" />
-			<parameter name="includedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="includedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="showTime" type="Boolean" default-value="false" />
 			<parameter name="showVisuals" type="Boolean" default-value="true" />
 			<parameter name="showCategories" type="Boolean" default-value="true" />
@@ -380,9 +380,9 @@
 	</block>
 	<block type="modules_event_NewBaseevent" icon="add">
 		<parameters>
-			<parameter name="destinationFolder" type="modules_event/treefolder" min-occurs="1" />
+			<parameter name="destinationFolder" type="Document" min-occurs="1" document-type="modules_event/treefolder" />
 			<parameter name="restrictModel" type="Boolean" default-value="false" />
-			<parameter name="allowedModels" type="String" fieldtype="checklist" list-id="modules_event/availablemodels" max-occurs="-1" />
+			<parameter name="allowedModels" type="String" fieldtype="checklist" max-occurs="-1" from-list="modules_event/availablemodels" />
 			<parameter name="allowNotRegistered" type="Boolean" default-value="true" />
 			<parameter name="blockTitle" type="String" />
 		</parameters>

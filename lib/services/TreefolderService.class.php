@@ -1,27 +1,10 @@
 <?php
 /**
- * event_TreefolderService
  * @package modules.event
+ * @method event_TreefolderService getInstance()
  */
 class event_TreefolderService extends generic_FolderService
 {
-	/**
-	 * @var event_TreefolderService
-	 */
-	private static $instance;
-
-	/**
-	 * @return event_TreefolderService
-	 */
-	public static function getInstance()
-	{
-		if (self::$instance === null)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
 	/**
 	 * @return event_persistentdocument_treefolder
 	 */
@@ -38,7 +21,7 @@ class event_TreefolderService extends generic_FolderService
 	 */
 	public function createQuery()
 	{
-		return $this->pp->createQuery('modules_event/treefolder');
+		return $this->getPersistentProvider()->createQuery('modules_event/treefolder');
 	}
 	
 	/**
@@ -49,7 +32,7 @@ class event_TreefolderService extends generic_FolderService
 	 */
 	public function createStrictQuery()
 	{
-		return $this->pp->createQuery('modules_event/treefolder', false);
+		return $this->getPersistentProvider()->createQuery('modules_event/treefolder', false);
 	}
 	
 	/**

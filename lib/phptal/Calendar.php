@@ -28,10 +28,8 @@ class PHPTAL_Php_Attribute_CHANGE_Calendar extends ChangeTalAttribute
 		$moduleName = self::getFromParams('templateModule', $params);
 		$moduleName = $moduleName ? $moduleName : 'event';
 		$templateName = self::getFromParams('templateName', $params, 'default');
-		$templateName = $templateName ? $templateName : 'default';
-		$templateLoader = TemplateLoader::getInstance()->setMimeContentType('html');
-		$templateLoader->setDirectory('templates')->setPackageName('modules_' . $moduleName);			
-		$template = $templateLoader->load(ucfirst($moduleName) . '-Inc-Calendar-'.ucfirst($templateName));
+		$templateName = ucfirst($moduleName) . '-Inc-Calendar-' . ucfirst($templateName ? $templateName : 'default');
+		$template = change_TemplateLoader::getNewInstance()->setExtension('html')->load('modules', $moduleName, $templateName);
 		
 		$counts = self::getFromParams('counts', $params, array());
 		$dayUrl = self::getFromParams('dayUrl', $params, null);

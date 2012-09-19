@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <script>
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
-	
 	<topic byDocumentId-attr="">
-		<page byLabel="Liste des actualité et événements" isIndexPage="true" indexingstatus="false" navigationVisibility="hidden"
-			metatitle="Rubrique &quot;{event_baseeventContextualList.label}&quot;" description="{event_baseeventContextualList.description}">
+		<page byLabel="Liste des actualité et événements" isIndexPage="true" indexingstatus="false" navigationVisibility="hidden" metatitle="Rubrique &quot;{event_baseeventContextualList.label}&quot;" description="{event_baseeventContextualList.description}">
 			<tag name="functional_event_baseevent-list" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_BaseeventContextualList" />
@@ -13,8 +11,7 @@
 				<changeblock type="modules_event_CategoryContextualList" />
 			</changecontent>
 		</page>
-		<page byLabel="Détail d'une actualité ou d'un événement" indexingstatus="false" navigationVisibility="hidden"
-			metatitle="{event_baseevent.type} &quot;{event_baseevent.label}&quot;" description="{event_baseevent.datetime} - {event_baseevent.summary}">
+		<page byLabel="Détail d'une actualité ou d'un événement" indexingstatus="false" navigationVisibility="hidden" metatitle="{event_baseevent.type} &quot;{event_baseevent.label}&quot;" description="{event_baseevent.datetime} - {event_baseevent.summary}">
 			<tag name="functional_event_baseevent-detail" />
 			<changecontent for="content-block">
 				<changeblock type="modules_event_Baseevent" __navigationPosition="top" />

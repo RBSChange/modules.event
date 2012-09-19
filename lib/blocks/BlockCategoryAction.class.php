@@ -8,7 +8,7 @@ class event_BlockCategoryAction extends event_BlockAbstractBaseeventListAction
 	/**
 	 * @param f_mvc_Request $request
 	 * @param f_mvc_Response $response
-	 * @return String
+	 * @return string
 	 */
 	public function execute($request, $response)
 	{
@@ -100,7 +100,7 @@ class event_BlockCategoryAction extends event_BlockAbstractBaseeventListAction
 		if (!$title)
 		{
 			$doc = $this->getParentDoc($request);
-			$title = LocaleService::getInstance()->transFO('m.event.fo.category-title', array('ucf', 'html'), array('category' => $doc->getLabel()));
+			$title = LocaleService::getInstance()->trans('m.event.fo.category-title', array('ucf', 'html'), array('category' => $doc->getLabel()));
 		}
 		return $title;
 	}

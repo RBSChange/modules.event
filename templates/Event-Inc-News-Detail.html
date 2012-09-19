@@ -1,7 +1,7 @@
 <h1 change:h=""><a tal:omit-tag="isOnDetailPage" change:link="document doc">${structure doc/getLabelAsHtml}</a></h1>
 <p class="normal event-infos">
-	<tal:block tal:condition="showTime" tal:replace="datetime:doc/getDate,from=gmt" />
-	<tal:block tal:condition="not:showTime" tal:replace="date:doc/getDate,from=gmt" />
+	<tal:block tal:condition="showTime">${datetime:doc/getUIDate}</tal:block>
+	<tal:block tal:condition="not:showTime">${date:doc/getUIDate}</tal:block>
 </p>
 
 <img tal:condition="doc/getDetailvisual" change:media="document doc/getDetailvisual; class 'visual'; format 'modules.event.frontoffice/detailvisual'; zoom 'true'" />
@@ -14,8 +14,7 @@
 	<dl class="inline-list" tal:condition="doc/getPublishedCategoryCount">
 		<dt>${trans:modules.event.fo.categories,ucf}</dt>
 		<dd tal:repeat="category doc/getPublishedCategoryArray">
-			<a change:link="document category">${structure category/getLabelAsHtml}</a>
-			<span tal:condition="not: repeat/category/end">, </span>
+			<a change:link="document category">${structure category/getLabelAsHtml}</a><span tal:condition="not: repeat/category/end" class="punctuation">, </span>
 		</dd>
 	</dl>
 </tal:block>

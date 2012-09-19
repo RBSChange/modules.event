@@ -25,7 +25,7 @@ class event_BlockBaseeventContextualListAction extends event_BlockAbstractBaseev
 		if (!$title)
 		{
 			$doc = $this->getParentDoc($request);
-			$title = LocaleService::getInstance()->transFO('m.event.fo.topic-title', array('ucf', 'html'), array('topic' => $doc->getLabel()));
+			$title = LocaleService::getInstance()->trans('m.event.fo.topic-title', array('ucf', 'html'), array('topic' => $doc->getLabel()));
 		}
 		return $title;
 	}

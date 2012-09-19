@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <i18n baseKey="m.event.bo.documentfilters" lcid="fr_FR">
 	<key id="query-on-baseevent">actualités et événements satisfaisant l'ensemble des critères suivants</key>
 	<key id="or-query-on-baseevent">actualités et événements satisfaisant un des critères suivants</key>

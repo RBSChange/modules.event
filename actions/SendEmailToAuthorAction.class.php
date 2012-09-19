@@ -17,7 +17,7 @@ class event_SendEmailToAuthorAction extends change_JSONAction
 		$message = $request->getParameter('message');
 		if (!$event->getDocumentService()->sendMessageToAuthor($event, $message))
 		{
-			return $this->sendJSONError(LocaleService::getInstance()->transBO('m.event.bo.general.error-on-mail-sending', array('ucf')));
+			return $this->sendJSONError(LocaleService::getInstance()->trans('m.event.bo.general.error-on-mail-sending', array('ucf')));
 		}
 
 		return $this->sendJSON($result);
