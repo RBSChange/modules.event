@@ -29,7 +29,7 @@ class event_BaseeventScriptDocumentElement extends import_ScriptDocumentElement
 		$properties = parent::getDocumentProperties();
 		
 		$event = $this->getPersistentDocument();
-		if (in_array($event->getPublicationstatus(), array('ACTIVE', 'PUBLICATED', 'DEACTIVATED')))
+		if (in_array($event->getPublicationstatus(), array('ACTIVE', 'PUBLISHED', 'DEACTIVATED')))
 		{
 			if (!isset($properties['publicationstatus']))
 			{
