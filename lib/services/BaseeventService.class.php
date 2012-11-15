@@ -359,32 +359,24 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	 */
 	public function getDisplayPage($document)
 	{
-		$linkedPage = $document->getLinkedpage();
-		if ($linkedPage instanceof website_persistentdocument_page)
+		$request = HttpController::getInstance()->getContext()->getRequest();
+		if ($request->hasModuleParameter('event', 'topicId'))
 		{
-			return $linkedPage;
+			$topicId = $request->getModuleParameter('event', 'topicId');
 		}
 		else
 		{
-			$request = HttpController::getInstance()->getContext()->getRequest();
-			if ($request->hasModuleParameter('event', 'topicId'))
-			{
-				$topicId = $request->getModuleParameter('event', 'topicId');
-			}
-			else
-			{
-				$topic = $this->getPrimaryTopicForWebsite($document, website_WebsiteModuleService::getInstance()->getCurrentWebsite());
-				$topicId = $topic ? $topic->getId() : null;
-			}
-			
-			if ($topicId > 0)
-			{
-				return website_PageService::getInstance()->createQuery()
-					->add(Restrictions::published())
-					->add(Restrictions::childOf($topicId))
-					->add(Restrictions::hasTag('functional_event_baseevent-detail'))
-					->findUnique();
-			}
+			$topic = $this->getPrimaryTopicForWebsite($document, website_WebsiteModuleService::getInstance()->getCurrentWebsite());
+			$topicId = $topic ? $topic->getId() : null;
+		}
+		
+		if ($topicId > 0)
+		{
+			return website_PageService::getInstance()->createQuery()
+				->add(Restrictions::published())
+				->add(Restrictions::childOf($topicId))
+				->add(Restrictions::hasTag('functional_event_baseevent-detail'))
+				->findUnique();
 		}
 		return null;
 	}
@@ -399,11 +391,19 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	 */
 	public function getWebLink($urlRewritingService, $document, $website, $lang, $parameters)
 	{
+		$linkedPage = $document->getLinkedpage();
+		if ($linkedPage instanceof website_persistentdocument_page)
+		{
+			unset($parameters['eventParam[topicId]']);
+			unset($parameters['eventParam']['topicId']);
+			return $urlRewritingService->getDocumentLinkForWebsite($linkedPage, null, $lang, $parameters);
+		}
+		
 		if (isset($parameters['eventParam[topicId]']))
 		{
 			$topicId = $parameters['eventParam[topicId]'];
 		}
-		elseif (isset($parameters['eventParam']) && isset($parameters['eventParam']['topicId']))
+		elseif (isset($parameters['eventParam']['topicId']))
 		{
 			$topicId = $parameters['eventParam']['topicId'];
 		}
@@ -413,7 +413,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 		if ($twebsite !== null && $twebsite !== $website)
 		{
 			return $urlRewritingService->getDocumentLinkForWebsite($document, $twebsite, $lang, $parameters);
-		}		
+		}
 		return null;
 	}
 
@@ -425,7 +425,7 @@ class event_BaseeventService extends f_persistentdocument_DocumentService
 	{
 		$topics = $document->getPublishedTopicArray();
 		$topicIds = DocumentHelper::getIdArrayFromDocumentArray($topics);
-				
+		
 		$query = website_TopicService::getInstance()->createQuery()->add(Restrictions::descendentOf($website->getId()));
 		$query->add(Restrictions::published())->add(Restrictions::in('id', $topicIds))->setProjection(Projections::property('id'));
 		$ids = $query->findColumn('id');
