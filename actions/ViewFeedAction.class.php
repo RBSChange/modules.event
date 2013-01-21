@@ -13,7 +13,7 @@ class event_ViewFeedAction extends change_Action
 	{
 		try 
 		{
-			$parentId = $request->getModuleParameter('event', 'parentref');		
+			$parentId = $request->getParameter('parentref');
 			$parent = DocumentHelper::getDocumentInstance($parentId);
 			if (!$parent->isPublished())
 			{
