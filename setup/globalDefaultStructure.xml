@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <script>
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+	
+	<documentRef type="modules_event/treefolder" byDocumentId-attr="treeFolderId" id="treeFolder" />
+	
 	<topic byDocumentId-attr="">
 		<page byLabel="Actualités et événements du site" indexingstatus="false" description="Actualités et événements du site &quot;{event_baseeventAllList.label}&quot;">
 			<tag name="contextual_website_website_modules_event_baseeventalllist" />
@@ -32,7 +35,7 @@
 		<page byLabel="Soumission d'une actualité ou d'un événement" indexingstatus="false">
 			<tag name="contextual_website_website_modules_event_newbaseevent" />
 			<changecontent for="content-block">
-				<changeblock type="modules_event_NewBaseevent" />
+				<changeblock type="modules_event_NewBaseevent" __destinationFolder-refid="treeFolder"/>
 			</changecontent>
 		</page>
 	</topic>
