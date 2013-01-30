@@ -1,5 +1,4 @@
 /** Inspired by http://www.duoh.com/csstutorials/calendar/index2.html */
-
 .calendar a {
 	color: #DF9496;
 }
@@ -14,8 +13,9 @@
 	background-color: #fff;
 }
 
-.calendar .nav, .calendar .nav a {
-	color: #fff;	
+.calendar .nav,
+.calendar .nav a {
+	color: #fff;
 	text-align: center;
 	text-decoration: none;
 }	
@@ -29,11 +29,13 @@
 	text-align: center;
 }
 
-.calendar th, .calendar td {
+.calendar th,
+.calendar td {
 	border-right: 1px solid #A2ADBC;
 	border-bottom: 1px solid #A2ADBC;
 	width: 20px;
 	height: 20px;
+	line-height: 20px;
 	text-align: center;
 }
 
@@ -47,13 +49,19 @@
 	background: #e0e0e0;
 }
 
-.calendar .current, .calendar td.current a, .calendar td.current a:link, .calendar td.current a:visited {
+.calendar .current,
+.calendar td.current a,
+.calendar td.current a:link,
+.calendar td.current a:visited {
 	color: #F6F4DA;
 	font-weight: bold;
 	background: #94DF96;
 }
 
-.calendar .today, .calendar td.today a, .calendar td.today a:link, .calendar td.today a:visited {
+.calendar .today,
+.calendar td.today a,
+.calendar td.today a:link,
+.calendar td.today a:visited {
 	color: #F6F4DA;
 	font-weight: bold;
 	background: #DF9496;
@@ -63,14 +71,17 @@
 	text-decoration: none;
 	font-weight: bold;
 	display: block;
+	height: 20px;
 }
 
-.calendar td a:link, .calendar td a:visited {	
+.calendar td a:link,
+.calendar td a:visited {
 	color: #608194;
 	background: #f3f3f3
 }
 
-.calendar td a:hover, .calendar td a:active {
+.calendar td a:hover,
+.calendar td a:active {
 	color: #6aa3ae;
 	background: #fff;
 }
