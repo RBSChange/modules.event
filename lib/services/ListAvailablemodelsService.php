@@ -26,7 +26,7 @@ class event_ListAvailablemodelsService extends BaseService implements list_ListI
 	 * @see list_persistentdocument_dynamiclist::getItems()
 	 * @return list_Item[]
 	 */
-	public final function getItems()
+	public function getItems()
 	{
 		$items = array();
 		
