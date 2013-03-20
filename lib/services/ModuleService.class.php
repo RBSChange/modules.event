@@ -70,6 +70,7 @@ class event_ModuleService extends ModuleBaseService
 		// Set atrtibutes.
 		$attributes['byDocumentId'] = $container->getId();
 		$attributes['type'] = $container->getPersistentModel()->getName();
+		$attributes['treeFolderId'] = event_TreefolderService::getInstance()->getDefaultFrontofficeInbox($websiteId)->getId();
 		return $attributes;
 	}
 	

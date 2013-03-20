@@ -20,4 +20,8 @@
   <key id="log-insert-news">log insert news</key>
   <key id="update-highlight">update.highlight {lang} {documentlabel}</key>
   <key id="log-update-highlight">log update highlight</key>
+  <key id="insert-treefolder">insert.treefolder {documentlabel}</key>
+  <key id="log-insert-treefolder">log insert treefolder</key>
+  <key id="delete-treefolder">delete.treefolder {documentlabel}</key>
+  <key id="log-delete-treefolder">log delete treefolder</key>
 </i18n>

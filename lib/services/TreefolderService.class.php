@@ -53,6 +53,22 @@ class event_TreefolderService extends generic_FolderService
 	}
 	
 	/**
+	 * @param integer $websiteId
+	 */
+	public function getDefaultFrontofficeInbox($websiteId)
+	{
+		$query = $this->createQuery()->add(Restrictions::orExp(Restrictions::eq('label', 'm.event.bo.general.inbox'), Restrictions::eq('label', 'Contributions des internautes')));
+		$folder = $query->addOrder(Order::desc('label'))->setMaxResults(1)->findUnique();
+		if (!$folder)
+		{
+			$folder = $this->getNewDocumentInstance();
+			$folder->setLabel('m.event.bo.general.inbox');
+			$folder->save(ModuleService::getInstance()->getRootFolderId('event'));
+		}
+		return $folder;
+	}
+	
+	/**
 	 * @param event_persistentdocument_highlight $document
 	 * @return string[]
 	 */

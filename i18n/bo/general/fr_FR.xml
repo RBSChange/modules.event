@@ -15,4 +15,5 @@
 	<key id="unexisting-website">un site qui n'existe plus</key>
 	<key id="error-on-mail-sending">Une erreur s'est produit durant l'envoi de l'e-mail.</key>
 	<key id="email-sent">L'e-mail a bien été envoyé.</key>
+	<key id="inbox">contributions des internautes</key>
 </i18n>
