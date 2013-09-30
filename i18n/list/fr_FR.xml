@@ -5,4 +5,7 @@
 	<key id="blocktemplates-success">par défaut</key>
 	<key id="detailblocktemplates-label">templates de détail disponibles</key>
 	<key id="detailblocktemplates-description">Liste des templates disponibles pour le bloc de détail des actualités et événements.</key>
+	
+	<key id="sorttype-asc">croissant</key>
+	<key id="sorttype-desc">décroissant</key>
 </i18n>
