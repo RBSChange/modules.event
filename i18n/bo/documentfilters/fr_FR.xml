@@ -4,4 +4,7 @@
 	<key id="or-query-on-baseevent">actualités et événements satisfaisant un des critères suivants</key>
 	<key id="baseeventfilter-label">propriété du document</key>
 	<key id="baseeventfilter-text">avec {property}</key>
+	
+	<key id="baseeventsortfilter-label">tri par date</key>
+	<key id="baseeventsortfilter-text">trier sur la date {sorttype}</key>	
 </i18n>

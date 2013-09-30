@@ -125,8 +125,28 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 */
 	public function getPublishedBaseeventsByWebsite($highlight, $website, $offset, $limit, $modelNames)
 	{
-		$count = null;
-		return $this->getQueryIntersection($highlight, $website, $modelNames)->findAtOffset($offset, $limit, $count, 'DESC');
+		$intersection = $this->getQueryIntersection($highlight, $website, $modelNames);
+		$ids = $intersection->findIds();
+		$pageIds = array_slice($ids, 0, $limit);
+		$docs = event_BaseeventService::getInstance()->createQuery()->add(Restrictions::in('id', $pageIds))->find();
+		
+		$firstQuery = f_util_ArrayUtils::firstElement($intersection->getQueries());
+		if (!f_util_ClassUtils::methodExists($firstQuery, "hasOrders") || !$firstQuery->hasOrders())
+		{
+			rsort($pageIds);
+		}
+		
+		$docsById = array();
+		foreach ($docs as $doc)
+		{
+			$docsById[$doc->getId()] = $doc;
+		}
+		$docs = array();
+		foreach ($pageIds as $id)
+		{
+			$docs[] = $docsById[$id];
+		}
+		return $docs;
 	}
 	
 	/**
@@ -140,7 +160,10 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	{
 		$ids = $this->getQueryIntersection($highlight, $website, $modelNames)->findIds();
 		shuffle($ids);
-		return event_BaseeventService::getInstance()->createQuery()->add(Restrictions::in('id', array_slice($ids, 0, $limit)))->find();
+		$pageIds = array_slice($ids, 0, $limit);
+		$docs = event_BaseeventService::getInstance()->createQuery()->add(Restrictions::in('id', $pageIds))->find();
+		shuffle($docs);
+		return $docs;
 	}
 	
 	/**
@@ -148,7 +171,7 @@ class event_HighlightService extends f_persistentdocument_DocumentService
 	 * @param website_persistentdocument_website $website
 	 * @param string[] $modelNames
 	 * @param boolean $withoutExcludedFromRss
-	 * @return event_persistentdocument_baseevent
+	 * @return f_persistentdocument_criteria_QueryIntersection
 	 */
 	protected function getQueryIntersection($highlight, $website, $modelNames, $withoutExcludedFromRss = false)
 	{
