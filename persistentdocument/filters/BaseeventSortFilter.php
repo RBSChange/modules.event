@@ -8,7 +8,6 @@ class event_BaseeventSortFilter extends f_persistentdocument_DocumentFilterImpl
 	public function __construct()
 	{
 		$info = new BeanPropertyInfoImpl('sorttype', 'String');
-		$info->setLabelKey('Type de tri');
 		$info->setListId('modules_event/sorttypefilter');
 		$parameter = new f_persistentdocument_DocumentFilterValueParameter($info);
 		
@@ -21,6 +20,16 @@ class event_BaseeventSortFilter extends f_persistentdocument_DocumentFilterImpl
 	public static function getDocumentModelName()
 	{
 		return 'modules_event/baseevent';
+	}
+
+	/**
+	 * Check a single given object.
+	 * @param event_persistentdocument_baseevent $value
+	 * @return boolean
+	 */
+	public function checkValue($value)
+	{
+		return true;
 	}
 	
 	/**
